@@ -3,6 +3,10 @@ import React from 'react';
 class ProyectList extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = { 
+            projects: []
+        }
     }
 
     // componentDidMount(){

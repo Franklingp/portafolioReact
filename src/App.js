@@ -12,6 +12,7 @@ import ProjectsList from './pages/ProjectsList';
 import ProjectDetail from './pages/ProjectDetail';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import Dashboard from './pages/Dashboard'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/project" component={ProjectsList}/>
           <Route exact path="/" component={Home}/>
           <Route exact path="/contact" component={Contact}/>
+          <Route path="/dashboard" component={Dashboard}/>
           <Route component={NotFound}/>
         </Switch>
       <Footer />
