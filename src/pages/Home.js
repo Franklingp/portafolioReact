@@ -7,7 +7,7 @@ const Home = (props) => {
             <h1>Welcome</h1>
             <span>console.log(“ Welcome ”);</span>
             <p><span>Desarrollador web</span> autodidacta demostrando que es posible.</p>
-            <a>Saber mas</a>
+            <span>Saber mas</span>
         </section>            
     );
 }

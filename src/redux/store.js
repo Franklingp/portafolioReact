@@ -1,11 +1,12 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import projectReducer from './reducers/projectReducer'; 
+import thunk from 'redux-thunk';
 
-//Imports of actions
-import projectActions from './actions/projectActions';
+//Here i combine all the reducers in only one
+const reducers = combineReducers({
+    projects: projectReducer
+})
 
-//Imports of reducers
-import projectReducers from './reducers/projectReducers';
-
-const store = createStore(projectReducers, null);
+const store = createStore(reducers, {}, applyMiddleware(thunk));
 
 export default store;

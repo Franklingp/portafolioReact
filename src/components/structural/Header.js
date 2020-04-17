@@ -10,9 +10,9 @@ const Header = (props) => {
                 <Link to="/project" className="link">Mis proyectos</Link>
                 <Link to="/" className="link">Conoceme</Link>
                 <Link to="/contact" className="link">Contactame</Link>
-                <a> ES </a>
+                <span> ES </span>
                 <span>.</span>
-                <a> EN </a>
+                <span> EN </span>
             </nav>
         </header>
     );
