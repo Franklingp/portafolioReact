@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
 import config from '../../config';
+import { projectHttp } from '../../service/fetch';
 
 const url = config.url+"/proyect/";
 
@@ -13,4 +14,16 @@ export const getAll = () => async (dispatch) => {
     }catch(error){
         console.log(error);
     }
+}
+
+export const deleteProjectSuccess = createAction('DELETE_AN_PROJECT');
+export const deleteProject = (id) => async (dispatch) => {
+    try{
+        projectHttp('DELETE', `remove/${id}`, null);
+        dispatch(deleteProjectSuccess(id));
+    }
+    catch(error){
+        console.log(error);
+    }
+
 }

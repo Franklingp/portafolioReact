@@ -1,6 +1,18 @@
-.navbar{
-    width: 100%;
+.navbar-custom{
     position: fixed;
-    height: 48px;
-    padding-bottom: 0px;
+    width: 100%;
+    z-index: 10;
+    color: #212224;
+}
+
+.logo{
+    position: relative;
+    bottom: 2px;
+    margin-right: 8px;
+}
+
+.title{
+    color: white;
+    font-family: Monsterra;
+    letter-spacing: 0.1em;
 }

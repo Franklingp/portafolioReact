@@ -11,7 +11,9 @@ class Dashboard extends React.Component {
 
     render(){
         return(
-            <h1>Dashboard</h1>
+            <section style={{paddingTop: '48px'}}>
+                <h1>Dashboard</h1>
+            </section>
         )
     }
 }

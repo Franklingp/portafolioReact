@@ -13,8 +13,12 @@ import ProjectsList from './pages/ProjectsList';
 import ProjectDetail from './pages/ProjectDetail';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
-import Dashboard from './pages/Dashboard'
 
+//dashboard
+import Dashboard from './dashboard/Dashboard';
+import Authentication from './dashboard/Authentication';
+import DashboardProjects from './dashboard/DashboardProjects';
+import DashboardProjectHandler from './dashboard/DashboardProjectHandler';
 
 class App extends React.Component {
 
@@ -27,11 +31,17 @@ class App extends React.Component {
       <Router>
         <Header />
           <Switch>
+            {/* Pubilc */}
             <Route path="/project/:id" component={ProjectDetail}/>
             <Route path="/project" component={ProjectsList}/>
             <Route exact path="/" component={Home}/>
             <Route exact path="/contact" component={Contact}/>
-            <Route path="/dashboard" component={Dashboard}/>
+
+            {/* dahboard */}
+            <Route path="/dashboard/auth" component={Authentication}/>
+            <Route path="/dashboard/projects" component={DashboardProjects}/>
+            <Route path="/dashboard/handler" component={DashboardProjectHandler}/>
+            <Route path="/dashboard" component={Dashboard}/>  
             <Route component={NotFound}/>
           </Switch>
         <Footer />
