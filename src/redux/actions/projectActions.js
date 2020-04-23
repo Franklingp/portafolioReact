@@ -25,5 +25,26 @@ export const deleteProject = (id) => async (dispatch) => {
     catch(error){
         console.log(error);
     }
+}
 
+export const addNewProjectSuccess = createAction('CREATE_NEW_PROJECT');
+export const addNewProject = (project) => async (dispatch) => {
+    try{
+        const response = await projectHttp('POST', `add`, project);
+        dispatch(addNewProjectSuccess(response));
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export const updateProjectSuccess = createAction('UPDATE_PROJECT');
+export const updateProject = (project) => async (dispatch) => {
+    try{
+        await projectHttp('PUT', `update/${project._id}`, project);
+        dispatch(updateProjectSuccess(project));
+    }
+    catch(error){
+        console.log(error);
+    }
 }

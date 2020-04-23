@@ -40,7 +40,7 @@ class App extends React.Component {
             {/* dahboard */}
             <Route path="/dashboard/auth" component={Authentication}/>
             <Route path="/dashboard/projects" component={DashboardProjects}/>
-            <Route path="/dashboard/handler" component={DashboardProjectHandler}/>
+            <Route path="/dashboard/handler/:id?" component={DashboardProjectHandler}/>
             <Route path="/dashboard" component={Dashboard}/>  
             <Route component={NotFound}/>
           </Switch>

@@ -5,6 +5,10 @@ import { deleteProject } from '../redux/actions/projectActions';
 
 const DashboardProjects = (props) => {
 
+    const handleEdit = (project) => {
+        props.history.push(`/dashboard/handler/${project._id}`, project);        
+    }
+
     return (
         <section className="container text-sm-center" 
         style={{paddingTop: '48px'}}>
@@ -39,7 +43,8 @@ const DashboardProjects = (props) => {
                                         Elminar
                                     </button>
                                     <button type='button' 
-                                    className="btn btn-warning">
+                                    className="btn btn-warning"
+                                    onClick={() => handleEdit(project)}>
                                         Editar
                                     </button>
                                 </th>

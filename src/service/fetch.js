@@ -2,13 +2,15 @@ import config from '../config';
 
 //Rest Request
 export const projectHttp = async (method, route, body) => {
-    console.log(method, route, body);
     try{
+        if(body !== null){
+            body = JSON.stringify(body);
+        }
         const cfg = {
             method,
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'applicarion/json'
+                'Content-Type': 'application/json'
             },
             body
         }
