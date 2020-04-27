@@ -1,7 +1,19 @@
 import config from '../config';
 
-//Rest Request
+// projects
 export const projectHttp = async (method, route, body) => {
+    const res = await Http(method, `/proyect/${route}`, body);
+    return res.Proyect;
+}
+
+// contact
+export const contacttHttp = async (method, route, body) => {
+    const res = await Http(method, `/contact/${route}`, body);
+    return res.Message;
+}
+
+//Base Rest Request
+const Http = async (method, route, body) => {
     try{
         if(body !== null){
             body = JSON.stringify(body);
@@ -14,12 +26,12 @@ export const projectHttp = async (method, route, body) => {
             },
             body
         }
-        const response = await fetch(`${config.url}/proyect/${route}`, cfg);
+        const response = await fetch(`${config.url}${route}`, cfg);
         const json = await response.json();
-        return json.Proyect;
+        return json;
     }
     catch(error){
         console.log(error);
         throw new Error('Has been an error when try the fetch apirest');
     }
-} 
+}
