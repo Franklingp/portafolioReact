@@ -7,7 +7,7 @@ export const projectHttp = async (method, route, body) => {
 }
 
 // contact
-export const contacttHttp = async (method, route, body) => {
+export const contactHttp = async (method, route, body) => {
     const res = await Http(method, `/contact/${route}`, body);
     return res.Message;
 }

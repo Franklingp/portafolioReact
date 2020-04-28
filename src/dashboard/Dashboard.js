@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import DashboardComments from './DashboardComments';
 
 class Dashboard extends React.Component {
     render(){
         return(
-            <section style={{paddingTop: '48px', textAlign: 'center'}}>
+            <section className='container' style={{paddingTop: '48px', textAlign: 'center'}}>
                 <h1>Dashboard</h1>
                 <br/>
                 <div>
@@ -15,6 +16,10 @@ class Dashboard extends React.Component {
                         Project List
                     </Link>
                 </div>
+                <br/>
+                <hr/>
+                <br/>
+                <DashboardComments/>
             </section>
         )
     }
