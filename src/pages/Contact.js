@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addNewMessage } from '../redux/actions/contactActions';
+import './Contact.css';
 
 const Contact = (props) => {
     const [name, nameState] = useState('');
@@ -43,10 +44,16 @@ const Contact = (props) => {
     return (
         <section  className='content'>
             <div className="izq-alt">
-                <h2>Contacto</h2>
+                <a href="#" className="big-text" style={{color: '#A68E52'}}>Instagram</a>
+                <a href="#" className="big-text" style={{color: '#E3E3E4'}}>Facebook</a>
+                <a href="#" className="big-text" style={{color: '#C4C4C4'}}>Correo</a>
+                <a href="#" className="big-text" style={{color: '#212224'}}>Twitter</a>
+                <a href="#" className="big-text" style={{color: '#111112'}}>Linkedin</a>
+                <a href="#" className="big-text" style={{color: '#A68E52'}}>Behance</a>
             </div>
             <div className="der-alt">
-                <h1>Contacto</h1>
+                <hr className="vector-contact"/>
+                <h2 className="contact-title">Contacto</h2>
 
                 <form onSubmit={handleSubmit}>
                     
@@ -65,10 +72,13 @@ const Contact = (props) => {
                         placeholder="Mensaje" value={message} onChange={handleChange}/>
                     </div>
 
-                    <input type="submit" className="btn btn-primary" value="Enviar" 
+                    <input type="submit" className="btn-contact" value="Enviar" 
                     disabled={handleDisabled()}/>
 
                 </form>
+                <p className="text-form">
+                    Este formulario obtiene tus datos <br/>para poder <span className="ligth">contactar</span> contigo posteriormente. <br/>No te preocupes tus datos estan <span className="ligth">seguros.</span>
+                </p>
             </div>
         </section>
     );
