@@ -1,3 +1,54 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face{
+  font-family: "Black-italic";
+  src: url("./assets/fonts/Montserrat-BlackItalic.ttf");
+}
+
+@font-face{
+  font-family: "Black";
+  src: url("./assets/fonts/Montserrat-Black.ttf");
+}
+
+@font-face{
+  font-family: "Thin";
+  src: url("./assets/fonts/Montserrat-Thin.ttf");
+}
+
+@font-face{
+  font-family: "Thin-italic";
+  src: url("./assets/fonts/Montserrat-ThinItalic.ttf");
+}
+
+@font-face{
+  font-family: "Extra-ligth";
+  src: url("./assets/fonts/Montserrat-ExtraLight.ttf");
+}
+
+@font-face{
+  font-family: "Ligth";
+  src: url("./assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face{
+  font-family: "Regular";
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
+}
+
+.text-ligth{
+  font-family: "Ligth";
+}
+
+.text-black{
+  font-family: 'Black';
+}
+
+.text-regular{
+  font-family: 'Regular';
+}
+
 body {
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,7 +56,7 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Montserrat';
+  font-family: 'Regular';
 }
 
 code {

@@ -7,23 +7,25 @@ class ProjectList extends React.Component {
 
     render(){
         return(
-            <section className="content">
+            <section className="contenido">
                 <div className='main-info'>
-                    <h1 className='title-list'>
+                    <h1 className='title-list text-black'>
                         Trabajos
                         <br/>
                         <span className="subtitle-list">Culminados</span>
                     </h1>
-                    <p className="paragraph-list">
-                        Esta es una selecion de los mejores proyectos en
-                        los que he trabajado anteriormente.
+                    <p className="paragraph-list text-ligth">
+                        Esta es una <span className="ligth">selecion</span> de <br/>
+                        los mejores <span className="ligth">proyectos</span> en <br/>
+                        los que he trabajado<br/>
+                        anteriormente.
                     </p>
                 </div>
                 <section className='list-card'>
                     {
-                        this.props.projects.map(project => {
+                        this.props.projects.map((project, index) => {
                             return(
-                               <ProjectCard key={project._id} {...project} />
+                               <ProjectCard key={project._id} {...project} index={index}/>
                             )
                         })
                     }

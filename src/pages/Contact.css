@@ -1,5 +1,5 @@
 .content{
-    width: 98.9vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: flex-end;
@@ -34,6 +34,7 @@
 
 .big-text:hover{
     text-decoration: none;
+    color: #212224;
     font-size: 80px;
     transition: 250ms;
 }
@@ -89,4 +90,18 @@
 
 .ligth {
     color: #A68E52;
+}
+
+@media (max-width: 750px){
+
+    .content{
+        width: 100vw;
+    }
+    .izq-alt{
+        width: 100%;
+    }
+    .der-alt{
+        width: 100%;
+    }
+
 }

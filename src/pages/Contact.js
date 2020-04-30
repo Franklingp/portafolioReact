@@ -44,16 +44,16 @@ const Contact = (props) => {
     return (
         <section  className='content'>
             <div className="izq-alt">
-                <a href="#" className="big-text" style={{color: '#A68E52'}}>Instagram</a>
-                <a href="#" className="big-text" style={{color: '#E3E3E4'}}>Facebook</a>
-                <a href="#" className="big-text" style={{color: '#C4C4C4'}}>Correo</a>
-                <a href="#" className="big-text" style={{color: '#212224'}}>Twitter</a>
-                <a href="#" className="big-text" style={{color: '#111112'}}>Linkedin</a>
-                <a href="#" className="big-text" style={{color: '#A68E52'}}>Behance</a>
+                <a href="#" className="big-text" style={{color: '#A68E52', fontFamily: 'Thin-italic'}}>Instagram</a>
+                <a href="#" className="big-text" style={{fontFamily: 'Extra-ligth'}}>Facebook</a>
+                <a href="#" className="big-text" style={{fontFamily: 'Ligth'}}>Correo</a>
+                <a href="#" className="big-text" style={{fontFamily: 'Regular'}}>Twitter</a>
+                <a href="#" className="big-text" style={{fontFamily: 'Thin-italic'}}>Behance</a>
+                <a href="#" className="big-text" style={{color: '#A68E52', fontFamily: 'Extra-ligth'}}>Linkedin</a>
             </div>
             <div className="der-alt">
                 <hr className="vector-contact"/>
-                <h2 className="contact-title">Contacto</h2>
+                <h2 className="contact-title text-ligth">Contacto</h2>
 
                 <form onSubmit={handleSubmit}>
                     
@@ -76,7 +76,7 @@ const Contact = (props) => {
                     disabled={handleDisabled()}/>
 
                 </form>
-                <p className="text-form">
+                <p className="text-form text-ligth">
                     Este formulario obtiene tus datos <br/>para poder <span className="ligth">contactar</span> contigo posteriormente. <br/>No te preocupes tus datos estan <span className="ligth">seguros.</span>
                 </p>
             </div>

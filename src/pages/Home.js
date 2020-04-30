@@ -1,12 +1,22 @@
 import React from 'react';
 import './Home.css';
 import arrow from '../assets/ArrowreadMore.png';
+import instagram from '../assets/instagram.png';
+import facebook from '../assets/facebook.png';
+import linkedin from '../assets/linkedin.png';
+import github from '../assets/github.png';
 
 const Home = (props) => {
     return(
         <section className='contenido'>
             <div className="izq">
-                <p className="left-info"><span className="left-title">Desarrollador <br/> web </span> 
+                <aside className="social-media-icons">
+                    <img src={instagram} alt="instagram"/>
+                    <img src={facebook} alt="facebook"/>
+                    <img src={linkedin} alt="linkedin"/>
+                    <img src={github} alt="github"/>
+                </aside>
+                <p className="left-info text-ligth"><span className="left-title text-black">Desarrollador <br/> web </span> 
                     <span style={{color: '#A68E52'}}>autodidacta</span><br/>
                     demostrando que <br/>
                     es posible.
@@ -16,7 +26,7 @@ const Home = (props) => {
             
             <div className="der">
                 <hr className="vector-vertical"/>
-                <aside className="language">
+                <aside className="language text-ligth">
                     If you want to navigate in <br/> 
                     English, change the <br/> 
                     language
@@ -24,10 +34,10 @@ const Home = (props) => {
                 <div className='header'>
                     <h1 className='header-bold'>Welcome</h1>
                     <p className='header-ligth'>console.log(“
-                        <span style={{fontStyle:"italic", color: '#A68E52'}}> Welcome </span>
+                        <span style={{color: '#A68E52', }}> Welcome </span>
                     ”);</p>
                 </div>
-                <span className='read-more'>
+                <span className='read-more text-ligth'>
                     Saber 
                     <span style={{color: '#A68E52', marginRight: '8px'}}>
                         {' mas'}
