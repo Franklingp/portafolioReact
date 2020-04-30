@@ -52,6 +52,8 @@ class  ProjectHandler extends React.Component {
         if(this.state.isEdit){
             this.props.updateProject(this.state.project);
         }else{
+            console.log('submit');
+            console.log(this.props);
             this.props.addNewProject(this.state.project);
         }
     }
