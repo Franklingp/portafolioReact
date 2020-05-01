@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { projectHttp } from '../service/fetch';
 import "./ProjectDetail.css";
+import url from '../assets/urlicon.png'
+import github from '../assets/GithubIconDark.png'
 
 const ProjectDetail = (props) => {
     const id = props.match.params.id;
@@ -15,10 +17,14 @@ const ProjectDetail = (props) => {
         project = getOneProjec(id);
     }
 
+    console.log(project);
+
     return(
         project &&
         <section className="contenido">
-            <div className="izq"></div>
+            <div className="izq izq-project">
+                <img src={project.images} className="img-project" alt="Project image"/>
+            </div>
             <div className="der-project">
                 <div className='header'>
                     <h1 className='header-bold'>{project.name}</h1>
@@ -29,9 +35,16 @@ const ProjectDetail = (props) => {
                 
                 <div className='project-description'>
                     <p className="text-description text-ligth">{project.description}</p>
-                    <span>{project.git}</span>
-                    <br/>
-                    <span>{project.url}</span>
+                    <div className="icons-project">
+                        {project.git &&
+                        <a href={project.git} className="item-icon">
+                            <img src={github} alt="logo" className="d-inline-block align-center logo"/>
+                        </a>}
+                       {project.url &&
+                       <a href={project.url} className="item-icon">
+                            <img src={url} alt="logo" className="d-inline-block align-center logo"/>
+                        </a>}
+                    </div>
                 </div>
             </div>
         </section>

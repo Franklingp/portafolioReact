@@ -1,3 +1,12 @@
+.izq-project{
+    justify-content: center;
+}
+
+.img-project{
+    width: 130%;
+    object-fit: cover;
+}
+
 .der-project{
     display: flex;
     flex-wrap: nowrap;
@@ -20,4 +29,14 @@
     font-weight: 300;
     font-size: 18px;
     line-height: 22px;
+}
+
+.icons-project{
+    margin: 0px auto;
+    position: relative;
+    top: 24px;
+}
+
+.item-icon{
+    margin: 8px;
 }
