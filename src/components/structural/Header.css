@@ -3,6 +3,7 @@
     width: 100%;
     z-index: 10;
     color: #212224;
+    font-family: "Ligth";
 }
 
 .logo{
@@ -12,7 +13,5 @@
 }
 
 .title{
-    color: black;
-    font-family: Monsterra;
     letter-spacing: 0.1em;
 }

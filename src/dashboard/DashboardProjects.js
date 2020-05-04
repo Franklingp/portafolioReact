@@ -35,7 +35,6 @@ const DashboardProjects = (props) => {
                                 <th scope="col">{project.description}</th>
                                 <th scope="col">{project.url}</th>
                                 <th scope="col">{project.git}</th>
-                                <th scope="col">{project.image}</th>
                                 <th scope="col">
                                     <button type='button' 
                                     className="btn btn-danger"

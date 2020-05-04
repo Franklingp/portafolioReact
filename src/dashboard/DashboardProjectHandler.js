@@ -7,13 +7,16 @@ class  ProjectHandler extends React.Component {
     constructor(props){
         super(props);
 
+        this.oldImg = "";
+        this.fileRef = React.createRef();
         this.state = {
             project: {
                 name: "",
                 category: "",
                 description: "",
                 url: "",
-                git: ""
+                git: "",
+                image: null
             },
             validation: {
                 valid: false,
@@ -35,6 +38,7 @@ class  ProjectHandler extends React.Component {
                 },
                 isEdit: true
             })
+            this.oldImg = this.props.location.state.image;
 
         }
     }
@@ -49,13 +53,17 @@ class  ProjectHandler extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log(this.props.location.state);
         if(this.state.isEdit){
-            this.props.updateProject(this.state.project);
+            if(this.oldImg !== this.state.project.image){
+                this.props.updateProject(this.state.project, true);
+            }else{
+                this.props.updateProject(this.state.project, false);
+            }
         }else{
-            console.log('submit');
-            console.log(this.props);
             this.props.addNewProject(this.state.project);
         }
+
     }
 
     handleValid = (e) => {
@@ -92,6 +100,14 @@ class  ProjectHandler extends React.Component {
                 <br/>
             </div>
         )
+    }
+
+    handleFile = (e) => {
+        let newProject = this.state.project;
+        newProject.image = this.fileRef.current.files[0];
+        this.setState({
+            project: newProject
+        })
     }
 
     render(){
@@ -139,6 +155,16 @@ class  ProjectHandler extends React.Component {
                         onChange={this.handleChange}
                         className="form-control" type="text"/>
                     </div>
+
+                    <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text" id="uploadImage">Upload</span>
+                    </div>
+                    <div className="custom-file">
+                        <input ref={this.fileRef} onChange={this.handleFile} type="file" className="custom-file-input" id="uploadImg" aria-describedby="uploadImage"/>
+                        <label className="custom-file-label" htmlFor="uploadImg">Choose file</label>
+                    </div>
+                    </div>                       
 
                     <input type="submit" className="btn btn-primary" value="Submit" 
                     disabled={this.state.validation.valid === false}

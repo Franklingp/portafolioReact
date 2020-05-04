@@ -54,6 +54,12 @@ class DashboardComments extends React.Component{
                     }
                 </tbody>
             </table>
+            {
+                props.messages.length === 0 &&
+                <div className="alert alert-warning" role="alert">
+                    No hay mensajes.
+                </div>
+            }
         </section>
         )
     }

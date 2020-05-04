@@ -23,7 +23,7 @@ const ProjectDetail = (props) => {
         project &&
         <section className="contenido">
             <div className="izq izq-project">
-                <img src={project.images} className="img-project" alt="Project image"/>
+                <img src={project.images} className="img-project" alt="ProjectImage"/>
             </div>
             <div className="der-project">
                 <div className='header'>

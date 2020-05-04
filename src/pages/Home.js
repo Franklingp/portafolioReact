@@ -5,16 +5,25 @@ import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
+import global from '../config.js';
 
 const Home = (props) => {
     return(
         <section className='contenido'>
             <div className="izq">
                 <aside className="social-media-icons">
-                    <img src={instagram} alt="instagram"/>
-                    <img src={facebook} alt="facebook"/>
-                    <img src={linkedin} alt="linkedin"/>
-                    <img src={github} alt="github"/>
+                    <a href={global.instagram}>
+                        <img src={instagram} alt="instagram"/>
+                    </a>
+                    <a href={global.facebook}>
+                        <img src={facebook} alt="facebook"/>
+                    </a>
+                    <a href={global.linkedin}>
+                        <img src={linkedin} alt="linkedin"/>
+                    </a>
+                    <a href={global.github}>
+                        <img src={github} alt="github"/>
+                    </a>
                 </aside>
                 <p className="left-info text-ligth"><span className="left-title text-black">Desarrollador <br/> web </span> 
                     <span style={{color: '#A68E52'}}>autodidacta</span><br/>

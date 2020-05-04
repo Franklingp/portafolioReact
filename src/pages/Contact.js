@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addNewMessage } from '../redux/actions/contactActions';
 import './Contact.css';
+import global from '../config';
 
 const Contact = (props) => {
     const [name, nameState] = useState('');
@@ -44,12 +45,12 @@ const Contact = (props) => {
     return (
         <section  className='content'>
             <div className="izq-alt">
-                <a href="#" className="big-text" style={{color: '#A68E52', fontFamily: 'Thin-italic'}}>Instagram</a>
-                <a href="#" className="big-text" style={{fontFamily: 'Extra-ligth'}}>Facebook</a>
-                <a href="#" className="big-text" style={{fontFamily: 'Ligth'}}>Correo</a>
-                <a href="#" className="big-text" style={{fontFamily: 'Regular'}}>Twitter</a>
-                <a href="#" className="big-text" style={{fontFamily: 'Thin-italic'}}>Behance</a>
-                <a href="#" className="big-text" style={{color: '#A68E52', fontFamily: 'Extra-ligth'}}>Linkedin</a>
+                <a href={global.instagram} className="big-text" style={{color: '#A68E52', fontFamily: 'Thin-italic'}}>Instagram</a>
+                <a href={global.facebook} className="big-text" style={{fontFamily: 'Extra-ligth'}}>Facebook</a>
+                <a href={global.email} className="big-text" style={{fontFamily: 'Ligth'}}>Correo</a>
+                <a href={global.twitter} className="big-text" style={{fontFamily: 'Regular'}}>Twitter</a>
+                <a href={global.behance} className="big-text" style={{fontFamily: 'Thin-italic'}}>Behance</a>
+                <a href={global.linkedin} className="big-text" style={{color: '#A68E52', fontFamily: 'Extra-ligth'}}>Linkedin</a>
             </div>
             <div className="der-alt">
                 <hr className="vector-contact"/>
