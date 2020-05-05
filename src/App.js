@@ -16,9 +16,12 @@ import NotFound from './pages/NotFound';
 
 //dashboard
 import Dashboard from './dashboard/Dashboard';
-import Authentication from './dashboard/Authentication';
 import DashboardProjects from './dashboard/DashboardProjects';
 import DashboardProjectHandler from './dashboard/DashboardProjectHandler';
+
+//Authentication
+import AuthLogin from './dashboard/Authentication/AuthLogin';
+import AuthSignup from './dashboard/Authentication/AuthSignup';
 
 class App extends React.Component {
 
@@ -37,8 +40,11 @@ class App extends React.Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/contact" component={Contact}/>
 
+            {/* authntication */}
+            <Route path="/dashboard/login" component={AuthLogin}/>
+            <Route path="/dashboard/signup" component={AuthSignup}/>
+
             {/* dahboard */}
-            <Route path="/dashboard/auth" component={Authentication}/>
             <Route path="/dashboard/projects" component={DashboardProjects}/>
             <Route path="/dashboard/handler/:id?" component={DashboardProjectHandler}/>
             <Route path="/dashboard" component={Dashboard}/>  
