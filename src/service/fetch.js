@@ -12,36 +12,20 @@ export const contactHttp = async (method, route, body) => {
     return res.Message;
 }
 
-// upload Files
-export const uploadFile = async (id, file) => {
-    const data = new FormData();
-    data.append('image', file);
-    try{
-        const cfg = {
-            method: "POST",
-            body: data
-        }
-        const response = await fetch(`${config.url}/proyect/uploadImage/${id}`, cfg);
-        const json = await response.json();
-        return json.Proyect;
-    }
-    catch(error){
-        console.log(error);
-    }
-}
-
 //Base Rest Request
 const Http = async (method, route, body) => {
     try{
-        if(body !== null){
+        let headers = {};
+        if(body !== null && route.split('/')[1] !== "proyect"){
             body = JSON.stringify(body);
-        }
-        const cfg = {
-            method,
-            headers: {
+            headers = {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            },
+            }
+        }
+        let cfg = {
+            method,
+            headers,
             body
         }
         const response = await fetch(`${config.url}${route}`, cfg);

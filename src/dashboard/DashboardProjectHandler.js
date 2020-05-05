@@ -7,7 +7,6 @@ class  ProjectHandler extends React.Component {
     constructor(props){
         super(props);
 
-        this.oldImg = "";
         this.fileRef = React.createRef();
         this.state = {
             project: {
@@ -38,8 +37,6 @@ class  ProjectHandler extends React.Component {
                 },
                 isEdit: true
             })
-            this.oldImg = this.props.location.state.image;
-
         }
     }
 
@@ -53,13 +50,8 @@ class  ProjectHandler extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props.location.state);
         if(this.state.isEdit){
-            if(this.oldImg !== this.state.project.image){
-                this.props.updateProject(this.state.project, true);
-            }else{
-                this.props.updateProject(this.state.project, false);
-            }
+            this.props.updateProject(this.state.project);
         }else{
             this.props.addNewProject(this.state.project);
         }

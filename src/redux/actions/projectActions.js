@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions';
 import config from '../../config';
-import { projectHttp, uploadFile } from '../../service/fetch';
+import { projectHttp } from '../../service/fetch';
 
 const url = config.url+"/proyect/";
 
@@ -33,18 +33,14 @@ export const deleteProject = (id) => async (dispatch) => {
 export const addNewProjectSuccess = createAction('CREATE_NEW_PROJECT');
 export const addNewProject = (project) => async (dispatch) => {
     try{
-        console.log(project);
-        let response = null;
-        if(project.image !== null){
-            console.log(project.image);
-            const img = project.image;
-            project.image = null;
-            response = await projectHttp('POST', `add`, project);
-            response = await uploadFile(response._id, img);
-        }
-        else{
-            response = await projectHttp('POST', `add`, project);
-        }
+        let data = new FormData();
+        data.append('name', project.name);
+        data.append('image', project.image);
+        data.append('git', project.git);
+        data.append('url', project.url);
+        data.append('category', project.category);
+        data.append('description', project.description);
+        const response = await projectHttp('POST', `add`, data);
         dispatch(addNewProjectSuccess(response));
     }
     catch(error){
@@ -53,21 +49,17 @@ export const addNewProject = (project) => async (dispatch) => {
 }
 
 export const updateProjectSuccess = createAction('UPDATE_PROJECT');
-export const updateProject = (project, changeImg) => async (dispatch) => {
+export const updateProject = (project) => async (dispatch) => {
     try{
-        console.log(changeImg);
-        if(changeImg === true){
-            console.log("true");
-            const img = project.image;
-            project.image = null;
-            await projectHttp('PUT', `update/${project._id}`, project);
-            const response = await uploadFile(project._id, img);
-            project.image = response.image;
-        }else{
-            console.log("false");
-            await projectHttp('PUT', `update/${project._id}`, project);
-        }
-        dispatch(updateProjectSuccess(project));
+        let data = new FormData();
+        data.append('name', project.name);
+        data.append('image', project.image);
+        data.append('git', project.git);
+        data.append('url', project.url);
+        data.append('category', project.category);
+        data.append('description', project.description);
+        const response = await projectHttp('PUT', `update/${project._id}`, data);
+        dispatch(updateProjectSuccess(response));
     }
     catch(error){
         console.log(error);
