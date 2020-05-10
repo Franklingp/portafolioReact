@@ -22,6 +22,7 @@ import DashboardProjectHandler from './dashboard/DashboardProjectHandler';
 //Authentication
 import AuthLogin from './dashboard/Authentication/AuthLogin';
 import AuthSignup from './dashboard/Authentication/AuthSignup';
+import Interceptor from './dashboard/Authentication/Interceptor';
 
 class App extends React.Component {
 
@@ -45,12 +46,15 @@ class App extends React.Component {
             <Route path="/dashboard/signup" component={AuthSignup}/>
 
             {/* dahboard */}
-            <Route path="/dashboard/projects" component={DashboardProjects}/>
-            <Route path="/dashboard/handler/:id?" component={DashboardProjectHandler}/>
-            <Route path="/dashboard" component={Dashboard}/>  
+            <Interceptor>
+              <Route path="/dashboard/projects" component={DashboardProjects}/>
+              <Route path="/dashboard/handler/:id?" component={DashboardProjectHandler}/>
+              <Route exact path="/dashboard" component={Dashboard}/> 
+            </Interceptor>
+
             <Route component={NotFound}/>
           </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     );
   }

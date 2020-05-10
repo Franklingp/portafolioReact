@@ -49,6 +49,10 @@
   font-family: 'Regular';
 }
 
+.content-top{
+  padding-top: 48px;
+}
+
 body {
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

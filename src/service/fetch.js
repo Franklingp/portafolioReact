@@ -3,13 +3,19 @@ import config from '../config';
 // projects
 export const projectHttp = async (method, route, body) => {
     const res = await Http(method, `/proyect/${route}`, body);
-    return res.Proyect;
+    return res.json.Proyect;
 }
 
 // contact
 export const contactHttp = async (method, route, body) => {
     const res = await Http(method, `/contact/${route}`, body);
-    return res.Message;
+    return res.json.Message;
+}
+
+//users     ojo que no siempre retorna el token
+export const authHttp = async (method, route, body) => {
+    const res = await Http(method, `/user/${route}`, body);
+    return res;
 }
 
 //Base Rest Request
@@ -30,7 +36,8 @@ const Http = async (method, route, body) => {
         }
         const response = await fetch(`${config.url}${route}`, cfg);
         const json = await response.json();
-        return json;
+        const obj = { json, status: response.status }
+        return obj;
     }
     catch(error){
         console.log(error);
