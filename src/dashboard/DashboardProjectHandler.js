@@ -55,7 +55,6 @@ class  ProjectHandler extends React.Component {
         }else{
             this.props.addNewProject(this.state.project);
         }
-
     }
 
     handleValid = (e) => {

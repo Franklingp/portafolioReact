@@ -9,11 +9,14 @@ class Dashboard extends React.Component {
                 <h1>Dashboard</h1>
                 <br/>
                 <div>
-                    <Link to="/dashboard/handler" className="btn btn-primary" style={{margin: '5px'}}>
+                    <Link to="/dashboard/handler" className="btn btn-primary">
                         Create new project
                     </Link>
-                    <Link to="/dashboard/projects" className="btn btn-primary">
-                        Project List
+                    <Link to="/dashboard/projects" className="btn btn-primary" style={{margin: '5px'}}>
+                        Projects
+                    </Link>
+                    <Link to="/dashboard/signUp" className="btn btn-primary">
+                        Register
                     </Link>
                 </div>
                 <br/>

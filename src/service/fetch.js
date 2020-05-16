@@ -1,4 +1,20 @@
 import config from '../config';
+import store from '../redux/store';
+
+//token to authentication
+let token = "";
+let authentication = "";
+const unSubscribe = store.subscribe(() => {
+    let auth = store.getState();
+    auth = auth.auth
+    if(auth.isAuth === true){
+        token = auth.token;
+        authentication = `bearer ${token}`;
+    }else{
+        token = "";
+        auth = "";
+    }
+});
 
 // projects
 export const projectHttp = async (method, route, body) => {
@@ -12,7 +28,7 @@ export const contactHttp = async (method, route, body) => {
     return res.json.Message;
 }
 
-//users     ojo que no siempre retorna el token
+//users
 export const authHttp = async (method, route, body) => {
     const res = await Http(method, `/user/${route}`, body);
     return res;
@@ -21,12 +37,15 @@ export const authHttp = async (method, route, body) => {
 //Base Rest Request
 const Http = async (method, route, body) => {
     try{
-        let headers = {};
+        let headers = {
+            'Authorization': authentication
+        };
         if(body !== null && route.split('/')[1] !== "proyect"){
             body = JSON.stringify(body);
             headers = {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': authentication
             }
         }
         let cfg = {

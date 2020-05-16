@@ -1,5 +1,18 @@
 import { createAction } from 'redux-actions';
 import { contactHttp } from '../../service/fetch';
+import store from '../store';
+
+//Store
+var auth = false;
+const unSubscribe = store.subscribe(() => {
+    let state = store.getState();
+    state = state.auth;
+    if(state.isAuth !== false){
+        auth = true;
+    }else{
+        auth = false;
+    }
+});
 
 //Actions to manage the messages
 export const addNewMessageSuccess = createAction('NEW_MESSAGE');
@@ -17,12 +30,14 @@ export const addNewMessage = body => async (dispatch) => {
 export const getAllMessageSuccess = createAction('GET_ALL_MESSAGES');
 export const getAllMessage = () => async (dispatch) => {
     try{
-        const response = await contactHttp('GET', 'get', null);
-        dispatch(getAllMessageSuccess(response));
+        if(auth === true){
+            const response = await contactHttp('GET', 'get', null);
+            dispatch(getAllMessageSuccess(response));
+        }
     }
     catch(error){
         console.log(error);
-        throw new Error('Ha ocurrido un error al intentar realizar la peticion');
+        //throw new Error('Ha ocurrido un error al intentar realizar la peticion');
     }
 }
 

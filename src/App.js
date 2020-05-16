@@ -43,10 +43,10 @@ class App extends React.Component {
 
             {/* authntication */}
             <Route path="/dashboard/login" component={AuthLogin}/>
-            <Route path="/dashboard/signup" component={AuthSignup}/>
 
             {/* dahboard */}
             <Interceptor>
+              <Route path="/dashboard/signup" component={AuthSignup}/>
               <Route path="/dashboard/projects" component={DashboardProjects}/>
               <Route path="/dashboard/handler/:id?" component={DashboardProjectHandler}/>
               <Route exact path="/dashboard" component={Dashboard}/> 
