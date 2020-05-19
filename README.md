@@ -1,6 +1,6 @@
 # Portafolio Angular
 
-_Este es un proyecto desarrollado en React JS y es un website donde se exiben los proyectos que uno sube a su servidor, en ella tenemos varias secciones como es la seccion de comentarios que tiene todas las redes sociales y permite tambien un sistema de mensajes directos por la pagina, tiene una seccion de "Sobre mi" y la posibilidad de gestionar los datos del servidor desde un dashboard al que se tiene acceso con un login donde se pueden observar los mensajes de los visitantes y modificar o agregar data de los proyectos. El backend de este proyecto lo puedes ver aqui [Link](https://github.com/Franklingp/portafolioBackend)_
+_(Todavia en desarrollo) Este es un proyecto desarrollado en React JS y es un website donde se exiben los proyectos que uno sube a su servidor, en ella tenemos varias secciones como es la seccion de comentarios que tiene todas las redes sociales y permite tambien un sistema de mensajes directos por la pagina, tiene una seccion de "Sobre mi" y la posibilidad de gestionar los datos del servidor desde un dashboard al que se tiene acceso con un login donde se pueden observar los mensajes de los visitantes y modificar o agregar data de los proyectos. El backend de este proyecto lo puedes ver aqui [Link](https://github.com/Franklingp/portafolioBackend)_
 
 ### Pre-requisitos 📋
 
