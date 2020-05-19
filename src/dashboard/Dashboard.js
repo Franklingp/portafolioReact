@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import DashboardComments from './DashboardComments';
+import { logOut } from '../redux/actions/authActions';
+import { connect } from 'react-redux';
 
 class Dashboard extends React.Component {
     render(){
@@ -18,6 +20,8 @@ class Dashboard extends React.Component {
                     <Link to="/dashboard/signUp" className="btn btn-primary">
                         Register
                     </Link>
+                    <button className="btn btn-primary" style={{margin: '5px'}}
+                    onClick={() => { this.props.logOut() }}>Logout</button>
                 </div>
                 <br/>
                 <hr/>
@@ -28,4 +32,8 @@ class Dashboard extends React.Component {
     }
 }
 
-export default Dashboard;
+const mapDispatchToProps = {
+    logOut
+}
+
+export default connect(null, mapDispatchToProps)(Dashboard);
