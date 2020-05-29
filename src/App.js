@@ -5,7 +5,7 @@ import { getAll } from './redux/actions/projectActions';
 
 //components
 import Header from './components/structural/Header';
-import Footer from './components/structural/Footer';
+//import Footer from './components/structural/Footer';
 
 //pages
 import Home from './pages/Home';

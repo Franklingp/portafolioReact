@@ -8,7 +8,7 @@
     align-items: stretch;
     width: 98vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow-x: none;
 }
 
 .izq{

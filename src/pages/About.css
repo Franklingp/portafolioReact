@@ -1,0 +1,114 @@
+.about{
+    padding-top: 48px;
+    background-color: #212224;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow-y: none;
+    padding: 40px;
+}
+
+.about-izq{
+    height: 100%;
+    width: 50vw;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.left-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.circle{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #212224;
+    border: 1px solid #A68E52;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin-right: 16px;
+}
+
+.skill{
+    font-size: 32px;
+    /* margin-bottom: 30px; */
+}
+
+.rigth-block{
+    width: 30%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 30vw;
+    bottom: -50vh;
+}
+
+.vector-about{
+    width: 0px;
+    height: 136px;   
+    border: 0.3px solid #A68E52;
+    color: #A68E52;
+    transform: rotate(0.42deg);
+}
+
+.vector-about-division{
+    width: 0px;
+    height: 350px;
+    border: 1px solid #A68E52;
+    position: relative;
+    right: 35px;
+}
+
+.about-der{
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.about-me{
+    font-size: 28px;
+    line-height: 29px;
+    letter-spacing: 0.1em;
+    color: #A68E52;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    left: 40px;
+    top: 10px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.paragraph{
+    text-align: right;
+    letter-spacing: 0.1em;
+    font-style: italic;
+    font-size: 18px;
+    overflow-y: scroll;
+}
+
+.link-readMore{
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+}
+
+.link-readMore:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.arrow-project{
+    margin: 8px;
+}

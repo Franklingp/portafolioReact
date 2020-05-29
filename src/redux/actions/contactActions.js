@@ -4,7 +4,7 @@ import store from '../store';
 
 //Store
 var auth = false;
-const unSubscribe = store.subscribe(() => {
+ store.subscribe(() => {                    //const unSubscribe =
     let state = store.getState();
     state = state.auth;
     if(state.isAuth !== false){

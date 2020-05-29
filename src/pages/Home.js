@@ -6,9 +6,11 @@ import facebook from '../assets/facebook.png';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
 import global from '../config.js';
+import About from './About';
 
 const Home = (props) => {
     return(
+        <React.Fragment>
         <section className='contenido'>
             <div className="izq">
                 <aside className="social-media-icons">
@@ -53,9 +55,10 @@ const Home = (props) => {
                     </span>
                     <img src={arrow} alt="arrow" />
                 </span>
-            </div>         
-            
-        </section>            
+            </div>
+        </section>
+        <About/>
+        </React.Fragment>           
     );
 }
 

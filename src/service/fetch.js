@@ -4,7 +4,7 @@ import store from '../redux/store';
 //token to authentication
 let token = "";
 let authentication = "";
-const unSubscribe = store.subscribe(() => {
+store.subscribe(() => {                         //const unSubscribe =
     let auth = store.getState();
     auth = auth.auth
     if(auth.isAuth === true){

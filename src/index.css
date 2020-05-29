@@ -37,8 +37,21 @@
   src: url("./assets/fonts/Montserrat-Regular.ttf");
 }
 
+@font-face{
+  font-family: "Bold";
+  src: url("./assets/fonts/Montserrat-Bold.ttf");
+}
+
 .text-ligth{
   font-family: "Ligth";
+}
+
+.text-bold{
+  font-family: "Bold";
+}
+
+.text-extra-ligth{
+  font-family: "Extra-ligth";
 }
 
 .text-black{
