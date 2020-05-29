@@ -113,3 +113,42 @@
     position: relative;
     right: 94px;
 }
+
+.show-mobile{
+    display: none;
+}
+
+@media (max-width: 1000px){
+
+    .show-mobile{
+        display: initial;
+    }
+
+    .contenido{
+        justify-content: center;
+    }
+
+    .read-more{
+        color: white;
+    }
+
+    .izq{
+        width: 100vw;
+        padding: 24px;
+        height: 100vh;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .left-info{
+        top: 0px;
+    }
+
+    .social-media-icons{
+        display: none;
+    }
+
+    .der{
+        display: none;
+    }
+}

@@ -27,11 +27,13 @@ const Home = (props) => {
                         <img src={github} alt="github"/>
                     </a>
                 </aside>
+                <hr className="vector-about show-mobile"/>
                 <p className="left-info text-ligth"><span className="left-title text-black">Desarrollador <br/> web </span> 
                     <span style={{color: '#A68E52'}}>autodidacta</span><br/>
                     demostrando que <br/>
                     es posible.
                 </p>
+                <hr className="vector-about show-mobile"/>
             </div> 
 
             

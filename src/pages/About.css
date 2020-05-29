@@ -38,7 +38,6 @@
 
 .skill{
     font-size: 32px;
-    /* margin-bottom: 30px; */
 }
 
 .rigth-block{
@@ -111,4 +110,43 @@
 
 .arrow-project{
     margin: 8px;
+}
+
+@media (max-width: 1000px){
+    
+    .about{
+        flex-wrap: wrap;
+        padding: 24px;
+    }
+
+    .about-izq{
+        width: 100vw;
+    }
+
+    .rigth-block{
+        display: none;
+    }
+
+    .left-block{
+        width: 100%;
+        align-items: center;
+    }
+
+    .title-about{
+        font-size: 24px;
+    }
+
+    .about-der{
+        width: 100vw;
+        color: #212224;
+        text-align: center;
+    }
+
+    .about-me{
+        left: 0px;
+    }
+
+    .paragraph{
+        text-align: center;
+    }
 }
