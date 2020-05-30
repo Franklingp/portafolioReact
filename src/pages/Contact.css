@@ -98,10 +98,24 @@
         width: 100vw;
     }
     .izq-alt{
-        width: 100%;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        width: 100vw;
+        min-height: 100vh;
+        justify-content: space-around;
     }
+
+    .big-text{
+        font-size: 50px;
+    }
+
+    .big-text:hover{
+        font-size: 60px;
+    }
+
     .der-alt{
-        width: 100%;
+        width: 100vw;
+        min-height: 100vh;
     }
 
 }
