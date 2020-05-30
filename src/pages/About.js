@@ -46,6 +46,7 @@ export const About = () => {
             <p className="paragraph text-ligth">
                 Etiam non luctus enim, nec venenatis leo. Proin vitae odio quis lacus molestie rutrum. Aenean vitae lobortis erat. Ut fringilla nisl efficitur lorem blandit, eu finibus metus commodo. Aliquam a velit euismod, aliquet augue at, lacinia dui. Fusce lobortis nisi et velit ultrices vehicula. Aenean a felis nec odio rutrum aliquet. Duis convallis, orci sit amet fermentum vehicula, lorem magna posuere nibh, et molestie lacus eros eget dolor. Maecenas vulputate scelerisque est, eget blandit lacus vestibulum sit amet. Proin ac augue a ipsum venenatis mollis. Morbi scelerisque, est et bibendum sagittis, nisl arcu rutrum ipsum, ut ultricies augue mi vitae lorem. Praesent a sapien viverra, tincidunt erat vel, elementum mi. Donec ex justo, commodo eu leo nec, volutpat faucibus nibh. Aenean quis tristique ante. Maecenas dignissim velit ullamcorper tortor aliquam, vitae dictum odio egestas. Etiam sem ligula, hendrerit nec tortor at, consequat volutpat ipsum.
             </p>
+            <Link className="link-readMore text-bold show-mobile" to="/project">Proyectos</Link>
         </section>
     </section>
     )

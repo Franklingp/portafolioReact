@@ -149,4 +149,9 @@
     .paragraph{
         text-align: center;
     }
+
+    .link-readMore{
+        color: #212224;
+        margin: 24px;
+    }
 }

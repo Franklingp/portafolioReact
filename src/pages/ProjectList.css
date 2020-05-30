@@ -52,3 +52,35 @@
     justify-content: center;
         
 }
+
+@media(max-width: 1000px){
+
+    .main-info{
+        padding-top: 48px;
+        padding: 32px;
+        display: block;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .title-list{
+        font-size: 48px;
+        position: relative;
+        top: 25px;
+    }
+    
+    .subtitle-list{
+        font-size: 32px;
+        left: 0px;
+    }
+
+    .paragraph-list{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .list-card{
+        width: 100vw;
+    }
+}

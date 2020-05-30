@@ -118,10 +118,18 @@
     display: none;
 }
 
+.show-desktop{
+    display: initial;
+}
+
 @media (max-width: 1000px){
 
     .show-mobile{
         display: initial;
+    }
+
+    .show-desktop{
+        display: none;
     }
 
     .contenido{

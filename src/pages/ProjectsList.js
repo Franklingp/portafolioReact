@@ -11,8 +11,8 @@ class ProjectList extends React.Component {
                 <div className='main-info'>
                     <h1 className='title-list text-black'>
                         Trabajos
-                        <br/>
-                        <span className="subtitle-list">Culminados</span>
+                        <br className="show-desktop"/>
+                        <span className="subtitle-list show-desktop">Culminados</span>
                     </h1>
                     <p className="paragraph-list text-ligth">
                         Esta es una <span className="ligth">selecion</span> de <br/>

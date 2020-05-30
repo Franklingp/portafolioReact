@@ -1,7 +1,7 @@
 const global = {
     //This is the url to connect with the servers api
     // url: "http://localhost:3700/api"
-    url: "http://localhost:3700/api",
+    url: "http://192.168.0.4:3700/api",
 
     //Social media
     instagram: "https://www.instagram.com/",

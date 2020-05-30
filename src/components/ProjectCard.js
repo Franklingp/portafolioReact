@@ -5,6 +5,19 @@ import './ProjectCard.css';
 const ProjectCard = (props) => {
     const { _id, name, date, category, index } = props;
 
+    const handleResponsive = () => {
+        if(window.screen.width > 1000){
+            if(index % 2 === 0){
+                return "content-card left-card"
+            }else{
+                return "content-card rigth-card"
+            } 
+        }else{
+            console.log("mobile");
+            return "content-card-mobile"
+        }
+    }
+
     const handleColor = () => {
         let i = index;
         if(index > 3){
@@ -29,12 +42,12 @@ const ProjectCard = (props) => {
     }
 
     return(
-        <article className={index % 2 === 0 ? "content-card left-card" : "content-card rigth-card"} style={{backgroundColor, color}}
+        <article className={handleResponsive()} style={{backgroundColor, color}}
         onClick={OnClick}>
             <h2 className="card-title text-regular">{name}</h2>
-            
+            <br className="show-mobile"/>
             <span className="card-date text-ligth">{date}</span>
-           
+            <br className="show-mobile"/>
             <span className="card-category text-ligth">{category}</span>
         </article>
     )

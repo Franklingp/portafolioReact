@@ -2,7 +2,7 @@
     color: #212224;
     height: 350px;
     min-width: 500px;
-    width: 50vw;
+    width: 50vw; 
     height: 30vw;
     background-color: #A68E52;
     padding: 70px;
@@ -21,4 +21,13 @@
     text-align: start;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.content-card-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+    height: 50vh;
 }
