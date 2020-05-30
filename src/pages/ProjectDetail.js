@@ -38,11 +38,11 @@ const ProjectDetail = (props) => {
                     <div className="icons-project">
                         {project.git &&
                         <a href={project.git} className="item-icon">
-                            <img src={github} alt="logo" className="d-inline-block align-center logo"/>
+                            <img src={github} alt="logo" className="d-inline-block align-center logo" width="32"/>
                         </a>}
                        {project.url &&
                        <a href={project.url} className="item-icon">
-                            <img src={url} alt="logo" className="d-inline-block align-center logo"/>
+                            <img src={url} alt="logo" className="d-inline-block align-center logo" width="40"/>
                         </a>}
                     </div>
                 </div>

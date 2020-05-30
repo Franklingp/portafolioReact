@@ -138,6 +138,7 @@
 
     .about-der{
         width: 100vw;
+        /* height: 100vh; */
         color: #212224;
         text-align: center;
     }
