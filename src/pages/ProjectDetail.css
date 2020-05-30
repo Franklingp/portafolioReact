@@ -40,3 +40,46 @@
 .item-icon{
     margin: 8px;
 }
+
+@media (max-width: 1000px){
+
+    .izq-project{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .img-project{
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .der-project{
+        width: 100vw;
+        height: 100vh;
+        padding: 12px;
+    }
+
+    .header{
+        left: 0px;
+    }
+
+    .header-bold{
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .header-ligth{
+        left: 0px;
+        bottom: 0px;
+    }
+
+    .project-description{
+        top: 0px;
+    }
+
+    .text-description{
+        width: 100%;
+        height: auto;
+    }
+    
+}
