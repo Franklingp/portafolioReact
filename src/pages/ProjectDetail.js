@@ -17,8 +17,6 @@ const ProjectDetail = (props) => {
         project = getOneProjec(id);
     }
 
-    console.log(project);
-
     return(
         project &&
         <section className="contenido">
