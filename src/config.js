@@ -1,7 +1,5 @@
 const global = {
     //This is the url to connect with the servers api
-    // url: "http://localhost:3700/api"
-    //"http://192.168.0.4:3700/api",
     url: "https://api-portfolio.herokuapp.com/api", 
 
     //Social media
