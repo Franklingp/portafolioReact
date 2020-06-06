@@ -11,6 +11,16 @@
     overflow-x: none;
 }
 
+.animation-none{
+    opacity: 0.01;
+    transition: opacity 400ms;
+}
+
+.animation-show{
+    opacity: 1;
+    transition: opacity 400ms;
+}
+
 .izq{
     display: flex;
     flex-direction: column;

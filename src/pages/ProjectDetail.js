@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import { projectHttp } from '../service/fetch';
 import "./ProjectDetail.css";
@@ -8,7 +8,16 @@ import github from '../assets/GithubIconDark.png'
 const ProjectDetail = (props) => {
     const id = props.match.params.id;
     let project = props.projects.find(project => project._id === id);
+    const [animation, setAnimation] = useState("contenido animation-none");
 
+    const handleAnimation = () => {
+        window.scrollTo(0, 0);
+        setTimeout( () => {
+            setAnimation("contenido animation-show");
+        },1);
+    }
+    handleAnimation()
+ 
     const getOneProjec = async (id) => {
         projectHttp("GET", 'get/'+id, null);
     }
@@ -19,7 +28,7 @@ const ProjectDetail = (props) => {
 
     return(
         project &&
-        <section className="contenido">
+        <section className={animation}>
             <div className="izq izq-project">
                 <img src={project.images} className="img-project" alt="ProjectImage"/>
             </div>

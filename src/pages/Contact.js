@@ -8,6 +8,15 @@ const Contact = (props) => {
     const [name, nameState] = useState('');
     const [email, emailState] = useState('');
     const [message, messageState] = useState('');
+    const [animation, setAnimation] = useState("content animation-none");
+
+    const handleAnimation = () => {
+        window.scrollTo(0, 0);
+        setTimeout( () => {
+            setAnimation("content animation-show");
+        },1);
+    }
+    handleAnimation();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -43,7 +52,7 @@ const Contact = (props) => {
     }
 
     return (
-        <section  className='content'>
+        <section  className={animation}>
             <div className="izq-alt">
                 <a href={global.instagram} className="big-text" style={{color: '#A68E52', fontFamily: 'Thin-italic'}}>Instagram</a>
                 <a href={global.facebook} className="big-text" style={{fontFamily: 'Extra-ligth'}}>Facebook</a>
