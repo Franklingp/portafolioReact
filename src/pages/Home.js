@@ -12,6 +12,7 @@ const Home = (props) => {
     const [animation, setAnimation] = useState("contenido animation-none");
 
     const handleAnimation = () => {
+        window.scrollTo(0, 0)
         setTimeout( () => {
             setAnimation("contenido animation-show");
         },1);

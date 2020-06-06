@@ -11,6 +11,7 @@ const Contact = (props) => {
     const [animation, setAnimation] = useState("content animation-none");
 
     const handleAnimation = () => {
+        window.scrollTo(0, 0);
         setTimeout( () => {
             setAnimation("content animation-show");
         },1);

@@ -12,6 +12,10 @@ class ProjectList extends React.Component {
         }
     }
 
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
+
     handleAnimation = () => {
         setTimeout(() => {
             this.setState({
