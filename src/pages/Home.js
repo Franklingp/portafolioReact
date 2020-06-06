@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import arrow from '../assets/ArrowreadMore.png';
 import instagram from '../assets/instagram.png';
@@ -9,9 +9,19 @@ import global from '../config.js';
 import About from './About';
 
 const Home = (props) => {
+    const [animation, setAnimation] = useState("contenido animation-none");
+
+    const handleAnimation = () => {
+        setTimeout( () => {
+            setAnimation("contenido animation-show");
+        },1);
+    }
+
+    handleAnimation();
+
     return(
         <React.Fragment>
-        <section className='contenido'>
+        <section className={animation}>
             <div className="izq">
                 <aside className="social-media-icons">
                     <a href={global.instagram}>
