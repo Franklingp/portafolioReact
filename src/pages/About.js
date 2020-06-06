@@ -1,12 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import './About.css';
 import colorArrow from '../assets/ArrowcolorArrow.png';
 import menuDark from '../assets/VectorMenuDark.png';
 
 export const About = () => {
+    const [animation, setAnimation] = useState("contenido about animation-none");
+
+    const handleAnimation = () => {
+        setTimeout( () => {
+            setAnimation("contenido about animation-show");
+        },1);
+    }
+    handleAnimation();
     return (
-    <section className="contenido about">
+    <section className={animation}>
         <section className="about-izq">
             <div className="left-block">
                  <h2 className="title-list text-black title-about">FullStack </h2>

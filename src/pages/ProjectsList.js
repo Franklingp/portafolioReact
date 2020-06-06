@@ -4,10 +4,26 @@ import ProjectCard from '../components/ProjectCard';
 import './ProjectList.css';
 
 class ProjectList extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            animation: "contenido animation-none"
+        }
+    }
+
+    handleAnimation = () => {
+        setTimeout(() => {
+            this.setState({
+                animation: "contenido animation-show"
+            });
+        },1);
+    }
 
     render(){
+        this.handleAnimation();
         return(
-            <section className="contenido">
+            <section className={this.state.animation}>
                 <div className='main-info'>
                     <h1 className='title-list text-black'>
                         Trabajos
