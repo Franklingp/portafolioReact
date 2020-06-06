@@ -51,9 +51,21 @@ const Header = (props) => {
                 </button>
                 <div className="collapse navbar-collapse menu" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item"><Link to="/project" className="nav-link" style={{color: item}}>Mis proyectos</Link></li>
-                        <li className="nav-item"><Link to="/contact" className="nav-link" style={{color: item}}>Contactame</Link></li>
-                        <li className="nav-item"><Link to="/" className="nav-link" style={{color: item}}>Sobre mi</Link></li>
+                        {
+                            window.screen.width < 1000 && <React.Fragment>
+                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/project" className="nav-link" style={{color: item}}>Mis proyectos</Link></li>
+                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/contact" className="nav-link" style={{color: item}}>Contactame</Link></li>
+                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/" className="nav-link" style={{color: item}}>Sobre mi</Link></li>
+                            </React.Fragment>
+                        }
+                        {
+                            window.screen.width > 1000 && <React.Fragment>
+                                <li className="nav-item"><Link to="/project" className="nav-link" style={{color: item}}>Mis proyectos</Link></li>
+                                <li className="nav-item"><Link to="/contact" className="nav-link" style={{color: item}}>Contactame</Link></li>
+                                <li className="nav-item"><Link to="/" className="nav-link" style={{color: item}}>Sobre mi</Link></li>
+                            </React.Fragment>
+                        }
+                        
                         <li className="nav-item">
                             <span className="nav-item nav-link" style={{color: item}}>
                                 <img className="language-icon" alt="lang" 
