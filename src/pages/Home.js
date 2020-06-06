@@ -12,7 +12,7 @@ const Home = (props) => {
     const [animation, setAnimation] = useState("contenido animation-none");
 
     const handleAnimation = () => {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
         setTimeout( () => {
             setAnimation("contenido animation-show");
         },1);
@@ -41,8 +41,8 @@ const Home = (props) => {
                 <hr className="vector-about show-mobile"/>
                 <p className="left-info text-ligth"><span className="left-title text-black">Desarrollador <br/> web </span> 
                     <span style={{color: '#A68E52'}}>autodidacta</span><br/>
-                    demostrando que <br/>
-                    es posible.
+                    en busca de nuevos <br/>
+                    retos.
                 </p>
                 <hr className="vector-about show-mobile"/>
             </div> 
