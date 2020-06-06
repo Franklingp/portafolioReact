@@ -9,7 +9,7 @@ export const About = () => {
     <section className="contenido about">
         <section className="about-izq">
             <div className="left-block">
-                 <h2 className="title-list text-black title-about">Skills <br/> web</h2> {/*title-list */}
+                 <h2 className="title-list text-black title-about">FullStack </h2>
 
                 <div>
                     <div className="circle"></div>
@@ -26,11 +26,11 @@ export const About = () => {
                 </div>
                 <div>
                     <div className="circle"></div>
-                    <span className="skill text-extra-ligth">HTML</span>
+                    <span className="skill text-extra-ligth">Express</span>
                 </div>
                 <div>
                     <div className="circle"></div>
-                    <span className="skill text-extra-ligth">CSS</span>
+                    <span className="skill text-extra-ligth">MongoDB</span>
                 </div>
             </div>
             <div className="rigth-block">
