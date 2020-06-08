@@ -36,7 +36,7 @@ const ProjectDetail = (props) => {
                 <div className='header'>
                     <h1 className='header-bold'>{project.name}</h1>
                     <p className='header-ligth'>Date(
-                        <span style={{color: '#A68E52'}}> {project.date} </span>
+                        <span style={{color: '#A68E52'}}> {String(new Date(project.date).toDateString())} </span>
                     );</p>
                 </div>
                 
