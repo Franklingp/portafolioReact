@@ -19,7 +19,8 @@
 
 .project-description{
     position: relative;
-    top: 20%;
+    top: 16px;
+    left: 35px;
 }
 
 .text-description{
@@ -74,7 +75,7 @@
     }
 
     .project-description{
-        top: 0px;
+        left: 0px;
     }
 
     .text-description{

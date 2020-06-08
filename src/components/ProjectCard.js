@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './ProjectCard.css';
+import { fistUpercase } from '../service/textFormat';
 
 const ProjectCard = (props) => {
     const { _id, name, date, category, index } = props;
@@ -44,11 +45,11 @@ const ProjectCard = (props) => {
     return(
         <article className={handleResponsive()} style={{backgroundColor, color}}
         onClick={OnClick}>
-            <h2 className="card-title text-regular">{name}</h2>
+            <h2 className="card-title text-regular">{fistUpercase(name)}</h2>
             <br className="show-mobile"/>
             <span className="card-date text-ligth">{String(new Date(date).toDateString())}</span>
             <br className="show-mobile"/>
-            <span className="card-category text-ligth">{category}</span>
+            <span className="card-category text-ligth">{fistUpercase(category)}</span>
         </article>
     )
 }

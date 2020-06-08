@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import { projectHttp } from '../service/fetch';
+import { fistUpercase } from '../service/textFormat';
 import "./ProjectDetail.css";
 import url from '../assets/urlicon.png'
 import github from '../assets/GithubIconDark.png'
@@ -34,10 +35,12 @@ const ProjectDetail = (props) => {
             </div>
             <div className="der-project">
                 <div className='header'>
-                    <h1 className='header-bold'>{project.name}</h1>
+                    <h1 className='header-bold'>{fistUpercase(project.name)}</h1>
                     <p className='header-ligth'>Date(
                         <span style={{color: '#A68E52'}}> {String(new Date(project.date).toDateString())} </span>
                     );</p>
+                    <span className="text-bold"
+                    style={{fontSize: '18px'}}>{fistUpercase(project.category)}</span>
                 </div>
                 
                 <div className='project-description'>
