@@ -17,13 +17,13 @@ const ProjectDetail = (props) => {
             setAnimation("contenido animation-show");
         },1);
     }
-    handleAnimation()
+    handleAnimation();
  
     const getOneProjec = async (id) => {
         projectHttp("GET", 'get/'+id, null);
     }
 
-    if(project === undefined){
+    if(!project){
         project = getOneProjec(id);
     }
 

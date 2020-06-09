@@ -60,6 +60,7 @@ const Http = async (method, route, body) => {
     }
     catch(error){
         console.log(error);
-        throw new Error('Has been an error when try the fetch apirest');
+        alert("Has been an error when try the fetch apirest");
+        // throw new Error('Has been an error when try the fetch apirest');
     }
 }
