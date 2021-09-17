@@ -28,6 +28,7 @@ const Home = () => {
             <section className={animation}>
 
                 <div className="izq">
+                    <div></div>
                     <aside className="social-media-icons">
                         <a href={global.instagram}>
                             <img src={instagram} alt="instagram" />
@@ -61,10 +62,10 @@ const Home = () => {
                     language
                 </aside>
                     <div className='header'>
-                        <h1 className='header-bold'>Franklin Pimentel</h1>
-                        <p className='header-ligth'>console.log(“
-                        <span style={{ color: '#A68E52', }}> React JS </span>
-                    ”);</p>
+                        <h1 className='header-bold'>Welcome</h1>
+                        <p className='header-ligth'>Just do it, in
+                            <span style={{ color: '#A68E52', }}> React JS </span>
+                        </p>
                     </div>
                     <span className='read-more text-ligth'>
                         Saber
