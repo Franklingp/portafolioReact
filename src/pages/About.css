@@ -75,7 +75,7 @@
 }
 
 .about-me {
-	font-size: 28px;
+	font-size: 32px;
 	line-height: 29px;
 	letter-spacing: 0.1em;
 	color: #a68e52;
@@ -89,7 +89,7 @@
 	text-align: center;
 	letter-spacing: 0.1em;
 	font-style: italic;
-	font-size: 18px;
+	font-size: 20px;
 	overflow-y: scroll;
 }
 
@@ -118,11 +118,14 @@
 @media (max-width: 1000px) {
 	.about {
 		flex-wrap: wrap;
-		padding: 24px;
+		padding: initial;
 	}
 
 	.about-izq {
-		width: 100vw;
+		width: initial;
+		padding: 24px;
+		background: #212224;
+		height: initial;
 	}
 
 	.rigth-block {
@@ -131,7 +134,7 @@
 
 	.left-block {
 		width: 100%;
-		align-items: center;
+		align-items: flex-start;
 	}
 
 	.title-about {
@@ -139,8 +142,10 @@
 	}
 
 	.about-der {
+		margin-top: 12px;
+		padding: 24px;
 		width: 100vw;
-		/* height: 100vh; */
+		height: initial;
 		color: #212224;
 		text-align: center;
 	}

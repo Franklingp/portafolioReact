@@ -47,14 +47,17 @@ export const About = () => {
             <section className="about-der text-regular">
                 <h3 className="about-me">Sobre mi</h3>
                 <p className="paragraph text-ligth">
-                    Hola red, yo soy Franklin Pimentel y soy Desarrollador web FullStack.
-                <br />
-                Como FullStack Junior cuento conocimientos en Frond-end con React JS y Angular,
-                junto a un buen manejo JavaScript como lenguaje de programación principal. Tambien manejo Backend con NodeJS
-                y Express para las bases de datos con MongoDB.
-                <br />
-                La pagina que estas viendo actualmente esta construida con las tecnologias ya mencionadas
-                desplegadas en Firebase el Frond-end y el Backend en Heroku
+                    Hola red, yo soy Franklin Pimentel Desarrollador web Front-end enfocado en tecnologias al rededor de JavaScript.
+                    Me defino por ser pro-activo, autodidacta, comprometido y por la pasion de resolver problemas programando dando las mejores soluciones
+                    posibles.
+                    Mis estudios empezaron en la carrera de ciencias de computacion de la universidad central de Venezuela, y aunque no pude concluir
+                    la carrera segui mi camino de forma autodidacta y posteriormente en Platzi, una increible comunidad de apasionados por la tecnologia
+                    y con un increible franse que los define y que he lleado a adopar.
+                    Nunca pares de aprender.
+                    {/* Estoy enfocado en Front-end y el manejo de React JS y sus particularidades como React Hooks, rendimiento de components, pruebas unitarias, webpack, etc,
+                    pero tambien manejo y tengo conocimientos de Backend con NodeJS y Express, y claro Git y deployment como el caso de esta pagina
+                    que se encuentra alojada en Firebase y backend en Heroku. */}
+
                 </p>
                 <Link className="link-readMore text-bold show-mobile" to="/project">
                     Proyectos <img src={menuDark} alt="menu" height="8" />
