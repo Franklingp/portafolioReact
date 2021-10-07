@@ -93,6 +93,11 @@
 	overflow-y: scroll;
 }
 
+.paragraph span {
+	color: #a68e52;
+	font-weight: bold;
+}
+
 .link-readMore {
 	color: white;
 	font-size: 18px;
