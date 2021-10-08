@@ -10,16 +10,11 @@ import facebook from '../assets/facebook.png';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
 
-//hoks
-import useAnimation from "../hooks/useAnimation";
-
 const Home = () => {
-    const [animation] = useAnimation("contenido");
 
     return (
         <React.Fragment>
-            <section className={animation}>
-
+            <section className={"contenido animate__animated animate__fadeIn"}>
                 <div className="izq">
                     <div></div>
                     <aside className="social-media-icons">
@@ -55,7 +50,7 @@ const Home = () => {
                     language
                 </aside>
                     <div className='header'>
-                        <h1 className='header-bold'>Welcome</h1>
+                        <h1 className='header-bold animate__animated animate__fadeInDown'>Welcome</h1>
                         <p className='header-ligth'>Just do it, in
                             <span style={{ color: '#A68E52', }}> React JS </span>
                         </p>
