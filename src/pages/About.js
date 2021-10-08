@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './About.css';
+
+//Icons
 import colorArrow from '../assets/ArrowcolorArrow.png';
 import menuDark from '../assets/VectorMenuDark.png';
 
+//hooks
+import useAnimation from "../hooks/useAnimation";
+
 export const About = () => {
-    const [animation, setAnimation] = useState("contenido about animation-none");
+    const [animation] = useAnimation("contenido about");
     const skills = [
         "JavaScript",
         "React JS",
@@ -14,12 +19,6 @@ export const About = () => {
         "API rest"
     ]
 
-    const handleAnimation = () => {
-        setTimeout(() => {
-            setAnimation("contenido about animation-show");
-        }, 1);
-    }
-    handleAnimation();
     return (
         <section className={animation}>
             <section className="about-izq">
@@ -54,10 +53,6 @@ export const About = () => {
                     la carrera segui mi camino de forma <span>autodidacta</span> y posteriormente en <span>Platzi</span>, una increible comunidad de apasionados por la tecnologia
                     y con un increible franse que los define y que he lleado a adopar.
                     <span>Nunca pares de aprender</span>.
-                    {/* Estoy enfocado en Front-end y el manejo de React JS y sus particularidades como React Hooks, rendimiento de components, pruebas unitarias, webpack, etc,
-                    pero tambien manejo y tengo conocimientos de Backend con NodeJS y Express, y claro Git y deployment como el caso de esta pagina
-                    que se encuentra alojada en Firebase y backend en Heroku. */}
-
                 </p>
                 <Link className="link-readMore text-bold show-mobile" to="/project">
                     Proyectos <img src={menuDark} alt="menu" height="8" />

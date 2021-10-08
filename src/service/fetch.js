@@ -7,10 +7,10 @@ let authentication = "";
 store.subscribe(() => {                         //const unSubscribe =
     let auth = store.getState();
     auth = auth.auth
-    if(auth.isAuth === true){
+    if (auth.isAuth === true) {
         token = auth.token;
         authentication = `bearer ${token}`;
-    }else{
+    } else {
         token = "";
         auth = "";
     }
@@ -18,7 +18,7 @@ store.subscribe(() => {                         //const unSubscribe =
 
 // projects
 export const projectHttp = async (method, route, body) => {
-    const res = await Http(method, `/proyect/${route}`, body);
+    const res = await Http(method, `/project/${route}`, body);
     return res.json.Proyect;
 }
 
@@ -36,11 +36,11 @@ export const authHttp = async (method, route, body) => {
 
 //Base Rest Request
 const Http = async (method, route, body) => {
-    try{
+    try {
         let headers = {
             'Authorization': authentication
         };
-        if(body !== null && route.split('/')[1] !== "proyect"){
+        if (body !== null && route.split('/')[1] !== "proyect") {
             body = JSON.stringify(body);
             headers = {
                 'Accept': 'application/json',
@@ -58,7 +58,7 @@ const Http = async (method, route, body) => {
         const obj = { json, status: response.status }
         return obj;
     }
-    catch(error){
+    catch (error) {
         console.log(error);
         throw new Error('Has been an error when try the fetch apirest');
     }

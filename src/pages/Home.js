@@ -1,27 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../assets/styles/Home.css';
+import global from '../config.js';
+import About from './About';
+
+//Icons
 import arrow from '../assets/ArrowreadMore.png';
 import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
-import global from '../config.js';
-import About from './About';
+
+//hoks
+import useAnimation from "../hooks/useAnimation";
 
 const Home = () => {
-    const [animation, setAnimation] = useState("contenido animation-none");
-
-    //Handle animation
-    const handleAnimation = () => {
-        window.scrollTo(0, 0);
-        setTimeout(() => {
-            setAnimation("contenido animation-show");
-        }, 1);
-    }
-
-    useEffect(() => {
-        handleAnimation();
-    }, [])
+    const [animation] = useAnimation("contenido");
 
     return (
         <React.Fragment>
