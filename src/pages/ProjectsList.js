@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import ProjectCard from '../components/ProjectCard';
 
@@ -11,6 +11,56 @@ import useAnimation from "../hooks/useAnimation";
 
 const ProjectList = ({ projects }) => {
     const [animation] = useAnimation("contenido");
+    // const [currentFrase, setCurrentFrase] = useState({
+    //     frase: "Proyectos",
+    //     count: 0,
+    // });
+    // const [bool, setBool] = useState(true);
+    // const frases = [
+    //     "Experiencias",
+    //     "Talento",
+    //     "Aprendizaje",
+    //     "Conocimiento",
+    //     "Proyectos"
+    // ];
+
+    // //handle frases
+    // const handleFrase = () => {
+    //     setBool(false)
+    //     if (currentFrase.count + 1 < frases.length) {
+    //         setCurrentFrase({
+    //             frase: frases[currentFrase.count + 1],
+    //             count: currentFrase.count + 1
+    //         })
+    //     } else {
+    //         setCurrentFrase({
+    //             frase: frases[0],
+    //             count: 0
+    //         })
+    //     }
+    //     setBool(true);
+
+    //     // setTimeout(() => {
+    //     //     if (currentFrase.count + 1 < frases.length) {
+    //     //         setCurrentFrase({
+    //     //             frase: frases[currentFrase.count + 1],
+    //     //             count: currentFrase.count + 1
+    //     //         })
+    //     //     } else {
+    //     //         setCurrentFrase({
+    //     //             frase: frases[0],
+    //     //             count: 0
+    //     //         })
+    //     //     }
+
+    //     // }, 1000)
+    // }
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         handleFrase();
+    //     }, 1500)
+    // }, [handleFrase])
 
     //validate project
     if (projects.length === 0) {
@@ -27,7 +77,7 @@ const ProjectList = ({ projects }) => {
                 <h1 className='title-list text-black'>
                     Portafolio
                     <br className="show-desktop" />
-                    <span className="subtitle-list show-desktop">Culminados</span>
+                    <span className={`subtitle-list show-desktop animate__animated animate__flipInX`}>Experiencias</span>
                 </h1>
                 <p className="paragraph-list text-ligth">
                     Esta es una <span>selecion</span> de <br />

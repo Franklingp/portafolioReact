@@ -10,7 +10,7 @@ const useAnimation = (initialState) => {
         setTimeout(() => {
             setAnimation(`${initialState} animation-show`);
         }, 1);
-    }, [initialState]);
+    }, []);
 
     useEffect(() => {
         handleAnimation();
