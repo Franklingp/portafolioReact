@@ -25,13 +25,13 @@ const ProjectList = ({ projects }) => {
         <section className={animation}>
             <div className='main-info'>
                 <h1 className='title-list text-black'>
-                    Trabajos
+                    Portafolio
                     <br className="show-desktop" />
                     <span className="subtitle-list show-desktop">Culminados</span>
                 </h1>
                 <p className="paragraph-list text-ligth">
-                    Esta es una <span className="ligth">selecion</span> de <br />
-                    los mejores <span className="ligth">proyectos</span> en <br />
+                    Esta es una <span>selecion</span> de <br />
+                    algunos de los <span>proyectos</span> en <br />
                     los que he trabajado<br />
                     anteriormente.
                 </p>
