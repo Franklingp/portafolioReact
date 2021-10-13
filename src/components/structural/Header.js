@@ -16,7 +16,7 @@ const Header = (props) => {
     const path = props.location.pathname;
 
     useEffect(() => {
-        switch(path){
+        switch (path) {
             case "/project":
                 setLogo(logoLigth);
                 setTitle("#ffffff");
@@ -33,50 +33,63 @@ const Header = (props) => {
                 setItem("#212224");
         }
 
-        if(window.screen.width < 1000){
+        if (window.screen.width < 1000) {
             setItem("#ffffff");
         }
-    },[path]);
+    }, [path]);
 
-    return(
+    return (
         <header className="navbar-custom">
-            <nav className="navbar navbar-expand-md h-100">
-                <span className="navbar-brand title" style={{color: title}}>
-                    <img src={logo} alt="logo" className="d-inline-block align-center logo" height="25"/>
+            <nav className="navbar-content">
+                <div className="navbar-header" style={{ color: title }}>
+                    <img src={logo} alt="logo" height="25" />
+                    <span>Franklin Pimentel</span>
+                </div>
+                <div className="navbar-link-content" id="">
+                    <ul className="navbar-link-list">
+                        <li className="navbar-link-item"><Link to="/project" className="" style={{ color: item }}>Mis proyectos</Link></li>
+                        <li className="navbar-link-item"><Link to="/project" className="" style={{ color: item }}>Mis proyectos</Link></li>
+                        <li className="navbar-link-item"><Link to="/project" className="" style={{ color: item }}>Mis proyectos</Link></li>
+                    </ul>
+                </div>
+            </nav>
+            {/* <nav className="navbar navbar-expand-md h-100">
+                <span className="navbar-brand title" style={{ color: title }}>
+                    <img src={logo} alt="logo" className="d-inline-block align-center logo" height="25" />
                     Franklin Pimentel
                 </span>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    {logo === logoLigth && <img src={menuWhite} alt="menu" height="8"/>}
-                    {logo === logoDark && <img src={menuDark} alt="menu" height="8"/>}
+                    {logo === logoLigth && <img src={menuWhite} alt="menu" height="8" />}
+                    {logo === logoDark && <img src={menuDark} alt="menu" height="8" />}
                 </button>
                 <div className="collapse navbar-collapse menu" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
                         {
                             window.screen.width < 1000 && <React.Fragment>
-                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/project" className="nav-link" style={{color: item}}>Mis proyectos</Link></li>
-                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/contact" className="nav-link" style={{color: item}}>Contactame</Link></li>
-                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/" className="nav-link" style={{color: item}}>Sobre mi</Link></li>
+                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/project" className="nav-link" style={{ color: item }}>Mis proyectos</Link></li>
+                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/contact" className="nav-link" style={{ color: item }}>Contactame</Link></li>
+                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/" className="nav-link" style={{ color: item }}>Sobre mi</Link></li>
                             </React.Fragment>
                         }
                         {
                             window.screen.width > 1000 && <React.Fragment>
-                                <li className="nav-item"><Link to="/project" className="nav-link" style={{color: item}}>Mis proyectos</Link></li>
-                                <li className="nav-item"><Link to="/contact" className="nav-link" style={{color: item}}>Contactame</Link></li>
-                                <li className="nav-item"><Link to="/" className="nav-link" style={{color: item}}>Sobre mi</Link></li>
+                                <li className="nav-item"><Link to="/project" className="nav-link" style={{ color: item }}>Mis proyectos</Link></li>
+                                <li className="nav-item"><Link to="/contact" className="nav-link" style={{ color: item }}>Contactame</Link></li>
+                                <li className="nav-item"><Link to="/" className="nav-link" style={{ color: item }}>Sobre mi</Link></li>
                             </React.Fragment>
                         }
-                        
+
                         <li className="nav-item">
-                            <span className="nav-item nav-link" style={{color: item}}>
-                                <img className="language-icon" alt="lang" 
-                                src={item === '#ffffff' ? languageWhite :languageDark} 
-                                height="16"/>ES . EN
+                            <span className="nav-item nav-link" style={{ color: item }}>
+                                <img className="language-icon" alt="lang"
+                                    src={item === '#ffffff' ? languageWhite : languageDark}
+                                    height="16" />ES . EN
                             </span>
                         </li>
-                        
+
                     </ul>
                 </div>
-            </nav>
+            </nav> */}
         </header>
     );
 }
