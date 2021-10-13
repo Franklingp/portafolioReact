@@ -39,10 +39,17 @@
 .navbar-link-list li {
 	list-style: none;
 	margin-left: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .navbar-link-list a {
 	text-decoration: none;
+}
+
+.language-icon {
+	margin-right: 8px;
 }
 
 @media (max-width: 1000px) {

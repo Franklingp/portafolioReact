@@ -47,9 +47,16 @@ const Header = (props) => {
                 </div>
                 <div className="navbar-link-content" id="">
                     <ul className="navbar-link-list">
-                        <li className="navbar-link-item"><Link to="/project" className="" style={{ color: item }}>Mis proyectos</Link></li>
-                        <li className="navbar-link-item"><Link to="/project" className="" style={{ color: item }}>Mis proyectos</Link></li>
-                        <li className="navbar-link-item"><Link to="/project" className="" style={{ color: item }}>Mis proyectos</Link></li>
+                        <li className="navbar-link-item"><Link to="/project" style={{ color: item }}>Mis proyectos</Link></li>
+                        <li className="navbar-link-item"><Link to="/contact" style={{ color: item }}>Contactame</Link></li>
+                        <li className="navbar-link-item"><Link to="/" style={{ color: item }}>Sobre mi</Link></li>
+                        <li className="nav-item">
+                            <img
+                                className="language-icon" alt="lang"
+                                src={item === '#ffffff' ? languageWhite : languageDark}
+                                height="18" />
+                            <span>Language</span>
+                        </li>
                     </ul>
                 </div>
             </nav>
