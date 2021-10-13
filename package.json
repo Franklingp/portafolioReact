@@ -1,6 +1,6 @@
 {
   "name": "portafolioreact",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,12 +15,16 @@
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
+    "@popperjs/core": "^2.10.2",
+    "autoprefixer": "^10.3.7",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.4.2",
+    "postcss-loader": "^6.1.1",
+    "sass-loader": "^12.2.0",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.3.1"
@@ -29,7 +33,6 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.1.2",
     "jquery": "^3.6.0",
-    "popper.js": "^1.16.1",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",

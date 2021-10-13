@@ -48,7 +48,7 @@ module.exports = {
                         name: "assets/static/[name].[contenthash].[ext]"
                     }
                 }
-            }
+            },
         ]
     },
     plugins: [

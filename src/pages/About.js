@@ -23,7 +23,7 @@ export const About = () => {
         <section className={animation}>
             <section className="about-izq">
                 <div className="left-block">
-                    <h2 className="title-list text-black title-about">Top Skills </h2>
+                    <h2 className="title-list font-black title-about">Top Skills </h2>
                     {
                         skills.map(skill => (
                             <div key={skill} className="skill-item">

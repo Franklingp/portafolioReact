@@ -52,7 +52,7 @@
 
 .vector-about {
 	width: 0px;
-	height: 136px;
+	height: 136px !important;
 	border: 0.3px solid #a68e52;
 	color: #a68e52;
 	transform: rotate(0.42deg);
@@ -60,7 +60,7 @@
 
 .vector-about-division {
 	width: 0px;
-	height: 350px;
+	height: 350px !important;
 	border: 1px solid #a68e52;
 	position: relative;
 	right: 35px;

@@ -31,8 +31,9 @@ const Home = () => {
                             <img src={github} alt="github" />
                         </a>
                     </aside>
-                    <hr className="vector-about show-mobile" />
-                    <p className="left-info text-ligth"><span className="left-title text-black">Desarrollador <br /> web </span>
+                    {/* <hr className="home-custom-vertical-line show-mobile" /> */}
+                    <hr style={{ color: "red" }} className="vector-about show-mobile" />
+                    <p className="left-info text-ligth"><span className="left-title font-black">Desarrollador <br /> web </span>
                         <span style={{ color: '#A68E52' }}>Front-end</span>
                         <br />
                         en busca de nuevos <br />
@@ -43,11 +44,12 @@ const Home = () => {
 
 
                 <div className="der">
-                    <hr className="vector-vertical" />
+                    {/* <hr className="vector-vertical" /> */}
+                    <hr className="home-custom-vertical-line" />
                     <aside className="language text-ligth">
                         If you want to navigate in <br />
-                    English, change the <br />
-                    language
+                        English, change the <br />
+                        language
                 </aside>
                     <div className='header'>
                         <h1 className='header-bold animate__animated animate__fadeInDown'>Welcome</h1>
