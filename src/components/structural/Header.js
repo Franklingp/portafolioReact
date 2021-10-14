@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './Header.css'
 import logoLigth from '../../assets/VectorBrand.png';
@@ -9,13 +9,33 @@ import languageWhite from '../../assets/LanguageWhite.png';
 import languageDark from '../../assets/LanguageDark.png';
 
 const Header = (props) => {
+    const [mobile, setMobile] = useState(true);
+    const [drawer, setDrawer] = useState(false);
     const [title, setTitle] = useState("#ffffff");
     const [item, setItem] = useState("#212224");
     const [logo, setLogo] = useState(logoLigth);
-
     const path = props.location.pathname;
 
-    useEffect(() => {
+    //Check if is mobile version or not
+    const checkLayout = () => {
+        if (window.screen.width < 1000) {
+            setMobile(true);
+            setDrawer(false)
+        } else {
+            setMobile(false);
+            setDrawer(true)
+        }
+    }
+
+    //update drawer
+    const updateDrawer = () => {
+        if (mobile === true) {
+            setDrawer(!drawer)
+        }
+    }
+
+    //update colors from header
+    const checkFontColor = useCallback(() => {
         switch (path) {
             case "/project":
                 setLogo(logoLigth);
@@ -32,11 +52,12 @@ const Header = (props) => {
                 setTitle("#ffffff");
                 setItem("#212224");
         }
+    }, [path])
 
-        if (window.screen.width < 1000) {
-            setItem("#ffffff");
-        }
-    }, [path]);
+    useEffect(() => {
+        checkFontColor()
+        checkLayout()
+    }, [checkFontColor]);
 
     return (
         <header className="navbar-custom">
@@ -45,20 +66,35 @@ const Header = (props) => {
                     <img src={logo} alt="logo" height="25" />
                     <span>Franklin Pimentel</span>
                 </div>
-                <div className="navbar-link-content" id="">
+
+                {/* Mobile menu Button*/}
+                <button onClick={updateDrawer} className="navbar-toggler" hidden={!mobile}>
+                    {logo === logoLigth && <img src={menuWhite} alt="menu" height="8" />}
+                    {logo === logoDark && <img src={menuDark} alt="menu" height="8" />}
+                </button>
+
+
+                {/*Menu*/}
+                <div className={`navbar-link-content animate__animated ${drawer === true ? "animate__fadeInRight" : "animate__fadeOutRight"}`}>
                     <ul className="navbar-link-list">
-                        <li className="navbar-link-item"><Link to="/project" style={{ color: item }}>Mis proyectos</Link></li>
-                        <li className="navbar-link-item"><Link to="/contact" style={{ color: item }}>Contactame</Link></li>
-                        <li className="navbar-link-item"><Link to="/" style={{ color: item }}>Sobre mi</Link></li>
+                        {
+                            mobile === true &&
+                            <li className="navbar-link-item" onClick={updateDrawer}>Close</li>
+                        }
+                        <li className="navbar-link-item" onClick={updateDrawer}><Link to="/project" style={{ color: mobile === true ? "#212224" : item }}>Mis proyectos</Link></li>
+                        <li className="navbar-link-item" onClick={updateDrawer}><Link to="/contact" style={{ color: mobile === true ? "#212224" : item }}>Contactame</Link></li>
+                        <li className="navbar-link-item" onClick={updateDrawer}><Link to="/" style={{ color: mobile === true ? "#212224" : item }}>Sobre mi</Link></li>
                         <li className="nav-item">
                             <img
                                 className="language-icon" alt="lang"
                                 src={item === '#ffffff' ? languageWhite : languageDark}
                                 height="18" />
-                            <span>Language</span>
+                            <span style={{ color: mobile === true ? "#212224" : item }}> Language</span>
                         </li>
                     </ul>
                 </div>
+
+
             </nav>
             {/* <nav className="navbar navbar-expand-md h-100">
                 <span className="navbar-brand title" style={{ color: title }}>
