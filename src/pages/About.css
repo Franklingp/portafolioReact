@@ -124,6 +124,7 @@
 	.about {
 		flex-wrap: wrap;
 		padding: initial;
+		height: inherit;
 	}
 
 	.about-izq {
@@ -131,6 +132,10 @@
 		padding: 24px;
 		background: #212224;
 		height: initial;
+	}
+
+	.about-der {
+		background: white;
 	}
 
 	.rigth-block {

@@ -20,6 +20,9 @@ const Header = (props) => {
     const path = props.location.pathname;
 
     //Check if is mobile version or not
+    //Oscar osorio
+    //la perla vive
+    //detras de jobsa tiene el taller
     const checkLayout = () => {
         if (window.screen.width < 1000) {
             setMobile(true);
