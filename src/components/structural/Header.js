@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './Header.css'
+
+//Icons
 import logoLigth from '../../assets/VectorBrand.png';
 import logoDark from '../../assets/VectorBrandDark.png';
-import menuWhite from '../../assets/VectorMenuWhite.png';
-import menuDark from '../../assets/VectorMenuDark.png';
+import menuWhite from '../../assets/menu_white.png';
+import menuDark from '../../assets/menu.png';
 import languageWhite from '../../assets/LanguageWhite.png';
 import languageDark from '../../assets/LanguageDark.png';
+import closeIcon from '../../assets/close.png';
 
 const Header = (props) => {
     const [mobile, setMobile] = useState(true);
@@ -68,19 +71,21 @@ const Header = (props) => {
                 </div>
 
                 {/* Mobile menu Button*/}
-                <button onClick={updateDrawer} className="navbar-toggler" hidden={!mobile}>
-                    {logo === logoLigth && <img src={menuWhite} alt="menu" height="8" />}
-                    {logo === logoDark && <img src={menuDark} alt="menu" height="8" />}
+                <button onClick={updateDrawer} className="navbar-menu-icon">
+                    {logo === logoLigth && <img src={menuWhite} alt="menu" height="16" />}
+                    {logo === logoDark && <img src={menuDark} alt="menu" height="16" />}
                 </button>
 
 
                 {/*Menu*/}
                 <div className={`navbar-link-content animate__animated ${drawer === true ? "animate__fadeInRight" : "animate__fadeOutRight"}`}>
                     <ul className="navbar-link-list">
-                        {
-                            mobile === true &&
-                            <li className="navbar-link-item" onClick={updateDrawer}>Close</li>
-                        }
+                        <div className="navbar-mobile-version" onClick={updateDrawer}>
+                            <li className="navbar-link-item" >
+                                <h3>Menu</h3>
+                            </li>
+                            <img className="navbar-close-icon" src={closeIcon} alt="menu" height="16" />
+                        </div>
                         <li className="navbar-link-item" onClick={updateDrawer}><Link to="/project" style={{ color: mobile === true ? "#212224" : item }}>Mis proyectos</Link></li>
                         <li className="navbar-link-item" onClick={updateDrawer}><Link to="/contact" style={{ color: mobile === true ? "#212224" : item }}>Contactame</Link></li>
                         <li className="navbar-link-item" onClick={updateDrawer}><Link to="/" style={{ color: mobile === true ? "#212224" : item }}>Sobre mi</Link></li>
@@ -96,43 +101,6 @@ const Header = (props) => {
 
 
             </nav>
-            {/* <nav className="navbar navbar-expand-md h-100">
-                <span className="navbar-brand title" style={{ color: title }}>
-                    <img src={logo} alt="logo" className="d-inline-block align-center logo" height="25" />
-                    Franklin Pimentel
-                </span>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    {logo === logoLigth && <img src={menuWhite} alt="menu" height="8" />}
-                    {logo === logoDark && <img src={menuDark} alt="menu" height="8" />}
-                </button>
-                <div className="collapse navbar-collapse menu" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto">
-                        {
-                            window.screen.width < 1000 && <React.Fragment>
-                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/project" className="nav-link" style={{ color: item }}>Mis proyectos</Link></li>
-                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/contact" className="nav-link" style={{ color: item }}>Contactame</Link></li>
-                                <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent"><Link to="/" className="nav-link" style={{ color: item }}>Sobre mi</Link></li>
-                            </React.Fragment>
-                        }
-                        {
-                            window.screen.width > 1000 && <React.Fragment>
-                                <li className="nav-item"><Link to="/project" className="nav-link" style={{ color: item }}>Mis proyectos</Link></li>
-                                <li className="nav-item"><Link to="/contact" className="nav-link" style={{ color: item }}>Contactame</Link></li>
-                                <li className="nav-item"><Link to="/" className="nav-link" style={{ color: item }}>Sobre mi</Link></li>
-                            </React.Fragment>
-                        }
-
-                        <li className="nav-item">
-                            <span className="nav-item nav-link" style={{ color: item }}>
-                                <img className="language-icon" alt="lang"
-                                    src={item === '#ffffff' ? languageWhite : languageDark}
-                                    height="16" />ES . EN
-                            </span>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav> */}
         </header>
     );
 }
