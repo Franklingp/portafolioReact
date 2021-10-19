@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 // import { projectHttp } from '../service/fetch';
-import "./ProjectDetail.css";
+import "../assets/styles/ProjectDetail.css";
 import url from '../assets/urlicon.png'
 import github from '../assets/GithubIconDark.png'
 
@@ -41,8 +41,8 @@ const ProjectDetail = ({ match, projects, history }) => {
             <div className="der-project">
                 <div className='header'>
                     <h1 className='header-bold'>{project.name}</h1>
-                    <p className='header-ligth'>Date(
-                        <span style={{ color: '#A68E52' }}> {project.date} </span>
+                    <p className='project-header-date'>Date(
+                        <span> {project.date} </span>
                     );</p>
                 </div>
 

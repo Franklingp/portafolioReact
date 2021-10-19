@@ -1,80 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import ProjectCard from '../components/ProjectCard';
 
 //styles
-import './ProjectList.css';
-import './loader.css';
-
-//hooks
-import useAnimation from "../hooks/useAnimation";
+import '../assets/styles/ProjectList.css';
+import '../assets/styles/loader.css';
 
 const ProjectList = ({ projects }) => {
-    const [animation] = useAnimation("contenido");
-    // const [currentFrase, setCurrentFrase] = useState({
-    //     frase: "Proyectos",
-    //     count: 0,
-    // });
-    // const [bool, setBool] = useState(true);
-    // const frases = [
-    //     "Experiencias",
-    //     "Talento",
-    //     "Aprendizaje",
-    //     "Conocimiento",
-    //     "Proyectos"
-    // ];
-
-    // //handle frases
-    // const handleFrase = () => {
-    //     setBool(false)
-    //     if (currentFrase.count + 1 < frases.length) {
-    //         setCurrentFrase({
-    //             frase: frases[currentFrase.count + 1],
-    //             count: currentFrase.count + 1
-    //         })
-    //     } else {
-    //         setCurrentFrase({
-    //             frase: frases[0],
-    //             count: 0
-    //         })
-    //     }
-    //     setBool(true);
-
-    //     // setTimeout(() => {
-    //     //     if (currentFrase.count + 1 < frases.length) {
-    //     //         setCurrentFrase({
-    //     //             frase: frases[currentFrase.count + 1],
-    //     //             count: currentFrase.count + 1
-    //     //         })
-    //     //     } else {
-    //     //         setCurrentFrase({
-    //     //             frase: frases[0],
-    //     //             count: 0
-    //     //         })
-    //     //     }
-
-    //     // }, 1000)
-    // }
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         handleFrase();
-    //     }, 1500)
-    // }, [handleFrase])
 
     //validate project
     if (projects.length === 0) {
         return (
-            <section className={animation} style={{ backgroundColor: "#212529" }}>
+            <section className={"contenido animate__animated animate__fadeIn"} style={{ backgroundColor: "#212529" }}>
                 <div className="loader">Loading...</div>
             </section>
         )
     }
 
     return (
-        <section className={animation}>
+        <section className={"contenido animate__animated animate__fadeIn"}>
             <div className='main-info'>
-                <h1 className='title-list text-black'>
+                <h1 className='title-list font-black'>
                     Portafolio
                     <br className="show-desktop" />
                     <span className={`subtitle-list show-desktop animate__animated animate__flipInX`}>Experiencias</span>
