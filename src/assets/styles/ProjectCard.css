@@ -9,6 +9,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+	cursor: pointer;
 }
 
 .left-card {
@@ -23,6 +24,29 @@
 	align-items: flex-start;
 }
 
+.card-yellow {
+	background-color: #a68e52;
+	color: #212224;
+}
+
+.card-shadow {
+	background-color: #c4c4c4;
+	color: #212224;
+}
+
+.card-ligth {
+	background-color: #e3e3e4;
+	color: #212224;
+}
+.card-dark {
+	background-color: #212224;
+	color: #e3e3e4;
+}
+
+.hidden-mobile {
+	display: inherit;
+}
+
 @media (max-width: 1000px) {
 	.content-card {
 		display: flex;
@@ -32,5 +56,16 @@
 		width: 100vw;
 		height: 50vh;
 		min-width: inherit;
+	}
+
+	.left-card,
+	.rigth-card {
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hidden-mobile {
+		display: none;
 	}
 }
