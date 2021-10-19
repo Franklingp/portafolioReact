@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
-// import { projectHttp } from '../service/fetch';
+
+//styles
 import "../assets/styles/ProjectDetail.css";
+
+//Icons
 import url from '../assets/urlicon.png'
 import github from '../assets/GithubIconDark.png'
 
-//hooks
-import useAnimation from "../hooks/useAnimation";
-
+//components
+import Loader from "../components/Loader";
 
 const ProjectDetail = ({ match, projects, history }) => {
-    const [animation] = useAnimation("contenido");
     const [project, setProject] = useState(null);
 
     //get project from redux
@@ -18,7 +19,7 @@ const ProjectDetail = ({ match, projects, history }) => {
         const id = match.params.id;
         const currentProject = projects.find(project => project._id === id);
         if (!currentProject) {
-            history.replace("/404");
+            history.replace("/project");
         } else {
             setProject(currentProject);
         }
@@ -29,12 +30,11 @@ const ProjectDetail = ({ match, projects, history }) => {
     }, [getProject])
 
     if (!project) {
-        return <h1>Not found</h1>
+        return <Loader />
     }
 
     return (
-        project &&
-        <section className={animation}>
+        <section className="contenido animate__animated animate__fadeIn">
             <div className="izq izq-project">
                 <img src={project.images} className="img-project" alt="ProjectImage" />
             </div>

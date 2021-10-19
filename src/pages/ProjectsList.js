@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 //components
 import ProjectCard from '../components/ProjectCard';
+import Loader from "../components/Loader";
 
 
 //styles
 import '../assets/styles/ProjectList.css';
-import '../assets/styles/loader.css';
 
 const ProjectList = ({ projects }) => {
 
@@ -28,11 +28,7 @@ const ProjectList = ({ projects }) => {
 
     //validate project
     if (projects.length < 1) {
-        return (
-            <section className={"contenido animate__animated animate__fadeIn"} style={{ backgroundColor: "#212529" }}>
-                <div className="loader">Loading...</div>
-            </section>
-        )
+        return <Loader />
     } else {
         return (
             <section className={"contenido animate__animated animate__fadeIn"}>
@@ -54,8 +50,8 @@ const ProjectList = ({ projects }) => {
                         projects.map((project, index) => {
                             const classess = handleCard(index);
                             return (
-                                <Link to={`/project/${project._id}`} className="projects-link">
-                                    <ProjectCard key={`${project._id}-${index}`} {...project} classess={classess} />
+                                <Link key={`${project._id}-${index}`} to={`/project/${project._id}`} className="projects-link">
+                                    <ProjectCard {...project} classess={classess} />
                                 </Link>
                             )
                         })
