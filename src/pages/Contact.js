@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addNewMessage } from '../redux/actions/contactActions';
-import './Contact.css';
 import global from '../config';
 
-//hooks
-import useAnimation from "../hooks/useAnimation";
+//styles
+import '../assets/styles/Contact.css';
+
 
 const Contact = (props) => {
-    const [name, nameState] = useState('');
-    const [email, emailState] = useState('');
-    const [message, messageState] = useState('');
-    const [animation] = useAnimation("content");
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.addNewMessage({ name, email, message });
+        props.addNewMessage({ ...form });
         alert(`Gracias ${name} por dejar tu mensaje, proxiamente estare contactando contigo por correo`);
         nameState('');
         emailState('');
@@ -23,32 +24,15 @@ const Contact = (props) => {
     }
 
     const handleChange = (e) => {
-        switch (e.target.name) {
-            case 'name':
-                nameState(e.target.value);
-                break;
-            case 'email':
-                emailState(e.target.value);
-                break;
-            case 'message':
-                messageState(e.target.value);
-                break;
-            default:
-                console.log('No es valido');
-        }
-    }
-
-    const handleDisabled = () => {
-        if (name === "" || message === "" || email === "") {
-            return true
-        } else {
-            return false;
-        }
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        })
     }
 
     return (
-        <section className={animation}>
-            <div className="izq-alt">
+        <section className={"contenido animate__animated animate__fadeIn"}>
+            <div className="contact-seccion-izq">
                 <a href={global.instagram} className="big-text" style={{ color: '#A68E52', fontFamily: 'Thin-italic' }}>Instagram</a>
                 <a href={global.facebook} className="big-text" style={{ fontFamily: 'Extra-ligth' }}>Facebook</a>
                 <a href={global.email} className="big-text" style={{ fontFamily: 'Ligth' }}>Correo</a>
@@ -56,29 +40,47 @@ const Contact = (props) => {
                 <a href={global.behance} className="big-text" style={{ fontFamily: 'Thin-italic' }}>Behance</a>
                 <a href={global.linkedin} className="big-text" style={{ color: '#A68E52', fontFamily: 'Extra-ligth' }}>Linkedin</a>
             </div>
-            <div className="der-alt">
+            <div className="contact-seccion-der">
                 <hr className="vector-contact" />
                 <h2 className="contact-title text-ligth">Contacto</h2>
 
                 <form onSubmit={handleSubmit}>
 
-                    <div className="form-group">
-                        <input type="text" className="form-control" name="name"
-                            placeholder="Nombre" value={name} onChange={handleChange} />
+                    <div className="mb-3">
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="name"
+                            placeholder="Nombre"
+                            value={form.name}
+                            required
+                            onChange={handleChange}
+                        />
                     </div>
 
-                    <div className="form-group">
-                        <input type="email" className="form-control" name="email"
-                            placeholder="Correo Electronico" value={email} onChange={handleChange} />
+                    <div className="mb-3">
+                        <input type="email"
+                            className="form-control"
+                            name="email"
+                            placeholder="Correo Electronico"
+                            value={form.email}
+                            onChange={handleChange}
+                            required
+                        />
                     </div>
 
-                    <div className="form-group">
-                        <textarea type="text" className="form-control" name="message"
-                            placeholder="Mensaje" value={message} onChange={handleChange} />
+                    <div className="mb-3">
+                        <textarea
+                            type="text"
+                            className="form-control"
+                            name="message"
+                            placeholder="Mensaje"
+                            value={form.message}
+                            onChange={handleChange}
+                        />
                     </div>
 
-                    <input type="submit" className="btn-contact" value="Enviar"
-                        disabled={handleDisabled()} />
+                    <input type="submit" className="btn-contact" value="Enviar" />
 
                 </form>
                 <p className="text-form text-ligth">

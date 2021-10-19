@@ -6,11 +6,7 @@ import '../assets/styles/About.css';
 import colorArrow from '../assets/ArrowcolorArrow.png';
 import menuDark from '../assets/VectorMenuDark.png';
 
-//hooks
-import useAnimation from "../hooks/useAnimation";
-
 export const About = () => {
-    const [animation] = useAnimation("contenido about");
     const skills = [
         "JavaScript",
         "React JS",
@@ -20,7 +16,7 @@ export const About = () => {
     ]
 
     return (
-        <section className={animation}>
+        <section className="contenido about animate__animated animate__fadeIn">
             <section className="about-izq">
                 <div className="left-block">
                     <h2 className="title-list font-black title-about">Top Skills </h2>
