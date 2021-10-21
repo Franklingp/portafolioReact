@@ -1,67 +1,70 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { useState } from 'react';
 import { logingUser } from '../../redux/actions/authActions';
 import { connect } from 'react-redux';
 
-class AuthLogin extends React.Component {
-    constructor(props){
-        super(props);
+//style
+import "../../assets/styles/AuthLogin.css";
 
-        this.state = {
-            email:"",
-            password: ""
-        }
-    }
+const AuthLogin = ({ logingUser }) => {
+    const [form, setForm] = useState({
+        email: "",
+        password: ""
+    });
 
-    componentDidUpdate(prevProps, prevState){
-        if(this.props.auth.isAuth === true){
-            this.props.history.push("/dashboard");
-        }
-    }
-
-    handleChange = (e) => {
-        this.setState({
+    //handle change
+    const handleChange = (e) => {
+        setForm({
+            ...form,
             [e.target.name]: e.target.value
         });
     }
 
-    handleSubmit = (e) => {
+    //handle submit
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.props.logingUser(this.state);
+        logingUser(form);
     }
 
-    render(){
-        let {email, password} = this.state;
-        return(
-            <section className="container text-center content-top">
-                <h1>AuthLogin</h1>
-                <p>Do you need to authenticate before continue...</p>
+    return (
+        <section className="container login-content">
+            <h1>Iniciar Sesion</h1>
+            <p>Necesitas iniciar sesion para poder continuar...</p>
 
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="email">Email address</label>
-                        <input name="email" type="email" className="form-control" id="email" 
-                        aria-describedby="emailHelp" onChange={this.handleChange} value={email}/>
-                        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <input name="password" type="password" className="form-control" 
-                        id="password" onChange={this.handleChange} value={password}/>
-                    </div>
-                    <button type="submit" className="btn btn-primary"
-                    disabled={email === "" || password === ""}>Submit</button>
-                </form>
-            </section>
-        )
-    }
+            <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                    <label htmlFor="email">Correo electronico</label>
+                    <input
+                        name="email"
+                        type="email"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={handleChange}
+                        value={form.email}
+                    />
+                    <small id="emailHelp" className="form-text text-muted">Tus datos se mantendran seguros en todo momento.</small>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="password">Contraseña</label>
+                    <input
+                        name="password"
+                        type="password"
+                        className="form-control"
+                        onChange={handleChange}
+                        value={form.password}
+                    />
+                </div>
+                <button
+                    type="submit"
+                    className="btn btn-primary">
+                    Iniciar Sesion
+                    </button>
+            </form>
+        </section>
+    )
 }
+
 const mapDispatchToProps = {
     logingUser
 }
 
-const mapStateToProps = state => ({
-    auth: state.auth
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AuthLogin));
+export default connect(null, mapDispatchToProps)(AuthLogin);

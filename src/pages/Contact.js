@@ -17,10 +17,12 @@ const Contact = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.addNewMessage({ ...form });
-        alert(`Gracias ${name} por dejar tu mensaje, proxiamente estare contactando contigo por correo`);
-        nameState('');
-        emailState('');
-        messageState('');
+        alert(`Gracias ${name} por dejar tu mensaje, proxiamente estare contactando contigo.`);
+        setForm({
+            name: "",
+            email: "",
+            message: "",
+        })
     }
 
     const handleChange = (e) => {
@@ -84,7 +86,9 @@ const Contact = (props) => {
 
                 </form>
                 <p className="text-form text-ligth">
-                    Este formulario obtiene tus datos <br />para poder <span className="ligth">contactar</span> contigo posteriormente. <br />No te preocupes tus datos estan <span className="ligth">seguros.</span>
+                    Este formulario es con el fin <br />
+                    de poder <span className="ligth">contactar</span> contigo posteriormente. <br />
+                    No te preocupes tus datos estan <span className="ligth">seguros.</span>
                 </p>
             </div>
         </section>
