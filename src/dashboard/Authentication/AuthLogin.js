@@ -6,23 +6,31 @@ import { connect } from 'react-redux';
 import "../../assets/styles/AuthLogin.css";
 
 const AuthLogin = ({ logingUser }) => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
     const [form, setForm] = useState({
         email: "",
         password: ""
     });
 
     //handle change
-    const handleChange = (e) => {
+    const handleChange = (event) => {
         setForm({
             ...form,
-            [e.target.name]: e.target.value
+            [event.target.name]: event.target.value
         });
     }
 
     //handle submit
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        logingUser(form);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setLoading(true);
+        const result = await logingUser(form);
+        if (result === false) {
+            alert("Correo o contraseña incorrectos");
+            setError(true);
+        }
+        setLoading(false);
     }
 
     return (
@@ -36,10 +44,12 @@ const AuthLogin = ({ logingUser }) => {
                     <input
                         name="email"
                         type="email"
-                        className="form-control"
+                        className={`form-control ${error ? "is-invalid" : null}`}
+                        onFocus={() => setError(false)}
                         aria-describedby="emailHelp"
                         onChange={handleChange}
                         value={form.email}
+                        disabled={loading}
                     />
                     <small id="emailHelp" className="form-text text-muted">Tus datos se mantendran seguros en todo momento.</small>
                 </div>
@@ -48,14 +58,18 @@ const AuthLogin = ({ logingUser }) => {
                     <input
                         name="password"
                         type="password"
-                        className="form-control"
+                        onFocus={() => setError(false)}
+                        className={`form-control ${error ? "is-invalid" : null}`}
                         onChange={handleChange}
                         value={form.password}
+                        disabled={loading}
                     />
                 </div>
                 <button
                     type="submit"
-                    className="btn btn-primary">
+                    className="btn btn-primary"
+                    disabled={loading}
+                >
                     Iniciar Sesion
                     </button>
             </form>

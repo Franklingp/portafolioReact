@@ -2,17 +2,18 @@ import { createAction } from 'redux-actions';
 import { authHttp } from '../../service/fetch';
 
 //Actions to manage the authentication
-export const logingUserSuccess =  createAction("LOGING_USER");
+export const logingUserSuccess = createAction("LOGING_USER");
 export const logingUser = data => async (dispatch) => {
-    try{
-        const response = await authHttp("POST", 'singIn', data);
-        if(response.status === 403 || response.status === 404){
-            alert("Correo o contraseNa incorrectos");
-        }else{
+    try {
+        const response = await authHttp("POST", 'sing-in', data);
+        if (response.status === 403 || response.status === 404) {
+            return false;
+        } else {
             dispatch(logingUserSuccess(response.json.token));
+            return true;
         }
     }
-    catch(error){
+    catch (error) {
         console.log(error);
         throw new Error("Has been a error when trying to login");
     }
