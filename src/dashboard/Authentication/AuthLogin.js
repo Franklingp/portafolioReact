@@ -29,8 +29,8 @@ const AuthLogin = ({ logingUser }) => {
         if (result === false) {
             alert("Correo o contraseña incorrectos");
             setError(true);
+            setLoading(false);
         }
-        setLoading(false);
     }
 
     return (

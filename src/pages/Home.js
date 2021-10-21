@@ -31,8 +31,7 @@ const Home = () => {
                             <img src={github} alt="github" />
                         </a>
                     </aside>
-                    {/* <hr className="home-custom-vertical-line show-mobile" /> */}
-                    <hr style={{ color: "red" }} className="vector-about show-mobile" />
+                    <hr className="vector-about show-mobile" />
                     <p className="left-info text-ligth"><span className="left-title font-black">Desarrollador <br /> web </span>
                         <span style={{ color: '#A68E52' }}>Front-end</span>
                         <br />
@@ -44,7 +43,6 @@ const Home = () => {
 
 
                 <div className="der">
-                    {/* <hr className="vector-vertical" /> */}
                     <hr className="home-custom-vertical-line" />
                     <aside className="language text-ligth">
                         If you want to navigate in <br />

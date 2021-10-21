@@ -10,9 +10,9 @@ import AuthSignup from '../dashboard/Authentication/AuthSignup';
 export default function Logged_in() {
     return (
         <Switch>
-            <Route path="/dashboard/signup" component={AuthSignup} />
-            <Route path="/dashboard/projects" component={DashboardProjects} />
-            <Route path="/dashboard/handler/:id?" component={DashboardProjectHandler} />
+            <Route path="/sign-up" component={AuthSignup} />
+            <Route path="/projects" component={DashboardProjects} />
+            <Route path="/project/:id?" component={DashboardProjectHandler} />
             <Route component={Dashboard} />
         </Switch>
     )
