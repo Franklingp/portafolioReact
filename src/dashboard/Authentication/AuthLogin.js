@@ -68,7 +68,7 @@ const AuthLogin = ({ logingUser }) => {
                 <button
                     type="submit"
                     className="btn btn-primary"
-                    disabled={loading}
+                    disabled={loading || error}
                 >
                     Iniciar Sesion
                     </button>
