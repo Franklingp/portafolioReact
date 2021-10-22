@@ -1,38 +1,24 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import DashboardComments from './DashboardComments';
-import { logOut } from '../redux/actions/authActions';
-import { connect } from 'react-redux';
 
-const Dashboard = ({ logOut }) => {
+//styles
+import "../assets/styles/Dashboard.css"
+
+//components
+import MessageTable from "../components/MessageTable";
+import DashboardComments from './DashboardComments';
+
+const Dashboard = () => {
 
     return (
-        <section className='container' style={{ paddingTop: '48px', textAlign: 'center' }}>
+        <section className='container dashboard-content'>
             <h1>Dashboard</h1>
-            <br />
-            <div>
-                <Link to="/dashboard/handler" className="btn btn-primary">
-                    Create new project
-                </Link>
-                <Link to="/dashboard/projects" className="btn btn-primary" style={{ margin: '5px' }}>
-                    Projects
-                </Link>
-                <Link to="/dashboard/signUp" className="btn btn-primary">
-                    Register
-                </Link>
-                <button className="btn btn-primary" style={{ margin: '5px' }}
-                    onClick={logOut}>Logout</button>
-            </div>
             <br />
             <hr />
             <br />
             <DashboardComments />
+            <MessageTable />
         </section>
     )
 }
 
-const mapDispatchToProps = {
-    logOut
-}
-
-export default connect(null, mapDispatchToProps)(Dashboard);
+export default Dashboard;
