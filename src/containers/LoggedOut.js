@@ -9,8 +9,10 @@ import Contact from '../pages/Contact';
 import NotFound from '../pages/NotFound';
 import AuthLogin from '../dashboard/Authentication/AuthLogin';
 
+function Logged_in() {
 
-export default function Logged_in() {
+
+
     return (
         <Switch>
             <Route path="/project/:id" component={ProjectDetail} />
@@ -22,3 +24,6 @@ export default function Logged_in() {
         </Switch>
     )
 }
+
+
+export default Logged_in;

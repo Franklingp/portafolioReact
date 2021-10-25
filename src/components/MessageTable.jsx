@@ -45,19 +45,27 @@ function MessageTable({ changeRead, deleteMessage, messages }) {
 				sort: false,
 			},
 		},
-		{
-			name: "_id",
-			label: "Action",
-			options: {
-				filter: true,
-				sort: false,
-				customBodyRender: () => <div>test</div>,
-			},
-		},
+		// {
+		// 	name: "_id",
+		// 	label: "Action",
+		// 	options: {
+		// 		filter: true,
+		// 		sort: false,
+		// 		customBodyRender: () => <div>test</div>,
+		// 	},
+		// },
 	];
 
 	const options = {
 		filterType: "checkbox",
+		print: false,
+		filter: false,
+		download: false,
+		confirmFilters: false,
+		viewColumns: false,
+		onChangePage: (currentPage) => {
+			console.log(currentPage);
+		},
 	};
 
 	return (

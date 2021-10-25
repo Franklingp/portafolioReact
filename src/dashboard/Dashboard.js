@@ -12,10 +12,7 @@ const Dashboard = () => {
     return (
         <section className='container dashboard-content'>
             <h1>Dashboard</h1>
-            <br />
             <hr />
-            <br />
-            <DashboardComments />
             <MessageTable />
         </section>
     )
