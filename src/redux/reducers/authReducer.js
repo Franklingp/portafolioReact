@@ -11,7 +11,7 @@ const authReducer = handleActions({
         return { isAuth: false, token: '' }
     }
 }, {
-    isAuth: true, //TODO ojo aqui va false
+    isAuth: false, //TODO ojo aqui va false
     token: ''
 });
 

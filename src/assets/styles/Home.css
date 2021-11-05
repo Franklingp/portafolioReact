@@ -3,10 +3,10 @@
 	font-family: "Montserrat";
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: stretch;
-	width: 98vw;
+	width: 100vw;
 	height: 100vh;
 	overflow-x: none;
 }

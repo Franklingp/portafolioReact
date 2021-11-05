@@ -1,5 +1,4 @@
 .about {
-	padding-top: 48px;
 	background-color: #212224;
 	color: white;
 	display: flex;
@@ -7,13 +6,12 @@
 	flex-wrap: nowrap;
 	justify-content: center;
 	overflow-y: none;
-	padding: 40px;
 }
 
 .about-izq {
 	height: 100%;
 	width: 50vw;
-
+	padding-left: 48px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -67,6 +65,7 @@
 }
 
 .about-der {
+	padding-right: 48px;
 	height: 100%;
 	width: 50vw;
 	display: flex;
