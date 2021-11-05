@@ -5,7 +5,7 @@ import { getAll } from './redux/actions/projectActions';
 import PropTypes from "prop-types";
 
 //components
-import Header from './components/structural/Header';
+import Header from './components/Header';
 
 //Containers
 import LoggedIn from "./containers/LoggedIn";

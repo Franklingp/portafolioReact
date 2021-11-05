@@ -24,9 +24,9 @@ function Logged_in({ getAllMessage }) {
 
     return (
         <Switch>
-            <Route path="/sign-up" component={AuthSignup} />
-            <Route path="/projects" component={DashboardProjects} />
-            <Route path="/project/:id?" component={DashboardProjectHandler} />
+            <Route path="/admin/sign-up" component={AuthSignup} />
+            <Route path="/admin/projects" component={DashboardProjects} />
+            <Route path="/admin/project/:id?" component={DashboardProjectHandler} />
             <Route component={Dashboard} />
         </Switch>
     )

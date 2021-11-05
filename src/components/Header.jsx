@@ -2,20 +2,20 @@ import React, { useEffect, useState, useCallback } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 
 //styles
-import "./Header.css";
+import "../assets/styles/Header.css";
 
 //Icons
-import logoLigth from "../../assets/VectorBrand.png";
-import logoDark from "../../assets/VectorBrandDark.png";
-import menuWhite from "../../assets/menu_white.png";
-import menuDark from "../../assets/menu.png";
-import languageWhite from "../../assets/LanguageWhite.png";
-import languageDark from "../../assets/LanguageDark.png";
-import closeIcon from "../../assets/close.png";
+import logoLigth from "../assets/VectorBrand.png";
+import logoDark from "../assets/VectorBrandDark.png";
+import menuWhite from "../assets/menu_white.png";
+import menuDark from "../assets/menu.png";
+import languageWhite from "../assets/LanguageWhite.png";
+import languageDark from "../assets/LanguageDark.png";
+import closeIcon from "../assets/close.png";
 
 //Redux
 import { connect } from "react-redux";
-import { logOut } from "../../redux/actions/authActions";
+import { logOut } from "../redux/actions/authActions";
 
 const Header = (props) => {
 	const { isAuth, logOut } = props;
@@ -121,17 +121,17 @@ const Header = (props) => {
 									</Link>
 								</li>
 								<li className="navbar-link-item" onClick={updateDrawer}>
-									<Link to="/project" style={{ color: "#212224" }}>
+									<Link to="/admin/project" style={{ color: "#212224" }}>
 										Create new project
 									</Link>
 								</li>
 								<li className="navbar-link-item" onClick={updateDrawer}>
-									<Link to="/projects" style={{ color: "#212224" }}>
+									<Link to="/admin/projects" style={{ color: "#212224" }}>
 										Projects
 									</Link>
 								</li>
 								<li className="navbar-link-item" onClick={updateDrawer}>
-									<Link to="/sign-up" style={{ color: "#212224" }}>
+									<Link to="/admin/sign-up" style={{ color: "#212224" }}>
 										Register
 									</Link>
 								</li>
