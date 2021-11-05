@@ -9,7 +9,7 @@ import MessageTable from "../components/MessageTable";
 
 const Dashboard = () => {
 	return (
-		<section className="container">
+		<section className="dashboard-content">
 			<Typography align="center" variant="h2">
 				Dashboard
 			</Typography>

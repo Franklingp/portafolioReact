@@ -117,7 +117,7 @@ const Header = (props) => {
 							<React.Fragment>
 								<li className="navbar-link-item" onClick={updateDrawer}>
 									<Link to="/" style={{ color: "#212224" }}>
-										dashboard
+										Dashboard
 									</Link>
 								</li>
 								<li className="navbar-link-item" onClick={updateDrawer}>
