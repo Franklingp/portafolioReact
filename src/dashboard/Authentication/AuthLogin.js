@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { logingUser } from '../../redux/actions/authActions';
 import { connect } from 'react-redux';
+import { TextField, Grid, Typography, Button } from "@mui/material";
 
 //style
 import "../../assets/styles/AuthLogin.css";
@@ -35,45 +36,93 @@ const AuthLogin = ({ logingUser }) => {
 
     return (
         <section className="container login-content">
-            <h1>Iniciar Sesion</h1>
-            <p>Necesitas iniciar sesion para poder continuar...</p>
-
-            <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                    <label htmlFor="email">Correo electronico</label>
-                    <input
-                        name="email"
-                        type="email"
-                        className={`form-control ${error ? "is-invalid" : null}`}
-                        onFocus={() => setError(false)}
-                        aria-describedby="emailHelp"
-                        onChange={handleChange}
-                        value={form.email}
-                        disabled={loading}
-                    />
-                    <small id="emailHelp" className="form-text text-muted">Tus datos se mantendran seguros en todo momento.</small>
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="password">Contraseña</label>
-                    <input
-                        name="password"
-                        type="password"
-                        onFocus={() => setError(false)}
-                        className={`form-control ${error ? "is-invalid" : null}`}
-                        onChange={handleChange}
-                        value={form.password}
-                        disabled={loading}
-                    />
-                </div>
-                <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={loading || error}
-                >
-                    Iniciar Sesion
-                    </button>
-            </form>
+            <div className="login-form-card">
+                <form onSubmit={handleSubmit}>
+                    <Grid container justifyContent="space-around" alignItems="center" spacing={3}>
+                        <Grid item xs={12}>
+                            <Typography variant="h2" align="center">Iniciar Sesion</Typography>
+                            <Typography variant="p" align="center">Necesitas iniciar sesion para poder continuar...</Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                name="email"
+                                type="email"
+                                error={error}
+                                onFocus={() => setError(false)}
+                                onChange={handleChange}
+                                value={form.email}
+                                disabled={loading}
+                                label="Email"
+                                fullWidth
+                                helperText="Tus datos se mantendran seguros en todo momento."
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                label="password"
+                                name="password"
+                                type="password"
+                                onFocus={() => setError(false)}
+                                onChange={handleChange}
+                                value={form.password}
+                                error={error}
+                                fullWidth
+                                disabled={loading}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button
+                                variant="contained"
+                                type="submit"
+                                className="btn btn-primary"
+                                disabled={loading || error}>
+                                Iniciar Sesion
+                    </Button>
+                        </Grid>
+                    </Grid>
+                </form>
+            </div>
         </section>
+        //     <section className="container login-content">
+        //     <h1>Iniciar Sesion</h1>
+        //     <p>Necesitas iniciar sesion para poder continuar...</p>
+
+        //     <form onSubmit={handleSubmit}>
+        //         <div className="mb-4">
+        //             <label htmlFor="email">Correo electronico</label>
+        //             <input
+        //                 name="email"
+        //                 type="email"
+        //                 className={`form-control ${error ? "is-invalid" : null}`}
+        //                 onFocus={() => setError(false)}
+        //                 aria-describedby="emailHelp"
+        //                 onChange={handleChange}
+        //                 value={form.email}
+        //                 disabled={loading}
+        //             />
+        //             <small id="emailHelp" className="form-text text-muted">Tus datos se mantendran seguros en todo momento.</small>
+        //         </div>
+        //         <div className="mb-4">
+        //             <label htmlFor="password">Contraseña</label>
+        //             <input
+        //                 name="password"
+        //                 type="password"
+        //                 onFocus={() => setError(false)}
+        //                 className={`form-control ${error ? "is-invalid" : null}`}
+        //                 onChange={handleChange}
+        //                 value={form.password}
+        //                 disabled={loading}
+        //             />
+        //         </div>
+        //         <button
+        //             type="submit"
+        //             className="btn btn-primary"
+        //             disabled={loading || error}
+        //         >
+        //             Iniciar Sesion
+        //             </button>
+        //     </form>
+        // </section>
     )
 }
 

@@ -19,6 +19,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
+	box-sizing: border-box;
 }
 
 .title-list {
