@@ -31,7 +31,7 @@ const ProjectList = ({ projects }) => {
         return <Loader />
     } else {
         return (
-            <section className={"contenido animate__animated animate__fadeIn"}>
+            <section className={"ProjectList-content animate__animated animate__fadeIn"}>
                 <div className='main-info'>
                     <h1 className='title-list font-black'>
                         Portafolio
