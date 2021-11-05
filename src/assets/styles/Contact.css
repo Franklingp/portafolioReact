@@ -1,12 +1,14 @@
-.content {
+.Contact-content {
+	z-index: 0;
+	font-family: "Montserrat";
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
 	width: 100vw;
 	height: 100vh;
-	display: flex;
-	justify-content: flex-end;
-	align-items: stretch;
-	flex-wrap: wrap;
-	flex-direction: row;
-	font-family: "Montserrat";
+	overflow-x: none;
 }
 
 .contact-seccion-izq {
@@ -81,6 +83,14 @@
 	color: #a68e52;
 	background-color: #212224;
 	margin-top: 24px;
+	transition: 300ms;
+	cursor: pointer;
+}
+
+.btn-contact:hover {
+	transition: 300ms;
+	color: white;
+	border-color: white;
 }
 
 .text-form {
@@ -98,11 +108,29 @@
 	color: #a68e52;
 }
 
+.custom-input {
+	color: #222325;
+	background-color: white;
+	height: 40px;
+	font-size: 24px;
+	box-sizing: border-box;
+	padding: 8px;
+	width: 90%;
+	border-radius: 6px;
+	border: 1px solid #222325;
+	margin: 8px;
+	font-size: 16px;
+	font-family: auto;
+	outline: none;
+}
+
 @media (max-width: 750px) {
-	.content {
+	.Contact-content {
 		width: 100vw;
+		flex-wrap: wrap;
 	}
 	.contact-seccion-izq {
+		box-sizing: border-box;
 		padding-top: 32px;
 		padding-bottom: 32px;
 		width: 100vw;
@@ -118,8 +146,13 @@
 		font-size: 60px;
 	}
 
+	.text-form {
+		top: 8px;
+	}
+
 	.contact-seccion-der {
 		width: 100vw;
-		min-height: 100vh;
+		height: 100vh;
+		box-sizing: border-box;
 	}
 }
