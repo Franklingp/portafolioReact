@@ -9,12 +9,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { connect } from "react-redux";
 import { deleteMessage } from "../redux/actions/contactActions";
 
-// date: "2021-10-19T18:47:04.676Z"
-// email: "fadsaf@djafkldsjf"
-// message: "test\n"
-// name: "dsd"
-// read: false
-
 function MessageTable({ deleteMessage, messages }) {
 	//handle delete comment
 	const handleDeleteCommet = (id) => {
