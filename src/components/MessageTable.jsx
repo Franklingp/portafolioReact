@@ -1,9 +1,13 @@
 import React from "react";
 import MUIDataTable from "mui-datatables";
 
+//meterial ui icons and components
+import { IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+
 //redux
 import { connect } from "react-redux";
-import { changeRead, deleteMessage } from "../redux/actions/contactActions";
+import { deleteMessage } from "../redux/actions/contactActions";
 
 // date: "2021-10-19T18:47:04.676Z"
 // email: "fadsaf@djafkldsjf"
@@ -11,7 +15,18 @@ import { changeRead, deleteMessage } from "../redux/actions/contactActions";
 // name: "dsd"
 // read: false
 
-function MessageTable({ changeRead, deleteMessage, messages }) {
+function MessageTable({ deleteMessage, messages }) {
+	//handle delete comment
+	const handleDeleteCommet = (id) => {
+		const check = window.confirm(
+			`Seguro que desea eliminar este mensaje permanentemente?`
+		);
+		if (check === true) {
+			deleteMessage(id);
+		}
+	};
+
+	//Table columns
 	const columns = [
 		{
 			name: "name",
@@ -45,17 +60,27 @@ function MessageTable({ changeRead, deleteMessage, messages }) {
 				sort: false,
 			},
 		},
-		// {
-		// 	name: "_id",
-		// 	label: "Action",
-		// 	options: {
-		// 		filter: true,
-		// 		sort: false,
-		// 		customBodyRender: () => <div>test</div>,
-		// 	},
-		// },
+		{
+			name: "_id",
+			label: "Actions",
+			options: {
+				filter: false,
+				sort: false,
+				customBodyRender: (id) => (
+					<IconButton
+						color="primary"
+						aria-label="upload picture"
+						component="span"
+						onClick={() => handleDeleteCommet(id)}
+					>
+						<DeleteIcon color="secondary" />
+					</IconButton>
+				),
+			},
+		},
 	];
 
+	//Table options
 	const options = {
 		filterType: "checkbox",
 		print: false,
@@ -83,7 +108,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-	changeRead,
 	deleteMessage,
 };
 

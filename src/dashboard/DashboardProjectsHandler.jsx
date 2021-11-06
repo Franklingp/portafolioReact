@@ -1,15 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, TextField, Button, Typography } from "@mui/material";
 
-function DashboardProjectsHandler() {
+//redux
+import { connect } from "react-redux";
+import { addNewProject, updateProject } from "../redux/actions/projectActions";
+
+//styles
+import "../assets/styles/DashboadProjectsHandler.css";
+
+function DashboardProjectsHandler({
+	match,
+	projects,
+	addNewProject,
+	updateProject,
+}) {
+	const [isEdit, setIsEdit] = useState(false);
 	const [form, setForm] = useState({
 		name: "",
 		category: "",
-		desciption: "",
-		image: "",
+		description: "",
+		images: "",
 		url: "",
 		git: "",
 	});
+
+	//check if is a new project or editing other already created
+	const checkProject = () => {
+		if (match.params.id) {
+			setIsEdit(true);
+			const project = projects.find(({ _id }) => _id === match.params.id);
+			if (project) {
+				setForm({ ...project });
+			}
+		} else {
+			setIsEdit(false);
+		}
+	};
 
 	//handle inptu change
 	const handleChange = (e) => {
@@ -22,15 +48,23 @@ function DashboardProjectsHandler() {
 	//handleSubmit
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(form);
+		if (isEdit === true) {
+			updateProject(form);
+		} else {
+			addNewProject(form);
+		}
 	};
+
+	useEffect(() => {
+		checkProject();
+	}, []);
 
 	return (
 		<React.Fragment>
 			<Typography align="center" variant="h2" margin={6}>
 				Handle Project
 			</Typography>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="Handle-Projectf-form">
 				<Grid
 					container
 					alignContent="center"
@@ -39,13 +73,14 @@ function DashboardProjectsHandler() {
 				>
 					<Grid item xs={12} md={6}>
 						<TextField
-							label="test"
-							variant="outlined"
+							label="Name"
 							fullWidth={true}
 							required
 							value={form.name}
 							onChange={handleChange}
 							name="name"
+							size="normal"
+							variant="outlined"
 						/>
 					</Grid>
 					<Grid item xs={12} md={6}>
@@ -72,9 +107,9 @@ function DashboardProjectsHandler() {
 						<TextField
 							label="Image"
 							fullWidth={true}
-							value={form.image}
+							value={form.images}
 							onChange={handleChange}
-							name="image"
+							name="images"
 						/>
 					</Grid>
 					<Grid item xs={12} md={4}>
@@ -106,4 +141,16 @@ function DashboardProjectsHandler() {
 	);
 }
 
-export default DashboardProjectsHandler;
+const mapStateToProps = (state) => ({
+	projects: state.projects,
+});
+
+const mapDispatchToProps = {
+	addNewProject,
+	updateProject,
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(DashboardProjectsHandler);
