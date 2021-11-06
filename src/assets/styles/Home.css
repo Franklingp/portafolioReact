@@ -155,6 +155,7 @@
 		height: 100vh;
 		justify-content: space-around;
 		align-items: center;
+		box-sizing: border-box;
 	}
 
 	.left-info {
