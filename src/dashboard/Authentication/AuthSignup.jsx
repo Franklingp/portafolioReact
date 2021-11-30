@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { logingUser } from "../../redux/actions/authActions";
-import { connect } from "react-redux";
 import { TextField, Grid, Typography, Button } from "@mui/material";
+import { authHttp } from "../../service/fetch";
 
 //style
 import "../../assets/styles/AuthLogin.css";
 
-const AuthLogin = ({ logingUser }) => {
+const AuthSignup = ({ history }) => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [form, setForm] = useState({
+		name: "",
+		surname: "",
 		email: "",
 		password: "",
 	});
@@ -26,11 +27,23 @@ const AuthLogin = ({ logingUser }) => {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		setLoading(true);
-		const result = await logingUser(form);
-		if (result === false) {
-			alert("Correo o contraseña incorrectos");
-			setError(true);
+		try {
+			const response = await authHttp("POST", "sign-up", form);
+			if (response.status === 400) {
+				alert("The email is not valid");
+				setError(true);
+				setLoading(false);
+			} else {
+				alert("The user has been register success");
+				setError(false);
+				setLoading(false);
+				history.push("/dashboard");
+			}
+		} catch (error) {
+			console.log(error.response);
+			alert("Has been a error when trying to register a user.");
 			setLoading(false);
+			setError(true);
 		}
 	};
 
@@ -46,11 +59,36 @@ const AuthLogin = ({ logingUser }) => {
 					>
 						<Grid item xs={12}>
 							<Typography variant="h2" align="center">
-								Iniciar Sesion
+								Sign up
 							</Typography>
-							<Typography variant="p" align="center">
-								Necesitas iniciar sesion para poder continuar...
-							</Typography>
+						</Grid>
+						<Grid item xs={12}>
+							<TextField
+								name="name"
+								type="text"
+								error={error}
+								onFocus={() => setError(false)}
+								onChange={handleChange}
+								value={form.name}
+								disabled={loading}
+								label="Name"
+								fullWidth
+								required
+							/>
+						</Grid>
+						<Grid item xs={12}>
+							<TextField
+								name="surname"
+								type="text"
+								error={error}
+								onFocus={() => setError(false)}
+								onChange={handleChange}
+								value={form.surname}
+								disabled={loading}
+								label="Last name"
+								required
+								fullWidth
+							/>
 						</Grid>
 						<Grid item xs={12}>
 							<TextField
@@ -62,9 +100,8 @@ const AuthLogin = ({ logingUser }) => {
 								value={form.email}
 								disabled={loading}
 								label="Email"
-								required
 								fullWidth
-								helperText="Tus datos se mantendran seguros en todo momento."
+								required
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -76,9 +113,9 @@ const AuthLogin = ({ logingUser }) => {
 								onChange={handleChange}
 								value={form.password}
 								error={error}
-								required
 								fullWidth
 								disabled={loading}
+								required
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -88,7 +125,7 @@ const AuthLogin = ({ logingUser }) => {
 								className="btn btn-primary"
 								disabled={loading || error}
 							>
-								Iniciar Sesion
+								Submit
 							</Button>
 						</Grid>
 					</Grid>
@@ -98,8 +135,4 @@ const AuthLogin = ({ logingUser }) => {
 	);
 };
 
-const mapDispatchToProps = {
-	logingUser,
-};
-
-export default connect(null, mapDispatchToProps)(AuthLogin);
+export default AuthSignup;
