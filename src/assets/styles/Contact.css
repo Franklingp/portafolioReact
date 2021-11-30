@@ -1,0 +1,158 @@
+.Contact-content {
+	z-index: 0;
+	font-family: "Montserrat";
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 100vw;
+	height: 100vh;
+	overflow-x: none;
+}
+
+.contact-seccion-izq {
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.contact-seccion-izq a {
+	text-decoration: none;
+}
+
+.big-text {
+	font-family: "Montserrat";
+	font-style: italic;
+	font-weight: normal;
+	font-size: 72px;
+	line-height: 88px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	color: #212224;
+	margin: 0px;
+	transition: 250ms;
+}
+
+.big-text:hover {
+	text-decoration: none;
+	color: #212224;
+	font-size: 80px;
+	transition: 250ms;
+}
+
+.contact-seccion-der {
+	padding-top: 48px;
+	text-align: center;
+	padding: 30px;
+	width: 40%;
+	background-color: #212224;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	color: white;
+}
+
+.vector-contact {
+	height: 112px !important;
+	border: 1px solid #a68e52;
+	width: 1px;
+	opacity: 1;
+	align-self: center;
+}
+
+.contact-title {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 48px;
+	line-height: 59px;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.btn-contact {
+	width: 50%;
+	height: 32px;
+	border: 2px solid #a68e52;
+	box-sizing: border-box;
+	border-radius: 6px;
+	color: #a68e52;
+	background-color: #212224;
+	margin-top: 24px;
+	transition: 300ms;
+	cursor: pointer;
+}
+
+.btn-contact:hover {
+	transition: 300ms;
+	color: white;
+	border-color: white;
+}
+
+.text-form {
+	position: relative;
+	top: 40px;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	color: #c4c4c4;
+}
+
+.ligth {
+	color: #a68e52;
+}
+
+.custom-input {
+	color: #222325;
+	background-color: white;
+	height: 40px;
+	font-size: 24px;
+	box-sizing: border-box;
+	padding: 8px;
+	width: 90%;
+	border-radius: 6px;
+	border: 1px solid #222325;
+	margin: 8px;
+	font-size: 16px;
+	font-family: auto;
+	outline: none;
+}
+
+@media (max-width: 750px) {
+	.Contact-content {
+		width: 100vw;
+		flex-wrap: wrap;
+	}
+	.contact-seccion-izq {
+		box-sizing: border-box;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		width: 100vw;
+		min-height: 100vh;
+		justify-content: space-around;
+	}
+
+	.big-text {
+		font-size: 50px;
+	}
+
+	.big-text:hover {
+		font-size: 60px;
+	}
+
+	.text-form {
+		top: 8px;
+	}
+
+	.contact-seccion-der {
+		width: 100vw;
+		height: 100vh;
+		box-sizing: border-box;
+	}
+}

@@ -1,6 +1,6 @@
 const global = {
     //This is the url to connect with the servers api
-    url: "https://api-portfolio.herokuapp.com/api", 
+    url: "https://api-portfolio.herokuapp.com/api",
 
     //Social media
     instagram: "https://www.instagram.com/franklinpimentel/",

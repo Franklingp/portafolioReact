@@ -1,44 +1,58 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
+
+//components
 import ProjectCard from '../components/ProjectCard';
-import './ProjectList.css';
-import './loader.css';
+import Loader from "../components/Loader";
 
-const ProjectList = (props) => {
-    const [animation, setAnimation] = useState("contenido animation-none");
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        handleAnimation();
-    }, []);
+//styles
+import '../assets/styles/ProjectList.css';
 
-    const handleAnimation = () => {
-        setTimeout(() => {
-            setAnimation("contenido animation-show");
-        },0);
+const ProjectList = ({ projects }) => {
+
+    //handle card styles
+    const handleCard = (index) => {
+        let aux = index
+        if (index > 3) {
+            aux = index % 4;
+        }
+        switch (aux) {
+            case 0: return "card-yellow left-card";
+            case 1: return "card-shadow rigth-card";
+            case 2: return "card-ligth left-card";
+            default: return "card-dark rigth-card"
+        }
     }
 
-    if(props.projects.length !== 0){
-        return(
-            <section className={animation}>
+    //validate project
+    if (projects.length < 1) {
+        return <Loader />
+    } else {
+        return (
+            <section className={"ProjectList-content animate__animated animate__fadeIn"}>
                 <div className='main-info'>
-                    <h1 className='title-list text-black'>
-                        Trabajos
-                        <br className="show-desktop"/>
-                        <span className="subtitle-list show-desktop">Culminados</span>
+                    <h1 className='title-list font-black'>
+                        Portafolio
+                        <br className="show-desktop" />
+                        <span className={`subtitle-list show-desktop`}>Experiencias</span>
                     </h1>
                     <p className="paragraph-list text-ligth">
-                        Esta es una <span className="ligth">selecion</span> de <br/>
-                        los mejores <span className="ligth">proyectos</span> en <br/>
-                        los que he trabajado<br/>
+                        Esta es una <span>selecion</span> de <br />
+                        algunos de los <span>proyectos</span> en <br />
+                        los que he trabajado<br />
                         anteriormente.
                     </p>
                 </div>
                 <section className='list-card'>
                     {
-                        props.projects.map((project, index) => {
-                            return(
-                            <ProjectCard key={project._id} {...project} index={index}/>
+                        projects.map((project, index) => {
+                            const classess = handleCard(index);
+                            return (
+                                <Link key={`${project._id}-${index}`} to={`/project/${project._id}`} className="projects-link">
+                                    <ProjectCard {...project} classess={classess} />
+                                </Link>
                             )
                         })
                     }
@@ -46,13 +60,7 @@ const ProjectList = (props) => {
             </section>
         );
     }
-    if(props.projects.length === 0){
-        return(
-            <section className="contenido" style={{backgroundColor: "#212529"}}>
-                <div className="loader">Loading...</div>
-            </section>
-        ) 
-    }
+
 }
 
 const mapStateToProps = state => ({

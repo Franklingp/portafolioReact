@@ -1,0 +1,180 @@
+.about {
+	background-color: #212224;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	overflow-y: none;
+}
+
+.about-izq {
+	height: 100%;
+	width: 50vw;
+	padding-left: 48px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.left-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.circle {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: #212224;
+	border: 1px solid #a68e52;
+	border-radius: 25px;
+	box-sizing: border-box;
+	margin-right: 16px;
+}
+
+.skill {
+	font-size: 48px;
+}
+
+.rigth-block {
+	width: 30%;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	left: 30vw;
+	bottom: -50vh;
+}
+
+.vector-about {
+	width: 0px;
+	height: 136px !important;
+	border: 0.3px solid #a68e52;
+	color: #a68e52;
+	transform: rotate(0.42deg);
+}
+
+.vector-about-division {
+	width: 0px;
+	height: 350px !important;
+	border: 1px solid #a68e52;
+	position: relative;
+	right: 35px;
+}
+
+.about-der {
+	padding-right: 48px;
+	height: 100%;
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.about-me {
+	font-size: 32px;
+	line-height: 29px;
+	letter-spacing: 0.1em;
+	color: #a68e52;
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.paragraph {
+	text-align: center;
+	letter-spacing: 0.1em;
+	font-style: italic;
+	font-size: 20px;
+	overflow-y: scroll;
+}
+
+.paragraph span {
+	color: #a68e52;
+	font-weight: bold;
+}
+
+.link-readMore {
+	color: white;
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: 0.1em;
+}
+
+.link-readMore:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.arrow-project {
+	margin: 8px;
+}
+
+.skill-item {
+	display: flex;
+	align-items: center;
+	margin-top: 32px;
+}
+
+.readMore-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 1000px) {
+	.about {
+		flex-wrap: wrap;
+		padding: initial;
+		height: inherit;
+	}
+
+	.about-izq {
+		width: initial;
+		padding: 24px;
+		background: #212224;
+		height: initial;
+	}
+
+	.about-der {
+		background: white;
+	}
+
+	.rigth-block {
+		display: none;
+	}
+
+	.left-block {
+		width: 100%;
+		align-items: flex-start;
+	}
+
+	.title-about {
+		font-size: 24px;
+	}
+
+	.about-der {
+		margin-top: 12px;
+		padding: 24px;
+		width: 100vw;
+		height: initial;
+		color: #212224;
+		text-align: center;
+	}
+
+	.about-me {
+		left: 0px;
+	}
+
+	.paragraph {
+		text-align: center;
+	}
+
+	.link-readMore {
+		color: #212224;
+		margin: 24px;
+	}
+}

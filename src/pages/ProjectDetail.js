@@ -1,59 +1,64 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
-import { projectHttp } from '../service/fetch';
-import { fistUpercase } from '../service/textFormat';
-import "./ProjectDetail.css";
+
+//styles
+import "../assets/styles/ProjectDetail.css";
+
+//Icons
 import url from '../assets/urlicon.png'
 import github from '../assets/GithubIconDark.png'
 
-const ProjectDetail = (props) => {
-    const id = props.match.params.id;
-    let project = props.projects.find(project => project._id === id);
-    const [animation, setAnimation] = useState("contenido animation-none");
+//components
+import Loader from "../components/Loader";
 
-    const handleAnimation = () => {
-        window.scrollTo(0, 0);
-        setTimeout( () => {
-            setAnimation("contenido animation-show");
-        },1);
-    }
-    handleAnimation();
- 
-    const getOneProjec = async (id) => {
-        projectHttp("GET", 'get/'+id, null);
+const ProjectDetail = ({ match, projects, history }) => {
+    const [project, setProject] = useState(null);
+
+    //get project from redux
+    const getProject = useCallback(() => {
+        const id = match.params.id;
+        const currentProject = projects.find(project => project._id === id);
+        if (!currentProject) {
+            history.replace("/project");
+        } else {
+            setProject(currentProject);
+        }
+    }, [match.params.id, projects, history])
+
+    useEffect(() => {
+        getProject();
+    }, [getProject])
+
+    if (!project) {
+        return <Loader />
     }
 
-    if(!project){
-        project = getOneProjec(id);
-    }
-
-    return(
-        project &&
-        <section className={animation}>
+    return (
+        <section className="contenido animate__animated animate__fadeIn">
             <div className="izq izq-project">
-                <img src={project.images} className="img-project" alt="ProjectImage"/>
+                <img src={project.images} className="img-project" alt="ProjectImage" />
             </div>
             <div className="der-project">
                 <div className='header'>
-                    <h1 className='header-bold'>{fistUpercase(project.name)}</h1>
-                    <p className='header-ligth'>Date(
-                        <span style={{color: '#A68E52'}}> {String(new Date(project.date).toDateString())} </span>
+                    <h1 className='header-bold'>{project.name}</h1>
+                    <p className='project-header-date'>Date(
+                        <span> {project.date} </span>
                     );</p>
                     <span className="text-bold"
-                    style={{fontSize: '18px'}}>{fistUpercase(project.category)}</span>
+                        style={{ fontSize: '18px' }}>{fistUpercase(project.category)}</span>
                 </div>
-                
+
                 <div className='project-description'>
                     <p className="text-description text-ligth">{project.description}</p>
                     <div className="icons-project">
                         {project.git &&
-                        <a href={project.git} className="item-icon">
-                            <img src={github} alt="logo" className="d-inline-block align-center logo" width="32"/>
-                        </a>}
-                       {project.url &&
-                       <a href={project.url} className="item-icon">
-                            <img src={url} alt="logo" className="d-inline-block align-center logo" width="40"/>
-                        </a>}
+                            <a href={project.git} className="item-icon">
+                                <img src={github} alt="logo" className="d-inline-block align-center logo" width="32" />
+                            </a>}
+                        {project.url &&
+                            <a href={project.url} className="item-icon">
+                                <img src={url} alt="logo" className="d-inline-block align-center logo" width="40" />
+                            </a>}
                     </div>
                 </div>
             </div>
@@ -63,7 +68,7 @@ const ProjectDetail = (props) => {
 
 
 const mapStateToProps = (state) => ({
-    projects: state.projects 
+    projects: state.projects
 });
 
 export default connect(mapStateToProps)(ProjectDetail);

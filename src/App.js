@@ -1,67 +1,48 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getAll } from './redux/actions/projectActions';
+import PropTypes from "prop-types";
 
 //components
-import Header from './components/structural/Header';
-//import Footer from './components/structural/Footer';
+import Header from './components/Header';
 
-//pages
-import Home from './pages/Home';
-import ProjectsList from './pages/ProjectsList';
-import ProjectDetail from './pages/ProjectDetail';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
+//Containers
+import LoggedIn from "./containers/LoggedIn";
+import LoggedOut from "./containers/LoggedOut";
 
-//dashboard
-import Dashboard from './dashboard/Dashboard';
-import DashboardProjects from './dashboard/DashboardProjects';
-import DashboardProjectHandler from './dashboard/DashboardProjectHandler';
+const App = ({ getAll, isAuth }) => {
 
-//Authentication
-import AuthLogin from './dashboard/Authentication/AuthLogin';
-import AuthSignup from './dashboard/Authentication/AuthSignup';
-import Interceptor from './dashboard/Authentication/Interceptor';
+  useEffect(() => {
+    getAll()
+  }, [getAll])
 
-class App extends React.Component {
-
-  componentDidMount(){
-    this.props.getAll();
-  }
-
-  render(){
-    return (
-      <Router>
-        <Header />
-          <Switch>
-            {/* Pubilc */}
-            <Route path="/project/:id" component={ProjectDetail}/>
-            <Route path="/project" component={ProjectsList}/>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/contact" component={Contact}/>
-
-            {/* authntication */}
-            <Route path="/dashboard/login" component={AuthLogin}/>
-
-            {/* dahboard */}
-            <Interceptor>
-              <Route path="/dashboard/signup" component={AuthSignup}/>
-              <Route path="/dashboard/projects" component={DashboardProjects}/>
-              <Route path="/dashboard/handler/:id?" component={DashboardProjectHandler}/>
-              <Route exact path="/dashboard" component={Dashboard}/> 
-            </Interceptor>
-
-            <Route component={NotFound}/>
-          </Switch>
-        {/* <Footer /> */}
-      </Router>
-    );
-  }
+  return (
+    <Router>
+      <Header />
+      {
+        isAuth === true ?
+          <LoggedIn />
+          :
+          <LoggedOut />
+      }
+    </Router>
+  );
 }
+
+//PropTypes
+App.propTypes = {
+  getAll: PropTypes.func.isRequired,
+  isAuth: PropTypes.bool.isRequired
+}
+
+//Redux
+const mapStateToProps = state => ({
+  isAuth: state.auth.isAuth
+})
 
 const mapDispatchToProps = {
   getAll
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
