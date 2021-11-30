@@ -11,6 +11,9 @@ import github from '../assets/GithubIconDark.png'
 //components
 import Loader from "../components/Loader";
 
+//utils
+import { fistUpercase } from "../service/textFormat";
+
 const ProjectDetail = ({ match, projects, history }) => {
     const [project, setProject] = useState(null);
 
@@ -40,7 +43,7 @@ const ProjectDetail = ({ match, projects, history }) => {
             </div>
             <div className="der-project">
                 <div className='header'>
-                    <h1 className='header-bold'>{project.name}</h1>
+                    <h1 className='header-bold'>{fistUpercase(project.name)}</h1>
                     <p className='project-header-date'>Date(
                         <span> {project.date} </span>
                     );</p>
