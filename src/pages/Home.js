@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <React.Fragment>
             <section className="contenido animate__animated animate__fadeIn">
-                <div className="izq animate__animated animate__fadeInLeft">
+                <div className="izq">
                     <div></div>
                     <aside className="social-media-icons">
                         <a href={global.instagram}>
@@ -32,12 +32,14 @@ const Home = () => {
                         </a>
                     </aside>
                     <hr className="vector-about show-mobile" />
-                    <p className="left-info text-ligth"><span className="left-title font-black">Desarrollador <br /> web </span>
-                        <span style={{ color: '#A68E52' }}>Front-end</span>
-                        <br />
-                        en busca de nuevos <br />
-                        retos.
-                    </p>
+                    <div className="animate__animated animate__fadeInLeft">
+                        <p className="left-info text-ligth"><span className="left-title font-black">Desarrollador <br /> web </span>
+                            <span style={{ color: '#A68E52' }}>Front-end</span>
+                            <br />
+                            en busca de nuevos <br />
+                            retos.
+                        </p>
+                    </div>
                     <hr className="vector-about show-mobile" />
                 </div>
 

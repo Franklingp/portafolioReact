@@ -32,8 +32,10 @@ export const About = () => {
                 <div className="rigth-block">
                     <div>
                         <hr className="vector-about" />
-                        <Link className="link-readMore text-bold" to="/project">Proyectos</Link>
-                        <img className="arrow-project" src={colorArrow} alt="arrow" />
+                        <div className="readMore-section">
+                            <Link className="link-readMore text-bold" to="/project">Proyectos</Link>
+                            <img className="arrow-project" src={colorArrow} alt="arrow" />
+                        </div>
                         <hr className="vector-about" />
                     </div>
                     <hr className="vector-about-division" />

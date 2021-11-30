@@ -9,9 +9,8 @@ import logoLigth from "../assets/VectorBrand.png";
 import logoDark from "../assets/VectorBrandDark.png";
 import menuWhite from "../assets/menu_white.png";
 import menuDark from "../assets/menu.png";
-import languageWhite from "../assets/LanguageWhite.png";
-import languageDark from "../assets/LanguageDark.png";
 import closeIcon from "../assets/close.png";
+import LanguageIcon from "@mui/icons-material/Language";
 
 //Redux
 import { connect } from "react-redux";
@@ -173,11 +172,11 @@ const Header = (props) => {
 									</Link>
 								</li>
 								<li className="nav-item">
-									<img
+									<LanguageIcon
+										style={{ color: mobile === true ? "#212224" : item }}
 										className="language-icon"
 										alt="lang"
-										src={item === "#ffffff" ? languageWhite : languageDark}
-										height="18"
+										color="red"
 									/>
 									<span style={{ color: mobile === true ? "#212224" : item }}>
 										{" "}

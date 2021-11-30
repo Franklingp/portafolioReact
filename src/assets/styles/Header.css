@@ -69,7 +69,6 @@
 		height: 100vh;
 		top: 0px;
 		left: 0px;
-		padding: 16px;
 	}
 
 	.navbar-link-list {
@@ -83,6 +82,7 @@
 	.navbar-link-list li {
 		list-style: none;
 		margin-left: 0px;
+		margin: 8px;
 	}
 	.navbar-link-item {
 		color: #212224 !important;
