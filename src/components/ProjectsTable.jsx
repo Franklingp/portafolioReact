@@ -5,16 +5,15 @@ import MUIDataTable from "mui-datatables";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloudIcon from "@mui/icons-material/Cloud";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { IconButton } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
+import {
+	IconButton,
+	Paper,
+	ToggleButton,
+	ToggleButtonGroup,
+} from "@mui/material";
 
-/* <th scope="col">Name</th>
-<th scope="col">Category</th>
-<th scope="col">Descrition</th>
-<th scope="col">Url</th>
-<th scope="col">Git</th>
-<th scope="col">Date</th> */
-
-function ProjectsTable({ data, handleDelete }) {
+function ProjectsTable({ data, handleDelete, handleEdit }) {
 	//Datatable columns
 	const columns = [
 		{
@@ -86,14 +85,24 @@ function ProjectsTable({ data, handleDelete }) {
 				filter: false,
 				sort: false,
 				customBodyRender: (id) => (
-					<IconButton
-						color="primary"
-						aria-label="Delete project"
-						component="span"
-						onClick={() => handleDelete(id)}
-					>
-						<DeleteIcon color="secondary" />
-					</IconButton>
+					<React.Fragment>
+						<IconButton
+							color="primary"
+							aria-label="Delete project"
+							component="span"
+							onClick={() => handleEdit(id)}
+						>
+							<EditIcon color="primary" />
+						</IconButton>
+						<IconButton
+							color="primary"
+							aria-label="Delete project"
+							component="span"
+							onClick={() => handleDelete(id)}
+						>
+							<DeleteIcon color="secondary" />
+						</IconButton>
+					</React.Fragment>
 				),
 			},
 		},

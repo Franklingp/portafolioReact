@@ -11,7 +11,7 @@ import ProjectsTable from "../components/ProjectsTable";
 //styles
 import "../assets/styles/DashboardProjects.css";
 
-function DashboardProjects({ projects, deleteProject }) {
+function DashboardProjects({ projects, deleteProject, history }) {
 	//handle delete projects from server
 	const handleDelete = (id) => {
 		const confirm = window.confirm(
@@ -22,12 +22,21 @@ function DashboardProjects({ projects, deleteProject }) {
 		}
 	};
 
+	//handle edit Projects
+	const handleEdit = (id) => {
+		history.push(`/admin/project/${id}`);
+	};
+
 	return (
 		<div className="Dashboard-Projects">
 			<Typography align="center" variant="h2" margin={4}>
 				Projects
 			</Typography>
-			<ProjectsTable data={projects} handleDelete={handleDelete} />
+			<ProjectsTable
+				data={projects}
+				handleEdit={handleEdit}
+				handleDelete={handleDelete}
+			/>
 		</div>
 	);
 }

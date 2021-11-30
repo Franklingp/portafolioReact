@@ -29,13 +29,6 @@ export const deleteProject = (id) => async (dispatch) => {
 export const addNewProjectSuccess = createAction('CREATE_NEW_PROJECT');
 export const addNewProject = (data) => async (dispatch) => {
     try {
-        // let data = new FormData();
-        // data.append('name', project.name);
-        // data.append('image', project.image);
-        // data.append('git', project.git);
-        // data.append('url', project.url);
-        // data.append('category', project.category);
-        // data.append('description', project.description);
         const response = await projectHttp('POST', `add`, data);
         dispatch(addNewProjectSuccess(response));
     }
@@ -46,16 +39,9 @@ export const addNewProject = (data) => async (dispatch) => {
 }
 
 export const updateProjectSuccess = createAction('UPDATE_PROJECT');
-export const updateProject = (project) => async (dispatch) => {
+export const updateProject = (data) => async (dispatch) => {
     try {
-        let data = new FormData();
-        data.append('name', project.name);
-        data.append('image', project.image);
-        data.append('git', project.git);
-        data.append('url', project.url);
-        data.append('category', project.category);
-        data.append('description', project.description);
-        const response = await projectHttp('PUT', `update/${project._id}`, data);
+        const response = await projectHttp('PUT', `update/${data._id}`, data);
         dispatch(updateProjectSuccess(response));
     }
     catch (error) {
