@@ -37,12 +37,12 @@ const ProjectDetail = ({ match, projects, history }) => {
         <section className="details-content animate__animated animate__fadeIn">
             <div className="izq izq-project">
                 <hr className="vector-project show-mobile" />
-                <img src={project.images} className="img-project" alt="ProjectImage" />
+                <img src={project.images} className="img-project animate__animated animate__zoomIn" alt="ProjectImage" />
                 <hr className="vector-project show-mobile" />
             </div>
             <div className="der-project">
                 <div className='header'>
-                    <h1 className='header-bold'>{project.name}</h1>
+                    <h1 className='header-bold animate__animated animate__fadeInDown'>{project.name}</h1>
                     <p className='project-header-date'>Date(
                         <span> {project.date} </span>
                     );</p>
