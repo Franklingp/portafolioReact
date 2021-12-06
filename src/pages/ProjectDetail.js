@@ -34,7 +34,7 @@ const ProjectDetail = ({ match, projects, history }) => {
     }
 
     return (
-        <section className="contenido animate__animated animate__fadeIn">
+        <section className="details-content animate__animated animate__fadeIn">
             <div className="izq izq-project">
                 <img src={project.images} className="img-project" alt="ProjectImage" />
             </div>
