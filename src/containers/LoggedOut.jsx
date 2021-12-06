@@ -13,7 +13,7 @@ function Logged_in() {
 	return (
 		<Switch>
 			<Route path="/project/:id" component={ProjectDetail} />
-			<Route path="/project" component={ProjectsList} />
+			<Route path="/projects" component={ProjectsList} />
 			<Route path="/contact" component={Contact} />
 			<Route path="/login" component={AuthLogin} />
 			<Route exact path="/" component={Home} />

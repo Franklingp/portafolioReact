@@ -19,7 +19,7 @@ const ProjectDetail = ({ match, projects, history }) => {
         const id = match.params.id;
         const currentProject = projects.find(project => project._id === id);
         if (!currentProject) {
-            history.replace("/project");
+            history.replace("/projects");
         } else {
             setProject(currentProject);
         }
@@ -36,7 +36,9 @@ const ProjectDetail = ({ match, projects, history }) => {
     return (
         <section className="details-content animate__animated animate__fadeIn">
             <div className="izq izq-project">
+                <hr className="vector-project show-mobile" />
                 <img src={project.images} className="img-project" alt="ProjectImage" />
+                <hr className="vector-project show-mobile" />
             </div>
             <div className="der-project">
                 <div className='header'>

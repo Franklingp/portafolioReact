@@ -16,7 +16,7 @@ const Home = () => {
         <React.Fragment>
             <section className="contenido animate__animated animate__fadeIn">
                 <div className="izq">
-                    <div></div>
+                    <div />
                     <aside className="social-media-icons">
                         <a href={global.instagram}>
                             <img src={instagram} alt="instagram" />
