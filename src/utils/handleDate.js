@@ -18,7 +18,7 @@ const setMonth = (number) => {
     }
 }
 
-export const formatData = (unformatedDate) => {
+export const formatDate = (unformatedDate) => {
     const data = new Date(unformatedDate);
     const date = data.getDate();
     const month = setMonth(data.getMonth());
