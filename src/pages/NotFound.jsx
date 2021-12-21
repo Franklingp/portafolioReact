@@ -14,7 +14,7 @@ const NotFound = (props) => {
 			<TravelExploreIcon
 				titleAccess="Not found"
 				className="NotFound-icon animate__animated animate__fadeInDown"
-				sx={{ fontSize: 128 }}
+				sx={{ fontSize: 128, color: "#aaa" }}
 			/>
 			<h1 className="NotFound-title">Ups, parece que hubo un error</h1>
 			<p className="NotFound-text">
