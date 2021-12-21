@@ -1,6 +1,6 @@
 .navbar-custom {
 	position: fixed;
-	width: 100%;
+	width: 100vw;
 	z-index: 10;
 	color: #212224;
 	font-family: "Ligth";

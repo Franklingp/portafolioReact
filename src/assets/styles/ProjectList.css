@@ -68,7 +68,16 @@
 	text-decoration: none;
 }
 
+.ProjectList-title {
+	font-size: 72px;
+	display: inline;
+}
+
 @media (max-width: 1000px) {
+	.ProjectList-title {
+		font-size: 32px;
+	}
+
 	.main-info {
 		padding-top: 48px;
 		padding: 32px;

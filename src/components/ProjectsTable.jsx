@@ -13,6 +13,9 @@ import {
 	ToggleButtonGroup,
 } from "@mui/material";
 
+//utils
+import { formatDate } from "../utils/handleDate";
+
 function ProjectsTable({ data, handleDelete, handleEdit }) {
 	//Datatable columns
 	const columns = [
@@ -46,6 +49,7 @@ function ProjectsTable({ data, handleDelete, handleEdit }) {
 			options: {
 				filter: true,
 				sort: false,
+				customBodyRender: formatDate,
 			},
 		},
 		{

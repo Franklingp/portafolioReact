@@ -1,5 +1,24 @@
-.izq-project {
+.details-content {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100vw;
+	height: 100vh;
 	justify-content: center;
+	align-items: center;
+}
+
+.izq-project {
+	justify-content: space-around;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+.vector-project {
+	width: 0px;
+	height: 136px !important;
+	border: 0.3px solid #a68e52;
+	color: #a68e52;
+	transform: rotate(0.42deg);
 }
 
 .img-project {
@@ -48,6 +67,10 @@
 }
 
 @media (max-width: 1000px) {
+	.details-content {
+		flex-wrap: wrap;
+	}
+
 	.izq-project {
 		width: 100vw;
 		height: 100vh;

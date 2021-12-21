@@ -9,6 +9,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { connect } from "react-redux";
 import { deleteMessage } from "../redux/actions/contactActions";
 
+//utils
+import { formatDate } from "../utils/handleDate";
+
 function MessageTable({ deleteMessage, messages }) {
 	//handle delete comment
 	const handleDeleteCommet = (id) => {
@@ -52,6 +55,7 @@ function MessageTable({ deleteMessage, messages }) {
 			options: {
 				filter: true,
 				sort: false,
+				customBodyRender: formatDate,
 			},
 		},
 		{

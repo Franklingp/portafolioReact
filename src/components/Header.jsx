@@ -52,18 +52,24 @@ const Header = (props) => {
 
 	//update colors from header
 	const checkFontColor = useCallback(() => {
-		switch (path) {
-			case "/project":
+		const site = path.split("/")[1];
+		switch (site) {
+			case "projects":
 				setLogo(logoLigth);
 				setTitle("#ffffff");
 				setItem("#ffffff");
 				break;
-			case "/contact":
+			case "project":
+				setLogo(logoLigth);
+				setTitle("#ffffff");
+				setItem("#212224");
+				break;
+			case "contact":
 				setLogo(logoDark);
 				setTitle("#212224");
 				setItem("#ffffff");
 				break;
-			case "/":
+			case "":
 				setLogo(logoLigth);
 				setTitle("#ffffff");
 				setItem("#212224");
@@ -149,7 +155,7 @@ const Header = (props) => {
 							<React.Fragment>
 								<li className="navbar-link-item" onClick={updateDrawer}>
 									<Link
-										to="/project"
+										to="/projects"
 										style={{ color: mobile === true ? "#212224" : item }}
 									>
 										Mis proyectos
