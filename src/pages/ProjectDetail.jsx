@@ -12,7 +12,7 @@ import github from "../assets/GithubIconDark.png";
 import Loader from "../components/Loader";
 
 //Utils
-import { firtsUpperCase } from "../utils/textFormat";
+import { firstUpperCase } from "../utils/textFormat";
 import { formatDate } from "../utils/handleDate";
 
 const ProjectDetail = ({ match, projects, history }) => {
@@ -51,7 +51,7 @@ const ProjectDetail = ({ match, projects, history }) => {
 			<div className="der-project">
 				<div className="header">
 					<h1 className="header-bold animate__animated animate__fadeInDown">
-						{firtsUpperCase(project.name)}
+						{firstUpperCase(project.name)}
 					</h1>
 					<p className="project-header-date">
 						Date(
