@@ -35,8 +35,8 @@ const Contact = (props) => {
 	};
 
 	return (
-		<section className={"Contact-content animate__animated animate__fadeIn"}>
-			<div className="contact-seccion-izq">
+		<section className="Contact-content animate__animated animate__fadeIn">
+			<div className="contact-seccion-izq animate__animated animate__pulse">
 				<a
 					href={global.instagram}
 					className="big-text"
@@ -82,7 +82,9 @@ const Contact = (props) => {
 			</div>
 			<div className="contact-seccion-der">
 				<hr className="vector-contact" />
-				<h2 className="contact-title text-ligth">Contacto</h2>
+				<h2 className="contact-title text-ligth animate__animated animate__fadeInDown">
+					Contacto
+				</h2>
 
 				<form onSubmit={handleSubmit}>
 					<div className="mb-3">
