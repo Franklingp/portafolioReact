@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addNewMessage } from "../redux/actions/contactActions";
-import { TextField } from "@mui/material";
 import global from "../config";
 
 //styles
 import "../assets/styles/Contact.css";
+
+//components
+// import Dialog from "../components/Dialog";
 
 const Contact = (props) => {
 	const [form, setForm] = useState({
@@ -37,6 +39,7 @@ const Contact = (props) => {
 	return (
 		<section className="Contact-content animate__animated animate__fadeIn">
 			<div className="contact-seccion-izq animate__animated animate__pulse">
+				{/* <Dialog /> */}
 				<a
 					href={global.instagram}
 					className="big-text"
