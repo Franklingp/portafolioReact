@@ -128,7 +128,7 @@ const Contact = (props) => {
 					Este formulario es con el fin <br />
 					de poder <span className="ligth">contactar</span> contigo
 					posteriormente. <br />
-					No te preocupes tus datos estan{" "}
+					No te preocupes tus datos están{" "}
 					<span className="ligth">seguros.</span>
 				</p>
 			</div>

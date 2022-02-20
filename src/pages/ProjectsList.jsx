@@ -38,14 +38,12 @@ const ProjectList = ({ projects }) => {
 			>
 				<div className="main-info">
 					<div className="title-list font-black animate__animated animate__bounce">
-						{/* animate__animated animate__bounce */}
 						<h1 className="ProjectList-title">Portafolio</h1>
 						<br className="show-desktop" />
 						<span className="subtitle-list show-desktop">Experiencias</span>
 					</div>
 					<p className="paragraph-list text-ligth animate__animated animate__fadeInDown">
-						{/* animate__animated animate__fadeInRight */}
-						Esta es una <span>selecion</span> de <br />
+						Esta es una <span>selección</span> de <br />
 						algunos de los <span>proyectos</span> en <br />
 						los que he trabajado
 						<br />
