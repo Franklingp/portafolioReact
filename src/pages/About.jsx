@@ -50,7 +50,7 @@ export const About = () => {
 					tecnología y con un increíble frase que los define y que he adoptado.
 					<span> Nunca pares de aprender</span>.
 				</p>
-				<Link className="link-readMore text-bold show-mobile" to="/project">
+				<Link className="link-readMore text-bold show-mobile" to="/projects">
 					Proyectos <img src={menuDark} alt="menu" height="8" />
 				</Link>
 			</section>
