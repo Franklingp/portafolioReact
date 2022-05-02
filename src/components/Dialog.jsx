@@ -50,7 +50,7 @@ export default function SimpleDialog({ open, handleDialog, email }) {
 }
 
 SimpleDialog.propTypes = {
-	onClose: PropTypes.func.isRequired,
+	handleDialog: PropTypes.func.isRequired,
 	open: PropTypes.bool.isRequired,
-	selectedValue: PropTypes.string.isRequired,
+	email: PropTypes.string.isRequired,
 };

@@ -67,7 +67,6 @@ const Contact = (props) => {
 					Facebook
 				</a>
 				<a
-					// href={`mailto:${global.email}?Subject=Hello%20again`}
 					onClick={handleDialog}
 					className="big-text"
 					style={{ fontFamily: "Ligth" }}
