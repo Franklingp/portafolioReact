@@ -7,15 +7,17 @@ import global from "../config";
 import "../assets/styles/Contact.css";
 
 //components
-// import Dialog from "../components/Dialog";
+import Dialog from "../components/Dialog";
 
 const Contact = (props) => {
+	const [openDialog, setOpenDialog] = useState(false);
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
 		message: "",
 	});
 
+	//Hndle form submit
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		props.addNewMessage({ ...form });
@@ -29,6 +31,7 @@ const Contact = (props) => {
 		});
 	};
 
+	//handle form values
 	const handleChange = (e) => {
 		setForm({
 			...form,
@@ -36,10 +39,19 @@ const Contact = (props) => {
 		});
 	};
 
+	//handle email dialog
+	const handleDialog = () => {
+		setOpenDialog(!openDialog);
+	};
+
 	return (
 		<section className="Contact-content animate__animated animate__fadeIn">
+			<Dialog
+				open={openDialog}
+				handleDialog={handleDialog}
+				email={global.email}
+			/>
 			<div className="contact-seccion-izq animate__animated animate__pulse">
-				{/* <Dialog /> */}
 				<a
 					href={global.instagram}
 					className="big-text"
@@ -55,7 +67,8 @@ const Contact = (props) => {
 					Facebook
 				</a>
 				<a
-					href={global.email}
+					// href={`mailto:${global.email}?Subject=Hello%20again`}
+					onClick={handleDialog}
 					className="big-text"
 					style={{ fontFamily: "Ligth" }}
 				>
