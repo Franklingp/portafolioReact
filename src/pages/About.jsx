@@ -37,7 +37,7 @@ export const About = () => {
 			</section>
 			<section className="about-der text-regular">
 				<h3 className="about-me">Sobre mi</h3>
-				<p className="paragraph text-ligth">
+				{/* <p className="paragraph text-ligth">
 					Hola red, yo soy{" "}
 					<span>Franklin Pimentel Desarrollador web Front-end</span> enfocado en
 					tecnologías al rededor de JavaScript. Me defino por ser proactivo,
@@ -49,6 +49,16 @@ export const About = () => {
 					<span>Platzi</span>, una increíble comunidad de apasionados por la
 					tecnología y con un increíble frase que los define y que he adoptado.
 					<span> Nunca pares de aprender</span>.
+				</p> */}
+				<p className="paragraph text-ligth">
+					Desarrollador web, mi trabajo consiste en desarrollar aplicaciones web
+					que cumplan objetivos determinados, ya sea desde mostrar información
+					con sitios web estáticos como aplicaciones más compleja que permitan
+					manejar y almacenar información para el usuario como manejo de
+					productos si es un sistema de inventario o manejo de métodos de pagos
+					para e-commerce, etc., todo esto con programación y buenas prácticas
+					en código sin dejar de lado la experiencia de usuario y el diseño
+					estético del sitio web.
 				</p>
 				<Link className="link-readMore text-bold show-mobile" to="/projects">
 					Proyectos <img src={menuDark} alt="menu" height="8" />
