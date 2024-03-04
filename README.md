@@ -24,4 +24,4 @@ _De esta forma tendras el proyecto corriendo en un servidor local en tu computad
 
 ## Construido con 🛠️
 
-_Este proyecto esta construido con React JS y Redux, entre otras dependencias_
+_Este proyecto esta construido con React JS y Redux, entre otras dependencias .2024_
