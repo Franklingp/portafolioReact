@@ -15,7 +15,6 @@ import LoggedOut from "./containers/LoggedOut";
 //Firebase config
 //Firebsase Analitics
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import firebaseConfig from "./firebase.config";
 
 //test databse
@@ -33,8 +32,8 @@ const App = ({ getAll, isAuth }) => {
 
   //test firebase data base:
   const getData = async () => {
-    
-    const firebaseApp = initializeApp(firebaseConfig);
+    console.log('Iniciando texto');
+    const firebaseApp = firebaseConfig;
 
     const db = getFirestore(firebaseApp);
 
@@ -80,8 +79,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   getAll
 }
-
-//Firebsase configurarion
-// const analytics = getAnalytics(firebaseApp);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
