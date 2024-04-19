@@ -23,7 +23,6 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
 const App = ({ getAll, isAuth }) => {
 
   useEffect(() => {
-
     //test
     getData();
 
@@ -32,23 +31,23 @@ const App = ({ getAll, isAuth }) => {
 
   //test firebase data base:
   const getData = async () => {
-    console.log('Iniciando texto');
-    const firebaseApp = firebaseConfig;
+    // console.log('Iniciando texto');
+    // const firebaseApp = firebaseConfig;
 
-    const db = getFirestore(firebaseApp);
+    // const db = getFirestore(firebaseApp);
 
-    async function api(db) {
-      const projectCollection = collection(db, 'projects');
-      const projectsSnapshot = await getDocs(projectCollection);
-      console.log("projectsSnapshot:");
-      console.log(projectsSnapshot);
-      const projectList = projectsSnapshot.docs.map(doc => doc.data());
-      console.log("projectList:");
-      console.log(projectList);
-      return projectList;
-    }
+    // async function api(db) {
+    //   const projectCollection = collection(db, 'projects');
+    //   const projectsSnapshot = await getDocs(projectCollection);
+    //   console.log("projectsSnapshot:");
+    //   console.log(projectsSnapshot);
+    //   const projectList = projectsSnapshot.docs.map(doc => doc.data());
+    //   console.log("projectList:");
+    //   console.log(projectList);
+    //   return projectList;
+    // }
 
-    api(db);
+    // api(db);
 
   }
 

@@ -1,6 +1,10 @@
 import config from '../config';
 import store from '../redux/store';
 
+//Importing firebase and database config
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
+import firebaseApp from "../firebase.config";
+
 //token to authentication
 let token = "";
 let authentication = "";
@@ -16,10 +20,25 @@ store.subscribe(() => {                         //const unSubscribe =
     }
 });
 
+  //test getting project from firebase database
+  const getData = async () => {
+    console.log('Iniciando testing');
+    const db = getFirestore(firebaseApp);
+    const projectCollection = collection(db, 'projects');
+    const projectsSnapshot = await getDocs(projectCollection);
+    console.log("projectsSnapshot:");
+    const projectList = await projectsSnapshot.docs.map(doc => doc.data());
+    console.log("projectList:");
+    console.log(projectList);
+    return projectList;
+
+  }
+
 // projects
 export const projectHttp = async (method, route, body) => {
-    const res = await Http(method, `/project/${route}`, body);
-    return res.json.Proyect;
+    //const res = await Http(method, `/project/${route}`, body);
+    //return res.json.Proyect;
+    return getData();
 }
 
 // contact
@@ -34,7 +53,7 @@ export const authHttp = async (method, route, body) => {
     return res;
 }
 
-//Base Rest Request
+//Base API Rest Request
 const Http = async (method, route, body) => {
     try {
         let headers = {
