@@ -11,45 +11,11 @@ import Header from './components/Header';
 import LoggedIn from "./containers/LoggedIn";
 import LoggedOut from "./containers/LoggedOut";
 
-
-//Firebase config
-//Firebsase Analitics
-import { initializeApp } from "firebase/app";
-import firebaseConfig from "./firebase.config";
-
-//test databse
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
-
 const App = ({ getAll, isAuth }) => {
 
   useEffect(() => {
-    //test
-    getData();
-
     getAll();
-  }, [getAll, getData])
-
-  //test firebase data base:
-  const getData = async () => {
-    // console.log('Iniciando texto');
-    // const firebaseApp = firebaseConfig;
-
-    // const db = getFirestore(firebaseApp);
-
-    // async function api(db) {
-    //   const projectCollection = collection(db, 'projects');
-    //   const projectsSnapshot = await getDocs(projectCollection);
-    //   console.log("projectsSnapshot:");
-    //   console.log(projectsSnapshot);
-    //   const projectList = projectsSnapshot.docs.map(doc => doc.data());
-    //   console.log("projectList:");
-    //   console.log(projectList);
-    //   return projectList;
-    // }
-
-    // api(db);
-
-  }
+  }, [getAll])
 
   return (
     <Router>

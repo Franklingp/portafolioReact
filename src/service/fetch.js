@@ -21,24 +21,31 @@ store.subscribe(() => {                         //const unSubscribe =
 });
 
   //test getting project from firebase database
-  const getData = async () => {
-    console.log('Iniciando testing');
-    const db = getFirestore(firebaseApp);
-    const projectCollection = collection(db, 'projects');
-    const projectsSnapshot = await getDocs(projectCollection);
-    console.log("projectsSnapshot:");
-    const projectList = await projectsSnapshot.docs.map(doc => doc.data());
-    console.log("projectList:");
-    console.log(projectList);
-    return projectList;
-
+  const httpsFirebase = async (method, collectionName, body) => {
+    //method: (get, push, update) to make changes on backend
+    //route: ("projects") to access to a specific collection
+    //body: (object) if you are pushing data to firebase
+    try{
+        console.log('starting firebase connection');
+        //const db = getFirestore(firebaseApp);
+        const collectionInfo = collection(getFirestore(firebaseApp), collectionName);
+        const snapshot = await getDocs(collectionInfo);
+        console.log(collectionName, " Snapshot:");
+        const data = await snapshot.docs.map(doc => doc.data());
+        console.log("Data from firebase: ", data);
+        console.log(data);
+        return data;
+    }catch(error){
+        console.log(error);
+        throw new Error('Has been an error when try the connect with firebase');
+    }
   }
 
 // projects
-export const projectHttp = async (method, route, body) => {
+export const projectHttp = async (method, collectionName, body) => {
     //const res = await Http(method, `/project/${route}`, body);
     //return res.json.Proyect;
-    return getData();
+    return httpsFirebase(method, collectionName, body);
 }
 
 // contact

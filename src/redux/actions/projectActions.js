@@ -5,7 +5,7 @@ import { projectHttp } from '../../service/fetch';
 export const getAllSuccess = createAction("GET_ALL_SUCCESS");
 export const getAll = () => async (dispatch) => {
     try {
-        const response = await projectHttp("GET", 'get', null);
+        const response = await projectHttp("GET", 'projects', null);
         dispatch(getAllSuccess(response));
     } catch (error) {
         console.log(error);
