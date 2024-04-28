@@ -2,7 +2,7 @@ import config from '../config';
 import store from '../redux/store';
 
 //Importing firebase and database config
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
+import { getFirestore, collection, getDocs, setDoc, doc } from 'firebase/firestore/lite'
 import firebaseApp from "../firebase.config";
 
 //token to authentication
@@ -20,38 +20,67 @@ store.subscribe(() => {                         //const unSubscribe =
     }
 });
 
+/*
+import { doc, setDoc } from "firebase/firestore"; 
+
+// Add a new document in collection "cities"
+await setDoc(doc(db, "cities", "LA"), {
+  name: "Los Angeles",
+  state: "CA",
+  country: "USA"
+});
+*/
+
   //test getting project from firebase database
   const httpsFirebase = async (method, collectionName, body) => {
     //method: (get, push, update) to make changes on backend
     //route: ("projects") to access to a specific collection
     //body: (object) if you are pushing data to firebase
-    try{
-        console.log('starting firebase connection');
-        //const db = getFirestore(firebaseApp);
-        const collectionInfo = collection(getFirestore(firebaseApp), collectionName);
-        const snapshot = await getDocs(collectionInfo);
-        console.log(collectionName, " Snapshot:");
-        const data = await snapshot.docs.map(doc => doc.data());
-        console.log("Data from firebase: ", data);
-        console.log(data);
-        return data;
-    }catch(error){
-        console.log(error);
-        throw new Error('Has been an error when try the connect with firebase');
+    switch(method){
+        case "GET":{
+            try{
+                console.log('starting firebase connection to get data');
+                const collectionInfo = collection(getFirestore(firebaseApp), collectionName);
+                const snapshot = await getDocs(collectionInfo);
+                console.log(collectionName, " Snapshot:");
+                const data = await snapshot.docs.map(doc => doc.data());
+                console.log("Data from firebase: ", data);
+                console.log(data);
+                return data;
+            }catch(error){
+                console.log(error);
+                throw new Error('Has been an error when try the connect with firebase');
+            }
+        }
+        case "POST": {
+            console.log('starting firebase connection to get data');
+            //await setDoc(doc(firebaseApp, collectionName), body);
+            // Add a new document in collection "cities"
+            await setDoc(doc(getFirestore(firebaseApp), "cities", "LA"), {
+                name: "Los Angeles",
+                state: "CA",
+                country: "USA"
+            });
+            return true;
+        }
+        default: console.log("No se especifico metodo");
     }
+    
+    
   }
 
 // projects
 export const projectHttp = async (method, collectionName, body) => {
     //const res = await Http(method, `/project/${route}`, body);
     //return res.json.Proyect;
-    return httpsFirebase(method, collectionName, body);
+    return await httpsFirebase(method, collectionName, body);
 }
 
 // contact
 export const contactHttp = async (method, route, body) => {
-    const res = await Http(method, `/contact/${route}`, body);
-    return res.json.Message;
+    // const res = await Http(method, `/contact/${route}`, body);
+    // return res.json.Message;
+    return await httpsFirebase(method, 'contact', body);
 }
 
 //users
