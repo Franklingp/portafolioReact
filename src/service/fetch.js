@@ -20,64 +20,43 @@ store.subscribe(() => {                         //const unSubscribe =
     }
 });
 
-/*
-import { doc, setDoc } from "firebase/firestore"; 
-
-// Add a new document in collection "cities"
-await setDoc(doc(db, "cities", "LA"), {
-  name: "Los Angeles",
-  state: "CA",
-  country: "USA"
-});
-*/
-
   //test getting project from firebase database
   const httpsFirebase = async (method, collectionName, body) => {
     //method: (get, push, update) to make changes on backend
     //route: ("projects") to access to a specific collection
     //body: (object) if you are pushing data to firebase
-    switch(method){
-        case "GET":{
-            try{
+    try{
+        switch(method){
+            case "GET":{
                 console.log('starting firebase connection to get data');
                 const collectionInfo = collection(firebaseApp, collectionName);
                 const snapshot = await getDocs(collectionInfo);
                 const data = await snapshot.docs.map(doc => doc.data());
                 console.log(data);
                 return data;
-            }catch(error){
-                console.log(error);
-                throw new Error('Has been an error when try the connect with firebase');
             }
-        }
-        case "POST": {
-            try{
+            case "POST": {
                 console.log('starting firebase connection to get data');
                 const docRef = await addDoc(collection(firebaseApp, collectionName), body);
                 console.log(docRef);
                 return true;
-            }catch(error){
-                console.log(error);
-                throw new Error('Has been an error when try the connect with firebase');
             }
+            default: console.log("No se especifico metodo");
         }
-        default: console.log("No se especifico metodo");
-    }
-    
-    
+
+    }catch(error){
+        console.log(error);
+        throw new Error('Has been an error when try the connect with firebase');
+    }    
   }
 
 // projects
 export const projectHttp = async (method, collectionName, body) => {
-    //const res = await Http(method, `/project/${route}`, body);
-    //return res.json.Proyect;
     return await httpsFirebase(method, collectionName, body);
 }
 
 // contact
 export const contactHttp = async (method, route, body) => {
-    // const res = await Http(method, `/contact/${route}`, body);
-    // return res.json.Message;
     return await httpsFirebase(method, 'contact', body);
 }
 
