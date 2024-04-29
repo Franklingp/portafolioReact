@@ -6,7 +6,7 @@ import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import firebaseApp from "../firebase.config";
 
 //Importing depencency of authentication
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 //token to authentication
 let token = "";
@@ -67,6 +67,18 @@ const authFirebase = async (method, body) => {
                 const user = await userCredential.user;
                 return user;
             }
+            case "LOG-OUT":{
+                // const auth = getAuth();
+                // signOut(auth).then(() => {
+                // // Sign-out successful.
+                // }).catch((error) => {
+                // // An error happened.
+                // });
+                console.log('starting firebase connection to log out');
+                const logOut = await signOut();
+                console.log(logOut);
+                return logOut;
+            }
             default: console.log("No se especifico para la autenticacion");
         }
 
@@ -89,8 +101,6 @@ export const contactHttp = async (method, body) => {
 //users
 export const authHttp = async (method, body) => {
     return await authFirebase(method, body);
-    // const res = await Http(method, `/user/${route}`, body);
-    // return res;
 }
 
 //Base API Rest Request
