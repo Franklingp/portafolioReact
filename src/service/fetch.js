@@ -54,7 +54,8 @@ store.subscribe(() => {                         //const unSubscribe =
     }    
   }
 
-  const authFirebase = async (method, body) => {
+//Connecting with auth firebase
+const authFirebase = async (method, body) => {
     //method: (get, push, update) to make changes on backend
     //body: (object) if you are pushing data to firebase
     try{
@@ -71,7 +72,7 @@ store.subscribe(() => {                         //const unSubscribe =
 
     }catch(error){
         console.log(error);
-        throw new Error('Has been an error when try connecth with auth firebase');
+        return error;
     }    
   }
 
