@@ -5,13 +5,19 @@ import { authHttp } from '../../service/fetch';
 export const logingUserSuccess = createAction("LOGING_USER");
 export const logingUser = data => async (dispatch) => {
     try {
-        const response = await authHttp("POST", data);
-        if (response.status === 403 || response.status === 404) {
+        const response = await authHttp("SIGN-IN", data);
+        if (!response.accessToken) {
             return false;
         } else {
-            dispatch(logingUserSuccess(response.json.token));
+            dispatch(logingUserSuccess(response.accessToken));
             return true;
         }
+        // if (response.status === 403 || response.status === 404) {
+        //     return false;
+        // } else {
+        //     dispatch(logingUserSuccess(response.json.token));
+        //     return true;
+        // }
     }
     catch (error) {
         console.log(error.response);

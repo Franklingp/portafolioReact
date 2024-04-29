@@ -2,8 +2,11 @@ import config from '../config';
 import store from '../redux/store';
 
 //Importing firebase and database config
-import { collection, getDocs, setDoc, doc, addDoc } from 'firebase/firestore/lite'
+import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import firebaseApp from "../firebase.config";
+
+//Importing depencency of authentication
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 //token to authentication
 let token = "";
@@ -41,12 +44,34 @@ store.subscribe(() => {                         //const unSubscribe =
                 console.log(docRef);
                 return true;
             }
+            
             default: console.log("No se especifico metodo");
         }
 
     }catch(error){
         console.log(error);
         throw new Error('Has been an error when try the connect with firebase');
+    }    
+  }
+
+  const authFirebase = async (method, body) => {
+    //method: (get, push, update) to make changes on backend
+    //body: (object) if you are pushing data to firebase
+    try{
+        switch(method){
+            case "SIGN-IN":{
+                console.log('starting firebase connection to sign in');
+                const auth = getAuth();
+                const userCredential = await signInWithEmailAndPassword(auth, body.email, body.password);
+                const user = await userCredential.user;
+                return user;
+            }
+            default: console.log("No se especifico para la autenticacion");
+        }
+
+    }catch(error){
+        console.log(error);
+        throw new Error('Has been an error when try connecth with auth firebase');
     }    
   }
 
@@ -61,9 +86,10 @@ export const contactHttp = async (method, body) => {
 }
 
 //users
-export const authHttp = async (method, route, body) => {
-    const res = await Http(method, `/user/${route}`, body);
-    return res;
+export const authHttp = async (method, body) => {
+    return await authFirebase(method, body);
+    // const res = await Http(method, `/user/${route}`, body);
+    // return res;
 }
 
 //Base API Rest Request
