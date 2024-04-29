@@ -18,7 +18,7 @@ var auth = false;
 export const addNewMessageSuccess = createAction('NEW_MESSAGE');
 export const addNewMessage = body => async (dispatch) => {
     try{
-        const response = await contactHttp('POST', 'add', body);
+        const response = await contactHttp('POST', body);
         dispatch(addNewMessageSuccess(response));
     }
     catch(error){
@@ -31,7 +31,7 @@ export const getAllMessageSuccess = createAction('GET_ALL_MESSAGES');
 export const getAllMessage = () => async (dispatch) => {
     try{
         if(auth === true){
-            const response = await contactHttp('GET', 'get', null);
+            const response = await contactHttp('GET', null);
             dispatch(getAllMessageSuccess(response));
         }
     }
@@ -44,7 +44,7 @@ export const getAllMessage = () => async (dispatch) => {
 export const changeReadSuccess = createAction("READ_MESSAGE");
 export const changeRead = (id) => async (dispatch) => {
     try{
-        const response = await contactHttp("GET", `get/${id}`, null);
+        const response = await contactHttp("GET", null);
         dispatch(changeReadSuccess(response));
     }
     catch(error){
@@ -56,7 +56,7 @@ export const changeRead = (id) => async (dispatch) => {
 export const deleteMessageSuccess = createAction("DELETE_MESSAGE");
 export const deleteMessage = (id) => async (dispatch) => {
     try{
-        await contactHttp("DELETE", `remove/${id}`, null);
+        await contactHttp("DELETE", null);
         dispatch(deleteMessageSuccess(id));
     }
     catch(error){

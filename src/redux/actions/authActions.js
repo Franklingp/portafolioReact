@@ -5,7 +5,7 @@ import { authHttp } from '../../service/fetch';
 export const logingUserSuccess = createAction("LOGING_USER");
 export const logingUser = data => async (dispatch) => {
     try {
-        const response = await authHttp("POST", 'sign-in', data);
+        const response = await authHttp("POST", data);
         if (response.status === 403 || response.status === 404) {
             return false;
         } else {

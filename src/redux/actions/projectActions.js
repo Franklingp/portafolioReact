@@ -5,7 +5,7 @@ import { projectHttp } from '../../service/fetch';
 export const getAllSuccess = createAction("GET_ALL_SUCCESS");
 export const getAll = () => async (dispatch) => {
     try {
-        const response = await projectHttp("GET", 'projects', null);
+        const response = await projectHttp("GET", null);
         dispatch(getAllSuccess(response));
     } catch (error) {
         console.log(error);
@@ -17,7 +17,7 @@ export const deleteProject = (id) => async (dispatch) => {
     try {
         const confirm = window.confirm('Esta seguro que desea eliminar este proyecto?');
         if (confirm) {
-            projectHttp('DELETE', `remove/${id}`, null);
+            projectHttp('DELETE', null);
             dispatch(deleteProjectSuccess(id));
         }
     }
@@ -29,7 +29,7 @@ export const deleteProject = (id) => async (dispatch) => {
 export const addNewProjectSuccess = createAction('CREATE_NEW_PROJECT');
 export const addNewProject = (data) => async (dispatch) => {
     try {
-        const response = await projectHttp('POST', `add`, data);
+        const response = await projectHttp('POST', data);
         dispatch(addNewProjectSuccess(response));
     }
     catch (error) {
@@ -41,7 +41,7 @@ export const addNewProject = (data) => async (dispatch) => {
 export const updateProjectSuccess = createAction('UPDATE_PROJECT');
 export const updateProject = (data) => async (dispatch) => {
     try {
-        const response = await projectHttp('PUT', `update/${data._id}`, data);
+        const response = await projectHttp('PUT', data);
         dispatch(updateProjectSuccess(response));
     }
     catch (error) {

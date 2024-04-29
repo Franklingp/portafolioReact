@@ -51,12 +51,12 @@ store.subscribe(() => {                         //const unSubscribe =
   }
 
 // projects
-export const projectHttp = async (method, collectionName, body) => {
-    return await httpsFirebase(method, collectionName, body);
+export const projectHttp = async (method, body) => {
+    return await httpsFirebase(method, "projects", body);
 }
 
 // contact
-export const contactHttp = async (method, route, body) => {
+export const contactHttp = async (method, body) => {
     return await httpsFirebase(method, 'contact', body);
 }
 
