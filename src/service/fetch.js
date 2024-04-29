@@ -2,7 +2,7 @@ import config from '../config';
 import store from '../redux/store';
 
 //Importing firebase and database config
-import { getFirestore, collection, getDocs, setDoc, doc } from 'firebase/firestore/lite'
+import { collection, getDocs, setDoc, doc, addDoc } from 'firebase/firestore/lite'
 import firebaseApp from "../firebase.config";
 
 //token to authentication
@@ -40,11 +40,9 @@ await setDoc(doc(db, "cities", "LA"), {
         case "GET":{
             try{
                 console.log('starting firebase connection to get data');
-                const collectionInfo = collection(getFirestore(firebaseApp), collectionName);
+                const collectionInfo = collection(firebaseApp, collectionName);
                 const snapshot = await getDocs(collectionInfo);
-                console.log(collectionName, " Snapshot:");
                 const data = await snapshot.docs.map(doc => doc.data());
-                console.log("Data from firebase: ", data);
                 console.log(data);
                 return data;
             }catch(error){
@@ -53,15 +51,15 @@ await setDoc(doc(db, "cities", "LA"), {
             }
         }
         case "POST": {
-            console.log('starting firebase connection to get data');
-            //await setDoc(doc(firebaseApp, collectionName), body);
-            // Add a new document in collection "cities"
-            await setDoc(doc(getFirestore(firebaseApp), "cities", "LA"), {
-                name: "Los Angeles",
-                state: "CA",
-                country: "USA"
-            });
-            return true;
+            try{
+                console.log('starting firebase connection to get data');
+                const docRef = await addDoc(collection(firebaseApp, collectionName), body);
+                console.log(docRef);
+                return true;
+            }catch(error){
+                console.log(error);
+                throw new Error('Has been an error when try the connect with firebase');
+            }
         }
         default: console.log("No se especifico metodo");
     }
