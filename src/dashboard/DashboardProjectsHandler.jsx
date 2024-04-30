@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Grid, TextField, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 //redux
 import { connect } from "react-redux";
@@ -14,6 +15,7 @@ function DashboardProjectsHandler({
 	addNewProject,
 	updateProject,
 }) {
+	const navigate = useNavigate();
 	const [isEdit, setIsEdit] = useState(false);
 	const [form, setForm] = useState({
 		name: "",
@@ -53,6 +55,7 @@ function DashboardProjectsHandler({
 		} else {
 			const data = {...form, id:form.name}
 			addNewProject(data);
+			navigate("/");
 		}
 	};
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 //Components
 import Home from "../pages/Home";
@@ -11,14 +11,14 @@ import AuthLogin from "../dashboard/Authentication/AuthLogin";
 
 function Logged_in() {
 	return (
-		<Switch>
-			<Route path="/project/:id" component={ProjectDetail} />
-			<Route path="/projects" component={ProjectsList} />
-			<Route path="/contact" component={Contact} />
-			<Route path="/login" component={AuthLogin} />
-			<Route exact path="/" component={Home} />
-			<Route component={NotFound} />
-		</Switch>
+		<Routes>
+			<Route path="/project/:id" element={<ProjectDetail/>} />
+			<Route path="/projects" element={<ProjectsList/>} />
+			<Route path="/contact" element={<Contact/>} />
+			<Route path="/login" element={<AuthLogin/>} />
+			<Route exact path="/" element={<Home/>} />
+			<Route element={<NotFound/>} />
+		</Routes>
 	);
 }
 

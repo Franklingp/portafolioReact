@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "../assets/styles/LoggedIn.css";
 
 //Redux
@@ -24,7 +24,7 @@ function Logged_in({ getAllMessage }) {
 
 	return (
 		<div className="LoggedIn-container">
-			<Switch>
+			<Routes>
 				<Route path="/admin/sign-up" component={AuthSignup} />
 				<Route path="/admin/projects" component={DashboardProjects} />
 				<Route
@@ -32,7 +32,7 @@ function Logged_in({ getAllMessage }) {
 					component={DashboardProjectsHandler}
 				/>
 				<Route component={Dashboard} />
-			</Switch>
+			</Routes>
 		</div>
 	);
 }

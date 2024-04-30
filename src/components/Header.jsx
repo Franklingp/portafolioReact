@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 //styles
 import "../assets/styles/Header.css";
@@ -24,7 +24,7 @@ const Header = (props) => {
 	const [item, setItem] = useState("#212224");
 	const [logo, setLogo] = useState(logoLigth);
 	const path = useLocation().pathname;
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	//Check if is mobile version or not
 	const checkLayout = () => {
@@ -46,7 +46,7 @@ const Header = (props) => {
 
 	//handle Logout
 	const handleLogout = () => {
-		history.push("/");
+		navigate("/");
 		logOut();
 	};
 
