@@ -55,8 +55,8 @@ const ProjectList = ({ projects }) => {
 						const classess = handleCard(index);
 						return (
 							<Link
-								key={`${project._id}-${index}`}
-								to={`/project/${project._id}`}
+								key={`${project.id}-${index}`}
+								to={`/project/${project.id}`}
 								className="projects-link"
 							>
 								<ProjectCard {...project} classess={classess} />

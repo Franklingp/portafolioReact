@@ -21,7 +21,7 @@ const ProjectDetail = ({ match, projects, history }) => {
 	//get project from redux
 	const getProject = useCallback(() => {
 		const id = match.params.id;
-		const currentProject = projects.find((project) => project._id === id);
+		const currentProject = projects.find((project) => project.id === id);
 		if (!currentProject) {
 			history.replace("/projects");
 		} else {

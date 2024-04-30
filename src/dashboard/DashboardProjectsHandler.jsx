@@ -51,7 +51,8 @@ function DashboardProjectsHandler({
 		if (isEdit === true) {
 			updateProject(form);
 		} else {
-			addNewProject(form);
+			const data = {...form, id:form.name}
+			addNewProject(data);
 		}
 	};
 

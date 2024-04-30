@@ -40,7 +40,7 @@ store.subscribe(() => {                         //const unSubscribe =
             }
             case "POST": {
                 console.log('starting firebase connection to get data');
-                const docRef = await addDoc(collection(firebaseApp, collectionName), body);
+                const docRef = await addDoc(collection(firebaseApp, collectionName), {...body});
                 console.log(docRef);
                 return true;
             }
