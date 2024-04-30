@@ -17,8 +17,8 @@ export const deleteProject = (id) => async (dispatch) => {
     try {
         const confirm = window.confirm('Esta seguro que desea eliminar este proyecto?');
         if (confirm) {
-            projectHttp('DELETE', null);
-            dispatch(deleteProjectSuccess(id));
+            const response = await projectHttp('DELETE', id);
+            dispatch(deleteProjectSuccess(response));
         }
     }
     catch (error) {

@@ -2,7 +2,7 @@ import config from '../config';
 import store from '../redux/store';
 
 //Importing firebase and database config
-import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
+import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore/lite';
 import firebaseApp from "../firebase.config";
 
 //Importing depencency of authentication
@@ -44,7 +44,12 @@ store.subscribe(() => {                         //const unSubscribe =
                 console.log(docRef.doc);
                 return body;
             }
-            
+            case "DELETE":{
+                // import { doc, deleteDoc } from "firebase/firestore";
+                // await deleteDoc(doc(db, "cities", "DC"));
+                await deleteDoc(doc(firebaseApp, collectionName, body));
+                return body;
+            }
             default: console.log("No se especifico metodo");
         }
 

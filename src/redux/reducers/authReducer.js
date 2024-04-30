@@ -2,7 +2,6 @@ import { handleActions } from 'redux-actions';
 
 const authReducer = handleActions({
     LOGING_USER: (state, { payload }) => {
-        alert("Logging success");
         const newState = { isAuth: true, token: payload };
         return newState;
     },

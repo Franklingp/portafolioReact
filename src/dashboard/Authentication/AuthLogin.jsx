@@ -28,7 +28,6 @@ const AuthLogin = ({ logingUser }) => {
 		setLoading(true);
 		const result = await logingUser(form);
 		if (result === false) {
-			// alert("Correo o contraseña incorrectos");
 			setError(true);
 			setLoading(false);
 		}
@@ -81,7 +80,7 @@ const AuthLogin = ({ logingUser }) => {
 							/>
 						</Grid>
 						{
-							error ? 
+							error ?
 								<Grid item xs={12}>
 									<Typography variant="caption" align="center" color={"red"}>
 										Correo o contraseña incorrectos

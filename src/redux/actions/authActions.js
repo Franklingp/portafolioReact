@@ -5,7 +5,6 @@ import { authHttp } from '../../service/fetch';
 export const logOutSuccess = createAction('LOGOUT');
 export const logOut = () => async (dispatch) => {
     const response = await authHttp("LOG-OUT", null);
-    console.log(response);
     dispatch(logOutSuccess(response.accessToken));
 }
 
