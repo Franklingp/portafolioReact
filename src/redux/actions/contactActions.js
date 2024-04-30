@@ -56,7 +56,7 @@ export const changeRead = (id) => async (dispatch) => {
 export const deleteMessageSuccess = createAction("DELETE_MESSAGE");
 export const deleteMessage = (id) => async (dispatch) => {
     try{
-        await contactHttp("DELETE", null);
+        await contactHttp("DELETE", id);
         dispatch(deleteMessageSuccess(id));
     }
     catch(error){

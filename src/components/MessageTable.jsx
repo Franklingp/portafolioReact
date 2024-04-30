@@ -59,7 +59,7 @@ function MessageTable({ deleteMessage, messages }) {
 			},
 		},
 		{
-			name: "_id",
+			name: "id",
 			label: "Actions",
 			options: {
 				filter: false,

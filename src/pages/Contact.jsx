@@ -9,7 +9,10 @@ import "../assets/styles/Contact.css";
 //components
 import Dialog from "../components/Dialog";
 
-const Contact = (props) => {
+//utils
+import { setID } from "../utils/idShuffle";
+
+const Contact = ({addNewMessage}) => {
 	const [openDialog, setOpenDialog] = useState(false);
 	const [form, setForm] = useState({
 		name: "",
@@ -18,9 +21,13 @@ const Contact = (props) => {
 	});
 
 	//Hndle form submit
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		props.addNewMessage({ ...form });
+		const res = await addNewMessage({ 
+			...form,
+			id: setID(form.name),
+			date: Date.now()
+		});
 		alert(
 			`Gracias ${name} por dejar tu mensaje, proxiamente estare contactando contigo.`
 		);
