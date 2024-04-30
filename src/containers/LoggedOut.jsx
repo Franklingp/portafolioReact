@@ -17,7 +17,7 @@ function Logged_in() {
 			<Route path="/contact" element={<Contact/>} />
 			<Route path="/login" element={<AuthLogin/>} />
 			<Route exact path="/" element={<Home/>} />
-			<Route element={<NotFound/>} />
+			<Route path="*" element={<NotFound/>} />
 		</Routes>
 	);
 }
