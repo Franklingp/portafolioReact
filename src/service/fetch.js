@@ -68,12 +68,6 @@ const authFirebase = async (method, body) => {
                 return user;
             }
             case "LOG-OUT":{
-                // const auth = getAuth();
-                // signOut(auth).then(() => {
-                // // Sign-out successful.
-                // }).catch((error) => {
-                // // An error happened.
-                // });
                 console.log('starting firebase connection to log out');
                 const logOut = await signOut();
                 console.log(logOut);

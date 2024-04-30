@@ -28,7 +28,7 @@ const AuthLogin = ({ logingUser }) => {
 		setLoading(true);
 		const result = await logingUser(form);
 		if (result === false) {
-			alert("Correo o contraseña incorrectos");
+			// alert("Correo o contraseña incorrectos");
 			setError(true);
 			setLoading(false);
 		}
