@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Grid, TextField, Button, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 //redux
 import { connect } from "react-redux";
@@ -10,12 +10,12 @@ import { addNewProject, updateProject } from "../redux/actions/projectActions";
 import "../assets/styles/DashboadProjectsHandler.css";
 
 function DashboardProjectsHandler({
-	match,
 	projects,
 	addNewProject,
 	updateProject,
 }) {
 	const navigate = useNavigate();
+	const { id } = useParams();
 	const [isEdit, setIsEdit] = useState(false);
 	const [form, setForm] = useState({
 		name: "",
@@ -28,7 +28,8 @@ function DashboardProjectsHandler({
 
 	//check if is a new project or editing other already created
 	const checkProject = () => {
-		if (match.params.id) {
+		// if (match.params.id) {
+		if (id) {
 			setIsEdit(true);
 			const project = projects.find(({ _id }) => _id === match.params.id);
 			if (project) {

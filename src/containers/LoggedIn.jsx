@@ -25,13 +25,10 @@ function Logged_in({ getAllMessage }) {
 	return (
 		<div className="LoggedIn-container">
 			<Routes>
-				<Route path="/admin/sign-up" component={AuthSignup} />
-				<Route path="/admin/projects" component={DashboardProjects} />
-				<Route
-					path="/admin/project/:id?"
-					component={DashboardProjectsHandler}
-				/>
-				<Route component={Dashboard} />
+				<Route path="admin/sign-up" element={<AuthSignup/>} />
+				<Route path="admin/projects" element={<DashboardProjects/>} />
+				<Route path="admin/project/:id?" element={<DashboardProjectsHandler/>}/>
+				<Route path="*" element={<Dashboard/>} />
 			</Routes>
 		</div>
 	);
