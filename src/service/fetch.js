@@ -41,8 +41,8 @@ store.subscribe(() => {                         //const unSubscribe =
             case "POST": {
                 console.log('starting firebase connection to get data');
                 const docRef = await addDoc(collection(firebaseApp, collectionName), {...body});
-                console.log(docRef);
-                return true;
+                console.log(docRef.doc);
+                return body;
             }
             
             default: console.log("No se especifico metodo");
