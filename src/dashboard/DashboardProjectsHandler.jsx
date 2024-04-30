@@ -9,6 +9,9 @@ import { addNewProject, updateProject } from "../redux/actions/projectActions";
 //styles
 import "../assets/styles/DashboadProjectsHandler.css";
 
+//Utilities
+import {setID} from "../utils/idShuffle"
+
 function DashboardProjectsHandler({
 	projects,
 	addNewProject,
@@ -54,7 +57,11 @@ function DashboardProjectsHandler({
 		if (isEdit === true) {
 			updateProject(form);
 		} else {
-			const data = {...form, id:form.name}
+			const data = {
+				...form, 
+				id: setID(form.name),
+				date: Date.now()
+			}
 			addNewProject(data);
 			navigate("/");
 		}
