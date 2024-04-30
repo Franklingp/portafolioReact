@@ -64,7 +64,6 @@ const AuthLogin = ({ logingUser }) => {
 								label="Email"
 								required
 								fullWidth
-								helperText="Tus datos se mantendran seguros en todo momento."
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -81,6 +80,16 @@ const AuthLogin = ({ logingUser }) => {
 								disabled={loading}
 							/>
 						</Grid>
+						{
+							error ? 
+								<Grid item xs={12}>
+									<Typography variant="caption" align="center" color={"red"}>
+										Correo o contraseña incorrectos
+									</Typography>
+								</Grid>
+							:
+								null
+						}
 						<Grid item xs={12}>
 							<Button
 								variant="contained"
