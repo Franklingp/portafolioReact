@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { connect } from "react-redux";
+import { useParams, useNavigate } from "react-router-dom";
 
 //styles
 import "../assets/styles/ProjectDetail.css";
@@ -15,19 +16,20 @@ import Loader from "../components/Loader";
 import { firstUpperCase } from "../utils/textFormat";
 import { formatDate } from "../utils/handleDate";
 
-const ProjectDetail = ({ match, projects, history }) => {
+const ProjectDetail = ({ projects }) => {
 	const [project, setProject] = useState(null);
+	const navigate = useNavigate();
+	const { id } = useParams();
 
 	//get project from redux
 	const getProject = useCallback(() => {
-		const id = match.params.id;
 		const currentProject = projects.find((project) => project.id === id);
 		if (!currentProject) {
-			history.replace("/projects");
+			navigate("/projects");
 		} else {
 			setProject(currentProject);
 		}
-	}, [match.params.id, projects, history]);
+	}, [id, projects]);
 
 	useEffect(() => {
 		getProject();
