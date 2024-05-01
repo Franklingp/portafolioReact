@@ -5,7 +5,7 @@ const projectReducer = handleActions({
         return [...action.payload];
     },
     DELETE_AN_PROJECT: (state, action) => {
-        const newState = state.filter(project => project._id !== action.payload);
+        const newState = state.filter(project => project.id !== action.payload);
         return [...newState];
     },
     CREATE_NEW_PROJECT: (state, action) => {

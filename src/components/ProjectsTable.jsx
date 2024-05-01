@@ -83,7 +83,7 @@ function ProjectsTable({ data, handleDelete, handleEdit }) {
 			},
 		},
 		{
-			name: "_id",
+			name: "id",
 			label: "Actions",
 			options: {
 				filter: false,

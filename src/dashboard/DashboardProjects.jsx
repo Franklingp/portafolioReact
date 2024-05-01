@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 //Redux
 import { connect } from "react-redux";
@@ -11,7 +12,9 @@ import ProjectsTable from "../components/ProjectsTable";
 //styles
 import "../assets/styles/DashboardProjects.css";
 
-function DashboardProjects({ projects, deleteProject, history }) {
+function DashboardProjects({ projects, deleteProject }) {
+	const navigate = useNavigate();
+	
 	//handle delete projects from server
 	const handleDelete = (id) => {
 		const confirm = window.confirm(
@@ -24,7 +27,7 @@ function DashboardProjects({ projects, deleteProject, history }) {
 
 	//handle edit Projects
 	const handleEdit = (id) => {
-		history.push(`/admin/project/${id}`);
+		navigate(`/admin/project/${id}`);
 	};
 
 	return (

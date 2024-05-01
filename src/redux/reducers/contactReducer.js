@@ -10,7 +10,7 @@ const contactReducer = handleActions({
     },
     READ_MESSAGE: (state, {payload}) => {
         const newState = state.map(message => {
-            if(message._id === payload._id){
+            if(message.id === payload.id){
                 const newMessage = message;
                 newMessage.read = !message.read;
                 return newMessage;
@@ -21,7 +21,7 @@ const contactReducer = handleActions({
         return [...newState];
     },
     DELETE_MESSAGE: (state, {payload}) => {
-        const newState = state.filter(message => message._id !== payload);
+        const newState = state.filter(message => message.id !== payload);
         return [...newState];
     }
 }, []);

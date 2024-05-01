@@ -61,6 +61,7 @@ export const deleteMessage = (id) => async (dispatch) => {
     }
     catch(error){
         console.log(error);
+        alert("Ha ocurrido un error al intentar eliminar el comentario");
         throw new Error('Ha ocurrido un error al intentar realizar la peticion');
     }
 }
