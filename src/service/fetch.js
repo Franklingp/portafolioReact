@@ -39,22 +39,13 @@ store.subscribe(() => {                         //const unSubscribe =
                 return data;
             }
             case "POST": {
-                // await setDoc(doc(db, "cities", "LA"), {
-                //     name: "Los Angeles",
-                //     state: "CA",
-                //     country: "USA"
-                //   });
-                // const docRef = await addDoc(collection(firebaseApp, collectionName), {...body});
                 console.log('starting firebase connection to get data');
                 const docRef = await setDoc(doc(firebaseApp, collectionName, body.id), body);
                 console.log(docRef);
                 return body;
             }
             case "DELETE":{
-                // import { doc, deleteDoc } from "firebase/firestore";
-                // await deleteDoc(doc(db, "cities", "DC"));
                 console.log('starting firebase connection to delete data');
-                console.log(body);
                 await deleteDoc(doc(firebaseApp, collectionName, body));
                 return body;
             }

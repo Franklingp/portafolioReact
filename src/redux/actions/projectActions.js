@@ -38,7 +38,7 @@ export const addNewProject = (data) => async (dispatch) => {
 export const updateProjectSuccess = createAction('UPDATE_PROJECT');
 export const updateProject = (data) => async (dispatch) => {
     try {
-        const response = await projectHttp('PUT', data);
+        const response = await projectHttp('POST', data);
         dispatch(updateProjectSuccess(response));
     }
     catch (error) {

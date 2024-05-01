@@ -57,14 +57,17 @@ function DashboardProjectsHandler({
 		e.preventDefault();
 		if (isEdit === true) {
 			updateProject(form);
+			navigate("/admin/projects");
+
 		} else {
 			const data = {
 				...form, 
 				id: setID(form.name),
-				date: Date.now()
+				date: Date.now(),
+				images: form.images == "" ? "https://i.imgur.com/lwWS7iY.jpeg" : form.images
 			}
 			addNewProject(data);
-			navigate("/");
+			navigate("/admin/projects");
 		}
 	};
 
