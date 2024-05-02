@@ -7,7 +7,7 @@ import colorArrow from "../assets/ArrowcolorArrow.png";
 import menuDark from "../assets/VectorMenuDark.png";
 
 export const About = () => {
-	const skills = ["JavaScript", "React JS", "React Hooks", "Redux", "API rest"];
+	const skills = ["JavaScript", "React JS", "Node JS", "Wordpress"];
 
 	return (
 		<section className="contenido about animate__animated animate__fadeIn">

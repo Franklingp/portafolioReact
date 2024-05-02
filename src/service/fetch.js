@@ -31,21 +31,16 @@ store.subscribe(() => {                         //const unSubscribe =
     try{
         switch(method){
             case "GET":{
-                console.log('starting firebase connection to get data');
                 const collectionInfo = collection(firebaseApp, collectionName);
                 const snapshot = await getDocs(collectionInfo);
                 const data = await snapshot.docs.map(doc => doc.data());
-                console.log(data);
                 return data;
             }
             case "POST": {
-                console.log('starting firebase connection to get data');
                 const docRef = await setDoc(doc(firebaseApp, collectionName, body.id), body);
-                console.log(docRef);
                 return body;
             }
             case "DELETE":{
-                console.log('starting firebase connection to delete data');
                 await deleteDoc(doc(firebaseApp, collectionName, body));
                 return body;
             }
@@ -65,16 +60,13 @@ const authFirebase = async (method, body) => {
     try{
         switch(method){
             case "SIGN-IN":{
-                console.log('starting firebase connection to sign in');
                 const auth = getAuth();
                 const userCredential = await signInWithEmailAndPassword(auth, body.email, body.password);
                 const user = await userCredential.user;
                 return user;
             }
             case "LOG-OUT":{
-                console.log('starting firebase connection to log out');
                 const logOut = await signOut();
-                console.log(logOut);
                 return logOut;
             }
             default: console.log("No se especifico para la autenticacion");
@@ -99,34 +91,4 @@ export const contactHttp = async (method, body) => {
 //users
 export const authHttp = async (method, body) => {
     return await authFirebase(method, body);
-}
-
-//Base API Rest Request
-const Http = async (method, route, body) => {
-    try {
-        let headers = {
-            'Authorization': authentication
-        };
-        if (body !== null && route.split('/')[1] !== "proyect") {
-            body = JSON.stringify(body);
-            headers = {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': authentication
-            }
-        }
-        let cfg = {
-            method,
-            headers,
-            body
-        }
-        const response = await fetch(`${config.url}${route}`, cfg);
-        const json = await response.json();
-        const obj = { json, status: response.status }
-        return obj;
-    }
-    catch (error) {
-        console.log(error);
-        throw new Error('Has been an error when try the fetch apirest');
-    }
 }
