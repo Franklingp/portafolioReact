@@ -18,22 +18,22 @@ const Home = () => {
 					<aside className="social-media-icons">
 						<a href={global.instagram}>
 							<InstagramIcon
-							alt="instagram"
+							alt="Instagram"
 							/>
 						</a>
 						<a href={global.facebook}>
 							<FacebookIcon
-							alt="instagram"
+							alt="Facebook"
 							/>
 						</a>
 						<a href={global.linkedin}>
 							<LinkedInIcon
-							alt="instagram"
+							alt="LinkedIN"
 							/>
 						</a>
 						<a href={global.github}>
 							<GitHubIcon
-							alt="instagram"
+							alt="Github"
 							/>
 						</a>
 					</aside>
