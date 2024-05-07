@@ -3,12 +3,11 @@ import "../assets/styles/Home.css";
 import global from "../config.js";
 import About from "./About";
 
-//Icons
-import arrow from "../assets/ArrowreadMore.png";
-import instagram from "../assets/instagram.png";
-import facebook from "../assets/facebook.png";
-import linkedin from "../assets/linkedin.png";
-import github from "../assets/github.png";
+//Material ui log
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Home = () => {
 	return (
@@ -18,16 +17,24 @@ const Home = () => {
 					<div />
 					<aside className="social-media-icons">
 						<a href={global.instagram}>
-							<img src={instagram} alt="instagram" />
+							<InstagramIcon
+							alt="instagram"
+							/>
 						</a>
 						<a href={global.facebook}>
-							<img src={facebook} alt="facebook" />
+							<FacebookIcon
+							alt="instagram"
+							/>
 						</a>
 						<a href={global.linkedin}>
-							<img src={linkedin} alt="linkedin" />
+							<LinkedInIcon
+							alt="instagram"
+							/>
 						</a>
 						<a href={global.github}>
-							<img src={github} alt="github" />
+							<GitHubIcon
+							alt="instagram"
+							/>
 						</a>
 					</aside>
 					<hr className="vector-about show-mobile" />

@@ -40,6 +40,9 @@
 	position: relative;
 	bottom: 30px;
 }
+.social-media-icons svg{
+	color: #A68E52;
+}
 
 .left-info {
 	font-style: normal;
@@ -130,6 +133,10 @@
 
 .show-desktop {
 	display: initial;
+}
+
+.primary{
+	color: #A68E52;
 }
 
 @media (max-width: 1000px) {
