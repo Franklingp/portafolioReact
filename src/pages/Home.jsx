@@ -46,12 +46,6 @@ const Home = () => {
 				</div>
 
 				<div className="der">
-					<hr className="home-custom-vertical-line" />
-					<aside className="language text-ligth">
-						If you want to navigate in <br />
-						English, change the <br />
-						language
-					</aside>
 					<div className="header">
 						<h1 className="header-bold animate__animated animate__fadeInDown">
 							Welcome
@@ -61,13 +55,6 @@ const Home = () => {
 							<span style={{ color: "#A68E52" }}> React JS </span>
 						</p>
 					</div>
-					<span className="read-more text-ligth">
-						Saber
-						<span style={{ color: "#A68E52", marginRight: "8px" }}>
-							{" mas"}
-						</span>
-						<img src={arrow} alt="arrow" />
-					</span>
 				</div>
 			</section>
 			<About />
