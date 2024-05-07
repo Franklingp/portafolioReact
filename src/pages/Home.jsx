@@ -43,7 +43,7 @@ const Home = () => {
 							<span className="left-title font-black">
 								Desarrollador <br /> web{" "}
 							</span>
-							<span style={{ color: "#A68E52" }}>Front-end</span>
+							<span className="primary">Front-end</span>
 							<br />
 							en busca de nuevos <br />
 							retos.
@@ -59,7 +59,7 @@ const Home = () => {
 						</h1>
 						<p className="header-ligth">
 							Just do it, in
-							<span style={{ color: "#A68E52" }}> React JS </span>
+							<span className="primary"> React JS </span>
 						</p>
 					</div>
 				</div>
