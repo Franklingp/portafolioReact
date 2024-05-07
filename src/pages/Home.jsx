@@ -16,22 +16,22 @@ const Home = () => {
 				<div className="izq">
 					<div />
 					<aside className="social-media-icons">
-						<a href={global.instagram}>
+						<a href={global.instagram} target="_blank" rel="noopener noreferrer">
 							<InstagramIcon
 							alt="Instagram"
 							/>
 						</a>
-						<a href={global.facebook}>
+						<a href={global.facebook} target="_blank" rel="noopener noreferrer">
 							<FacebookIcon
 							alt="Facebook"
 							/>
 						</a>
-						<a href={global.linkedin}>
+						<a href={global.linkedin} target="_blank" rel="noopener noreferrer">
 							<LinkedInIcon
 							alt="LinkedIN"
 							/>
 						</a>
-						<a href={global.github}>
+						<a href={global.github} target="_blank" rel="noopener noreferrer">
 							<GitHubIcon
 							alt="Github"
 							/>
