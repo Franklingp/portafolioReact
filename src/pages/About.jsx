@@ -13,7 +13,7 @@ export const About = () => {
 		<section className="contenido about animate__animated animate__fadeIn">
 			<section className="about-izq">
 				<div className="left-block">
-					<h2 className="title-list font-black title-about">Top Skills </h2>
+					<h2 className="title-about font-black">Habilidades clave </h2>
 					{skills.map((skill) => (
 						<div key={skill} className="skill-item">
 							<div className="circle"></div>
