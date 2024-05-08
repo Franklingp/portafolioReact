@@ -45,8 +45,7 @@ const Home = () => {
 							</span>
 							<span className="primary">Front-end</span>
 							<br />
-							en busca de nuevos <br />
-							retos.
+							impulsando experiencias <br /> digitales.
 						</p>
 					</div>
 					<hr className="vector-about show-mobile" />

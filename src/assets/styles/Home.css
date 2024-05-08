@@ -42,6 +42,13 @@
 }
 .social-media-icons svg{
 	color: #A68E52;
+	transition: 250ms;
+}
+
+.social-media-icons svg:hover {
+	text-decoration: none;
+	font-size: 32px;
+	transition: 250ms;
 }
 
 .left-info {
