@@ -40,14 +40,12 @@ const ProjectList = ({ projects }) => {
 					<div className="title-list font-black animate__animated animate__bounce">
 						<h1 className="ProjectList-title">Portafolio</h1>
 						<br className="show-desktop" />
-						<span className="subtitle-list show-desktop">Experiencias</span>
+						<span className="subtitle-list show-desktop">Digital</span>
 					</div>
 					<p className="paragraph-list text-ligth animate__animated animate__fadeInDown">
-						Esta es una <span>selección</span> de <br />
-						algunos de los <span>proyectos</span> en <br />
-						los que he trabajado
-						<br />
-						anteriormente.
+						Cada trabajo refleja mi <span>dedicación</span> <br/>
+						desde  aplicaciones interactivas <br/>
+						hasta <span>sistemas</span> robustos. <br/>
 					</p>
 				</div>
 				<section className="list-card">

@@ -5,6 +5,7 @@ import "../assets/styles/About.css";
 //Icons
 import colorArrow from "../assets/ArrowcolorArrow.png";
 import menuDark from "../assets/VectorMenuDark.png";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export const About = () => {
 	const skills = ["JavaScript", "React JS", "Node JS", "Wordpress"];
@@ -28,7 +29,7 @@ export const About = () => {
 							<Link className="link-readMore text-bold" to="/projects">
 								Proyectos
 							</Link>
-							<img className="arrow-project" src={colorArrow} alt="arrow" />
+							<ArrowForwardIcon />
 						</div>
 						<hr className="vector-about" />
 					</div>

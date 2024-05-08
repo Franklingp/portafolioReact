@@ -162,9 +162,7 @@ const Contact = ({addNewMessage}) => {
 				<p className="text-form text-ligth">
 					Este formulario es con el fin <br />
 					de poder <span className="ligth">contactar</span> contigo
-					posteriormente. <br />
-					No te preocupes tus datos están{" "}
-					<span className="ligth">seguros.</span>
+					posteriormente.
 				</p>
 			</div>
 		</section>
