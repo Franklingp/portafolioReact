@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../assets/styles/About.css";
 
 //Icons
-import colorArrow from "../assets/ArrowcolorArrow.png";
 import menuDark from "../assets/VectorMenuDark.png";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 

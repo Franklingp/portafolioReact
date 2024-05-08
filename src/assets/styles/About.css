@@ -134,6 +134,10 @@
 	align-items: center;
 }
 
+.readMore-section svg{
+	color: #A68E52;
+}
+
 @media (max-width: 1000px) {
 	.about {
 		flex-wrap: wrap;
