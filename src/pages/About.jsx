@@ -39,14 +39,12 @@ export const About = () => {
 			<section className="about-der text-regular">
 				<h3 className="about-me">Sobre mi</h3>
 				<p className="paragraph text-ligth">
-					Desarrollador web, mi trabajo consiste en desarrollar aplicaciones web
-					que cumplan objetivos determinados, ya sea desde mostrar información
-					con sitios web estáticos como aplicaciones más compleja que permitan
-					manejar y almacenar información para el usuario como manejo de
-					productos si es un sistema de inventario o manejo de métodos de pagos
-					para e-commerce, etc., todo esto con programación y buenas prácticas
-					en código sin dejar de lado la experiencia de usuario y el diseño
-					estético del sitio web.
+				Soy un desarrollador web altamente capacitado, especializado en Frontend con 
+				un enfoque en React y JavaScript. Mi pasión por la excelencia técnica se 
+				refleja en mi enfoque meticuloso para crear soluciones eficientes y centradas 
+				en el usuario. Con una habilidad probada en el diseño y desarrollo de aplicaciones 
+				web escalables y mantenibles, estoy comprometido a superar desafíos técnicos 
+				y ofrecer soluciones de alta calidad que cumplen con los objetivos del proyecto.
 				</p>
 				<Link className="link-readMore text-bold show-mobile" to="/projects">
 					Proyectos <img src={menuDark} alt="menu" height="8" />
