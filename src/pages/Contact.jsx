@@ -63,6 +63,8 @@ const Contact = ({addNewMessage}) => {
 					href={global.instagram}
 					className="big-text"
 					style={{ color: "#A68E52", fontFamily: "Thin-italic" }}
+					target="_blank" 
+					rel="noopener noreferrer"
 				>
 					Instagram
 				</a>
@@ -70,6 +72,8 @@ const Contact = ({addNewMessage}) => {
 					href={global.facebook}
 					className="big-text"
 					style={{ fontFamily: "Extra-ligth" }}
+					target="_blank" 
+					rel="noopener noreferrer"
 				>
 					Facebook
 				</a>
@@ -77,13 +81,18 @@ const Contact = ({addNewMessage}) => {
 					onClick={handleDialog}
 					className="big-text"
 					style={{ fontFamily: "Ligth" }}
+					target="_blank" 
+					rel="noopener noreferrer"
 				>
+
 					Correo
 				</a>
 				<a
 					href={global.twitter}
 					className="big-text"
 					style={{ fontFamily: "Regular" }}
+					target="_blank" 
+					rel="noopener noreferrer"
 				>
 					Twitter
 				</a>
@@ -91,6 +100,8 @@ const Contact = ({addNewMessage}) => {
 					href={global.behance}
 					className="big-text"
 					style={{ fontFamily: "Thin-italic" }}
+					target="_blank" 
+					rel="noopener noreferrer"
 				>
 					Behance
 				</a>
@@ -98,6 +109,8 @@ const Contact = ({addNewMessage}) => {
 					href={global.linkedin}
 					className="big-text"
 					style={{ color: "#A68E52", fontFamily: "Extra-ligth" }}
+					target="_blank" 
+					rel="noopener noreferrer"
 				>
 					Linkedin
 				</a>

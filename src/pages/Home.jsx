@@ -3,12 +3,11 @@ import "../assets/styles/Home.css";
 import global from "../config.js";
 import About from "./About";
 
-//Icons
-import arrow from "../assets/ArrowreadMore.png";
-import instagram from "../assets/instagram.png";
-import facebook from "../assets/facebook.png";
-import linkedin from "../assets/linkedin.png";
-import github from "../assets/github.png";
+//Material ui log
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Home = () => {
 	return (
@@ -17,17 +16,25 @@ const Home = () => {
 				<div className="izq">
 					<div />
 					<aside className="social-media-icons">
-						<a href={global.instagram}>
-							<img src={instagram} alt="instagram" />
+						<a href={global.instagram} target="_blank" rel="noopener noreferrer">
+							<InstagramIcon
+							alt="Instagram"
+							/>
 						</a>
-						<a href={global.facebook}>
-							<img src={facebook} alt="facebook" />
+						<a href={global.facebook} target="_blank" rel="noopener noreferrer">
+							<FacebookIcon
+							alt="Facebook"
+							/>
 						</a>
-						<a href={global.linkedin}>
-							<img src={linkedin} alt="linkedin" />
+						<a href={global.linkedin} target="_blank" rel="noopener noreferrer">
+							<LinkedInIcon
+							alt="LinkedIN"
+							/>
 						</a>
-						<a href={global.github}>
-							<img src={github} alt="github" />
+						<a href={global.github} target="_blank" rel="noopener noreferrer">
+							<GitHubIcon
+							alt="Github"
+							/>
 						</a>
 					</aside>
 					<hr className="vector-about show-mobile" />
@@ -36,38 +43,24 @@ const Home = () => {
 							<span className="left-title font-black">
 								Desarrollador <br /> web{" "}
 							</span>
-							<span style={{ color: "#A68E52" }}>Front-end</span>
+							<span className="primary">Front-end</span>
 							<br />
-							en busca de nuevos <br />
-							retos.
+							impulsando experiencias <br /> digitales.
 						</p>
 					</div>
 					<hr className="vector-about show-mobile" />
 				</div>
 
 				<div className="der">
-					<hr className="home-custom-vertical-line" />
-					<aside className="language text-ligth">
-						If you want to navigate in <br />
-						English, change the <br />
-						language
-					</aside>
 					<div className="header">
 						<h1 className="header-bold animate__animated animate__fadeInDown">
 							Welcome
 						</h1>
 						<p className="header-ligth">
 							Just do it, in
-							<span style={{ color: "#A68E52" }}> React JS </span>
+							<span className="primary"> React JS </span>
 						</p>
 					</div>
-					<span className="read-more text-ligth">
-						Saber
-						<span style={{ color: "#A68E52", marginRight: "8px" }}>
-							{" mas"}
-						</span>
-						<img src={arrow} alt="arrow" />
-					</span>
 				</div>
 			</section>
 			<About />

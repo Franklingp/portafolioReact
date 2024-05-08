@@ -10,7 +10,6 @@ import logoDark from "../assets/VectorBrandDark.png";
 import menuWhite from "../assets/menu_white.png";
 import menuDark from "../assets/menu.png";
 import closeIcon from "../assets/close.png";
-import LanguageIcon from "@mui/icons-material/Language";
 
 //Redux
 import { connect } from "react-redux";
@@ -89,7 +88,7 @@ const Header = (props) => {
 	return (
 		<header className="navbar-custom">
 			<nav className="navbar-content">
-				<div className="navbar-header" style={{ color: title }}>
+				<div className="navbar-header" style={{ color: title }} onClick={() => {navigate("/")}}>
 					<img src={logo} alt="logo" height="25" />
 					<span>Franklin Pimentel</span>
 				</div>
@@ -155,10 +154,18 @@ const Header = (props) => {
 							<React.Fragment>
 								<li className="navbar-link-item" onClick={updateDrawer}>
 									<Link
+										to="/"
+										style={{ color: mobile === true ? "#212224" : item }}
+									>
+										Inicio
+									</Link>
+								</li>
+								<li className="navbar-link-item" onClick={updateDrawer}>
+									<Link
 										to="/projects"
 										style={{ color: mobile === true ? "#212224" : item }}
 									>
-										Mis proyectos
+										Proyectos
 									</Link>
 								</li>
 								<li className="navbar-link-item" onClick={updateDrawer}>
@@ -166,28 +173,8 @@ const Header = (props) => {
 										to="/contact"
 										style={{ color: mobile === true ? "#212224" : item }}
 									>
-										Contactame
+										Contacto
 									</Link>
-								</li>
-								<li className="navbar-link-item" onClick={updateDrawer}>
-									<Link
-										to="/"
-										style={{ color: mobile === true ? "#212224" : item }}
-									>
-										Sobre mi
-									</Link>
-								</li>
-								<li className="nav-item">
-									<LanguageIcon
-										style={{ color: mobile === true ? "#212224" : item }}
-										className="language-icon"
-										alt="lang"
-										color="red"
-									/>
-									<span style={{ color: mobile === true ? "#212224" : item }}>
-										{" "}
-										Language
-									</span>
 								</li>
 							</React.Fragment>
 						)}

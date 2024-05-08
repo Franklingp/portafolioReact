@@ -22,6 +22,7 @@
 	align-items: center;
 	letter-spacing: 0.1em;
 	font-size: 1.25rem;
+	cursor:pointer;
 }
 
 .navbar-header img {
