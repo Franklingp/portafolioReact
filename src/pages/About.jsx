@@ -17,7 +17,7 @@ export const About = () => {
 					{skills.map((skill) => (
 						<div key={skill} className="skill-item">
 							<div className="circle"></div>
-							<span className="skill text-extra-ligth">{skill}</span>
+							<span className="skill text-ligth">{skill}</span>
 						</div>
 					))}
 				</div>
@@ -25,7 +25,7 @@ export const About = () => {
 					<div>
 						<hr className="vector-about" />
 						<div className="readMore-section">
-							<Link className="link-readMore text-bold" to="/projects">
+							<Link className="link-readMore text-regular" to="/projects">
 								Proyectos
 							</Link>
 							<ArrowForwardIcon />

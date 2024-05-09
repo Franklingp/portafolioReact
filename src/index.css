@@ -3,28 +3,8 @@
 }
 
 @font-face {
-	font-family: "Black-italic";
-	src: url("./assets/fonts/Montserrat-BlackItalic.ttf");
-}
-
-@font-face {
 	font-family: "Black";
 	src: url("./assets/fonts/Montserrat-Black.ttf");
-}
-
-@font-face {
-	font-family: "Thin";
-	src: url("./assets/fonts/Montserrat-Thin.ttf");
-}
-
-@font-face {
-	font-family: "Thin-italic";
-	src: url("./assets/fonts/Montserrat-ThinItalic.ttf");
-}
-
-@font-face {
-	font-family: "Extra-ligth";
-	src: url("./assets/fonts/Montserrat-ExtraLight.ttf");
 }
 
 @font-face {
@@ -37,21 +17,8 @@
 	src: url("./assets/fonts/Montserrat-Regular.ttf");
 }
 
-@font-face {
-	font-family: "Bold";
-	src: url("./assets/fonts/Montserrat-Bold.ttf");
-}
-
 .text-ligth {
 	font-family: "Ligth";
-}
-
-.text-bold {
-	font-family: "Bold";
-}
-
-.text-extra-ligth {
-	font-family: "Extra-ligth";
 }
 
 .font-black {

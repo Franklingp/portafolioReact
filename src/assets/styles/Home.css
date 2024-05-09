@@ -105,12 +105,13 @@
 }
 
 .header-bold {
-	font-family: "Black-italic";
+	font-family: "Black";
 	font-weight: 1000;
 	font-size: 72px;
 	line-height: 88px;
 	letter-spacing: 0.1em;
 	margin: 0px;
+	font-style: italic;
 }
 
 .header-ligth {
