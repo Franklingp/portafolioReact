@@ -20,6 +20,16 @@
 	align-items: center;
 }
 
+.contact-header{
+	align-self: center;
+    position: relative;
+	padding: 3em;
+}
+
+.contact-header h1{
+	margin-bottom: 0.3em;
+}
+
 .contact-seccion-izq a {
 	text-decoration: none;
 	cursor: pointer;
@@ -75,6 +85,10 @@
 	margin-bottom: 24px;
 }
 
+.contact-form{
+	margin-bottom: 32px;
+}
+
 .btn-contact {
 	width: 50%;
 	height: 32px;
@@ -123,6 +137,26 @@
 	font-size: 16px;
 	font-family: auto;
 	outline: none;
+}
+
+.contact-social-media{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contact-social-media svg{
+	color: #A68E52;
+	transition: 250ms;
+	margin-right: 8px;
+}
+.contact-social-media svg:hover{
+	color: #A68E52;
+	transition: 250ms;
+	width: 32px;
+	height: 32px;
 }
 
 @media (max-width: 750px) {
