@@ -29,7 +29,7 @@ const Contact = ({addNewMessage}) => {
 			date: Date.now()
 		});
 		alert(
-			`Gracias ${name} por dejar tu mensaje, proxiamente estare contactando contigo.`
+			`Gracias ${form.name} por dejar tu mensaje, proxiamente estare contactando contigo.`
 		);
 		setForm({
 			name: "",
@@ -62,7 +62,6 @@ const Contact = ({addNewMessage}) => {
 				<a
 					href={global.instagram}
 					className="big-text"
-					style={{ color: "#A68E52", fontFamily: "Thin-italic" }}
 					target="_blank" 
 					rel="noopener noreferrer"
 				>
@@ -71,7 +70,6 @@ const Contact = ({addNewMessage}) => {
 				<a
 					href={global.facebook}
 					className="big-text"
-					style={{ fontFamily: "Extra-ligth" }}
 					target="_blank" 
 					rel="noopener noreferrer"
 				>
@@ -80,7 +78,6 @@ const Contact = ({addNewMessage}) => {
 				<a
 					onClick={handleDialog}
 					className="big-text"
-					style={{ fontFamily: "Ligth" }}
 					target="_blank" 
 					rel="noopener noreferrer"
 				>
@@ -90,7 +87,6 @@ const Contact = ({addNewMessage}) => {
 				<a
 					href={global.twitter}
 					className="big-text"
-					style={{ fontFamily: "Regular" }}
 					target="_blank" 
 					rel="noopener noreferrer"
 				>
@@ -99,7 +95,6 @@ const Contact = ({addNewMessage}) => {
 				<a
 					href={global.behance}
 					className="big-text"
-					style={{ fontFamily: "Thin-italic" }}
 					target="_blank" 
 					rel="noopener noreferrer"
 				>
@@ -108,7 +103,6 @@ const Contact = ({addNewMessage}) => {
 				<a
 					href={global.linkedin}
 					className="big-text"
-					style={{ color: "#A68E52", fontFamily: "Extra-ligth" }}
 					target="_blank" 
 					rel="noopener noreferrer"
 				>
