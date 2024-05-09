@@ -166,11 +166,16 @@
 	}
 	.contact-seccion-izq {
 		box-sizing: border-box;
+		text-align: center;
 		padding-top: 32px;
-		padding-bottom: 32px;
 		width: 100vw;
 		min-height: 100vh;
 		justify-content: space-around;
+	}
+
+	.contact-seccion-izq p{
+		left: 0px;
+		right: 0px;
 	}
 
 	.big-text {
