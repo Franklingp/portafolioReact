@@ -53,7 +53,7 @@ const Home = () => {
 
 				<div className="der">
 					<div className="header">
-						<h1 className="header-bold animate__animated animate__fadeInDown">
+						<h1 className="header-bold font-black animate__animated animate__fadeInDown">
 							Welcome
 						</h1>
 						<p className="header-ligth">

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "../assets/styles/About.css";
 
 //Icons
-import colorArrow from "../assets/ArrowcolorArrow.png";
 import menuDark from "../assets/VectorMenuDark.png";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export const About = () => {
 	const skills = ["JavaScript", "React JS", "Node JS", "Wordpress"];
@@ -17,7 +17,7 @@ export const About = () => {
 					{skills.map((skill) => (
 						<div key={skill} className="skill-item">
 							<div className="circle"></div>
-							<span className="skill text-extra-ligth">{skill}</span>
+							<span className="skill text-ligth">{skill}</span>
 						</div>
 					))}
 				</div>
@@ -25,10 +25,10 @@ export const About = () => {
 					<div>
 						<hr className="vector-about" />
 						<div className="readMore-section">
-							<Link className="link-readMore text-bold" to="/projects">
+							<Link className="link-readMore text-regular" to="/projects">
 								Proyectos
 							</Link>
-							<img className="arrow-project" src={colorArrow} alt="arrow" />
+							<ArrowForwardIcon />
 						</div>
 						<hr className="vector-about" />
 					</div>
@@ -38,16 +38,12 @@ export const About = () => {
 			<section className="about-der text-regular">
 				<h3 className="about-me">Sobre mi</h3>
 				<p className="paragraph text-ligth">
-					Soy un desarrollador web especializado en crear soluciones tecnológicas 
-					eficientes y centradas en el usuario. Me enfoco en la simplicidad y la 
-					legibilidad del código, adoptando prácticas de programación que garantizan la 
-					mantenibilidad y escalabilidad a largo plazo. Disfruto enfrentando desafíos 
-					técnicos y dividiéndolos en problemas manejables, lo que me permite desarrollar 
-					soluciones modulares y acelerar el proceso de desarrollo. Me adapto a las necesidades 
-					del equipo y del cliente, comprometiéndome a ofrecer soluciones de alta calidad 
-					dentro del presupuesto y el tiempo acordados. Mi pasión por el desarrollo 
-					web se refleja en mi propia página web, donde presento una variedad de proyectos 
-					que demuestran mi experiencia y dedicación en cada aspecto del desarrollo web.
+				Soy un desarrollador web altamente capacitado, especializado en Frontend con 
+				un enfoque en React y JavaScript. Mi pasión por la excelencia técnica se 
+				refleja en mi enfoque meticuloso para crear soluciones eficientes y centradas 
+				en el usuario. Con una habilidad probada en el diseño y desarrollo de aplicaciones 
+				web escalables y mantenibles, estoy comprometido a superar desafíos técnicos 
+				y ofrecer soluciones de alta calidad que cumplen con los objetivos del proyecto.
 				</p>
 				<Link className="link-readMore text-bold show-mobile" to="/projects">
 					Proyectos <img src={menuDark} alt="menu" height="8" />

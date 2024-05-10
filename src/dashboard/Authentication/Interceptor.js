@@ -1,6 +1,32 @@
 import React from  'react';
-import { withRouter } from 'react-router-dom';
+import {useState, useEffect} from  'react';
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+// const Interceptor = ({children, auth}) => {
+//     const isAuth = useState(false);
+//     const navigate = useNavigate();
+
+//     useEffect(() =>{
+//         if(auth.isAuth == false){
+//             alert("Debe iniciar sesion para poder continuar");
+//             navigate("/");
+//         }
+//     },[isAuth])
+
+//     return(
+//         <section>
+//             {children}
+//         </section>
+//     )
+// }
+
+// const mapStateToProps = (state) => ({
+//     auth: state.auth
+// })
+
+// export default connect(mapStateToProps)(Interceptor);
+
 
 class Interceptor extends React.Component {
     constructor(props){

@@ -12,6 +12,13 @@ import Dialog from "../components/Dialog";
 //utils
 import { setID } from "../utils/idShuffle";
 
+//Material ui log
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+
 const Contact = ({addNewMessage}) => {
 	const [openDialog, setOpenDialog] = useState(false);
 	const [form, setForm] = useState({
@@ -29,7 +36,7 @@ const Contact = ({addNewMessage}) => {
 			date: Date.now()
 		});
 		alert(
-			`Gracias ${name} por dejar tu mensaje, proxiamente estare contactando contigo.`
+			`Gracias ${form.name} por dejar tu mensaje, proxiamente estare contactando contigo.`
 		);
 		setForm({
 			name: "",
@@ -59,61 +66,17 @@ const Contact = ({addNewMessage}) => {
 				email={global.email}
 			/>
 			<div className="contact-seccion-izq animate__animated animate__pulse">
-				<a
-					href={global.instagram}
-					className="big-text"
-					style={{ color: "#A68E52", fontFamily: "Thin-italic" }}
-					target="_blank" 
-					rel="noopener noreferrer"
-				>
-					Instagram
-				</a>
-				<a
-					href={global.facebook}
-					className="big-text"
-					style={{ fontFamily: "Extra-ligth" }}
-					target="_blank" 
-					rel="noopener noreferrer"
-				>
-					Facebook
-				</a>
-				<a
-					onClick={handleDialog}
-					className="big-text"
-					style={{ fontFamily: "Ligth" }}
-					target="_blank" 
-					rel="noopener noreferrer"
-				>
-
-					Correo
-				</a>
-				<a
-					href={global.twitter}
-					className="big-text"
-					style={{ fontFamily: "Regular" }}
-					target="_blank" 
-					rel="noopener noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					href={global.behance}
-					className="big-text"
-					style={{ fontFamily: "Thin-italic" }}
-					target="_blank" 
-					rel="noopener noreferrer"
-				>
-					Behance
-				</a>
-				<a
-					href={global.linkedin}
-					className="big-text"
-					style={{ color: "#A68E52", fontFamily: "Extra-ligth" }}
-					target="_blank" 
-					rel="noopener noreferrer"
-				>
-					Linkedin
-				</a>
+					<div className="contact-header">
+						<h1 className="header-bold font-black animate__animated animate__fadeInDown">
+							Contáctame
+						</h1>
+						<p className="header-ligth">
+							Gracias por tu interés en mi trabajo. Si deseas saber más 
+							utiliza el formulario de contacto o sígueme en mis redes 
+							Sociales. Estaré encantado de responder tus consultas y trabajar juntos en nuevos
+							proyectos.
+						</p>
+					</div>
 			</div>
 			<div className="contact-seccion-der">
 				<hr className="vector-contact" />
@@ -121,7 +84,7 @@ const Contact = ({addNewMessage}) => {
 					Contacto
 				</h2>
 
-				<form onSubmit={handleSubmit}>
+				<form className={"contact-form"} onSubmit={handleSubmit}>
 					<div className="mb-3">
 						<input
 							type="text"
@@ -150,6 +113,7 @@ const Contact = ({addNewMessage}) => {
 						<textarea
 							type="text"
 							className="custom-input"
+							required
 							name="message"
 							placeholder="Mensaje"
 							value={form.message}
@@ -159,13 +123,34 @@ const Contact = ({addNewMessage}) => {
 
 					<input type="submit" className="btn-contact" value="Enviar" />
 				</form>
-				<p className="text-form text-ligth">
-					Este formulario es con el fin <br />
-					de poder <span className="ligth">contactar</span> contigo
-					posteriormente. <br />
-					No te preocupes tus datos están{" "}
-					<span className="ligth">seguros.</span>
-				</p>
+					<aside className="contact-social-media">
+						<a href={global.instagram} target="_blank" rel="noopener noreferrer">
+							<InstagramIcon
+							alt="Instagram"
+							/>
+						</a>
+						<a href={global.facebook} target="_blank" rel="noopener noreferrer">
+							<FacebookIcon
+							alt="Facebook"
+							/>
+						</a>
+						<a href={global.linkedin} target="_blank" rel="noopener noreferrer">
+							<LinkedInIcon
+							alt="LinkedIN"
+							/>
+						</a>
+						<a href={global.github} target="_blank" rel="noopener noreferrer">
+							<GitHubIcon
+							alt="Github"
+							/>
+						</a>
+						<a onClick={handleDialog}>
+							<EmailIcon
+							alt="Email"
+							/>
+						</a>
+					</aside> 
+				<hr className="vector-contact" />
 			</div>
 		</section>
 	);

@@ -7,7 +7,7 @@ import App from './App';
 import 'animate.css';
 
 //Helmet meta headers
-import HelmetProvider from "./components/HelmetProvider";
+import HelmetInteceptor from "./components/HelmetInteceptor";
 
 //Redux
 import { Provider } from 'react-redux';
@@ -17,9 +17,9 @@ ReactDOM.render(
 
   <React.StrictMode>
     <Provider store={store}>
-      <HelmetProvider>
+      <HelmetInteceptor>
         <App />
-      </HelmetProvider>
+      </HelmetInteceptor>
     </Provider>
   </React.StrictMode>,
 

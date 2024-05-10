@@ -66,22 +66,25 @@ const ProjectDetail = ({ projects }) => {
 					<p className="text-description text-ligth">{project.description}</p>
 					<div className="icons-project">
 						{project.git && (
-							<a href={project.git} className="item-icon">
+							<a href={project.git} className="item-icon" target="_blank" rel="noopener noreferrer">
 								<img
 									src={github}
 									alt="logo"
 									className="d-inline-block align-center logo"
 									width="32"
+									target="_blank" 
+									rel="noopener noreferrer"
 								/>
 							</a>
 						)}
 						{project.url && (
-							<a href={project.url} className="item-icon">
+							<a href={project.url} className="item-icon" target="_blank" rel="noopener noreferrer">
 								<img
 									src={url}
 									alt="logo"
 									className="d-inline-block align-center logo"
 									width="40"
+									
 								/>
 							</a>
 						)}
