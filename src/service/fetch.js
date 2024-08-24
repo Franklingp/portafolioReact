@@ -1,12 +1,12 @@
-import config from '../config';
 import store from '../redux/store';
 
 //Importing firebase and database config
-import { collection, getDocs, addDoc, deleteDoc, doc, setDoc } from 'firebase/firestore/lite';
+import { collection, getDocs, addDoc, deleteDoc, doc, setDoc } from 'firebase/firestore';
 import firebaseApp from "../firebase.config";
 
 //Importing depencency of authentication
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+
 
 //token to authentication
 let token = "";
